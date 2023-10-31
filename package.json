@@ -1,0 +1,22 @@
+{
+  "name": "main.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss:assets/css -w",
+    "sass-minify": "sass scss:assets/css -s compressed"
+  },
+  "author": "NgoLong",
+  "license": "MIT",
+  "keywords": [
+    "json-server"
+  ],
+  "description": "",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
