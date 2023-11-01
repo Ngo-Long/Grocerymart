@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // Breakpoints, dimension, container, row, column, v.v
 $grid-breakpoints: (
@@ -14,7 +14,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px,
+  xxl: 1370px,
 );
 $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
@@ -117,7 +117,7 @@ $gutters: (
 @each $breakpoint, $dimension in $grid-breakpoints {
   $max-width: map-get($container-max-widths, $breakpoint);
   $is-xs: $breakpoint == xs;
-  $infix: if($is-xs, "", "-#{$breakpoint}");
+  $infix: if($is-xs, '', '-#{$breakpoint}');
 
   @include make-media-query($dimension, $is-xs) {
     .container {

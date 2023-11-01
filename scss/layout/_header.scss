@@ -1,4 +1,107 @@
+@use '../abstracts';
+
+%flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+%flexCenterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
-  // height: $header-height;
-  // background: $text-color;
+  background: var(--header-bg-color);
+
+  @include abstracts.breakpoint(lg) {
+    width: 100px;
+  }
+
+  @include abstracts.breakpoint(sm) {
+    width: 50px;
+  }
+}
+
+.top-bar {
+  @extend %flexCenter;
+  padding: 30px 0;
+}
+
+.navbar {
+  margin-left: 144px;
+  margin-right: auto;
+
+  &__list {
+    @extend %flexCenterCenter;
+    gap: 30px;
+  }
+
+  &__link {
+    display: flex;
+    line-height: 146.667%;
+  }
+
+  &__icon {
+    margin-top: 3px;
+    margin-left: 6px;
+  }
+}
+
+.top-action {
+  @extend %flexCenterCenter;
+  gap: 20px;
+
+  &__group {
+    @extend %flexCenterCenter;
+    height: 50px;
+    min-width: 50px;
+    max-width: 226px;
+    border-radius: 0.8rem;
+    background: var(--top-action-bg-color);
+    box-shadow: 0px 20px 60px 10px var(--top-action-group-shadow);
+  }
+
+  &__btn {
+    @extend %flexCenterCenter;
+    gap: 10px;
+    cursor: pointer;
+    padding: 14px 20px;
+  }
+
+  &__btn--single {
+    padding: 13px;
+  }
+
+  &__icon {
+    @extend %flexCenterCenter;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.325rem 0.275rem 0.2709rem 0.275rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 146.667%;
+  }
+
+  &__separate {
+    width: 1.3px;
+    height: 20px;
+    background: var(--top-action-separate-color);
+  }
+
+  &__user {
+  }
+
+  &__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 0.8rem;
+    background: url(<path-to-image>), lightgray -205.145px -22.64px / 819.939% 546.626% no-repeat,
+      #dfd2fa;
+    box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
 }
