@@ -1,0 +1,134 @@
+.dropdown {
+  position: absolute;
+  left: 0;
+  width: min(1240px, 100%);
+  padding-top: 54px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &__inner {
+    position: relative;
+
+    padding: 30px;
+
+    border-radius: 2rem;
+    background: var(--dropdown-bg-color);
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+
+    &::after {
+      content: url('../icons/dropdown-down.svg');
+      position: absolute;
+      top: -10px;
+      left: var(--arrow-left-pos);
+      translate: -50%;
+      filter: var(--dropdown-arrow-color);
+      z-index: 1;
+    }
+  }
+}
+
+.top-menu {
+  position: relative;
+
+  &__main {
+    max-height: calc(min(582px, 100vh - 158px) - 60px);
+    overflow-y: auto;
+  }
+}
+
+.menu-column {
+  --menu-main-column-width: 292px;
+
+  + .menu-column {
+    margin-top: 23px;
+  }
+
+  display: flex;
+  gap: 14px;
+
+  &__main {
+    width: var(--menu-main-column-width);
+    border-right: 1px solid var(--menu-column-border);
+  }
+
+  &__icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    &-1 {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    &-2 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: var(--menu-column-icon-color);
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__heading {
+    margin-top: 2.5px;
+    line-height: 150%;
+  }
+
+  &__list {
+    margin-top: 13px;
+  }
+
+  &__item {
+    &--active .sub-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item--active > &__link,
+  &__item:hover > &__link {
+    font-weight: 500;
+    color: #0071dc;
+  }
+
+  &__link {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 142.857%;
+    padding: 7px 10px 7px 0;
+  }
+}
+
+.sub-menu {
+  position: absolute;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-left: 30px;
+  inset: 0 0 0 var(--menu-main-column-width);
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+
+  &--no-main {
+    position: inherit;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-height: calc(min(582px, 100vh - 158px) - 60px);
+  }
+}
