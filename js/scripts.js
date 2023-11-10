@@ -119,13 +119,23 @@ function handleActiveMenu() {
       if (!items.length) return;
 
       removeActive(menu);
-      items[0].classList.add(activeClass);
+
+      if (window.innerWidth > 991) {
+        items[0].classList.add(activeClass);
+      }
 
       Array.from(items).forEach((item) => {
         item.onmouseenter = () => {
           if (window.innerWidth <= 991) return;
           removeActive(menu);
           item.classList.add(activeClass);
+        };
+
+        item.onclick = () => {
+          if (window.innerWidth > 991) return;
+          removeActive(menu);
+          item.classList.add(activeClass);
+          item.scrollIntoView();
         };
       });
     });
@@ -153,6 +163,7 @@ function initJsToggle() {
     if (!target) {
       document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
     }
+
     button.onclick = () => {
       if (!$(target)) {
         return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
@@ -167,3 +178,38 @@ function initJsToggle() {
     };
   });
 }
+
+// Đóng mở dropdown
+window.addEventListener('template-loaded', toggleDropdown);
+
+function toggleDropdown() {
+  const links = $$('.js-dropdown-list > li > a');
+
+  links.forEach((link) => {
+    link.onclick = () => {
+      if (window.innerWidth > 991) return;
+
+      const item = link.closest('li');
+      item.classList.toggle('navbar__item--active');
+    };
+  });
+}
+
+// main
+(() => {
+  // Hàm tải template
+  load();
+
+  // Hàm tính toán vị trí arrow cho dropdown
+  calArrowPos();
+
+  // Giữ active menu khi hover
+  handleActiveMenu();
+
+  // JS toggle
+  initJsToggle();
+
+  // Đóng mở dropdown
+  toggleDropdown();
+})();
+x;

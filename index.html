@@ -32,13 +32,32 @@
   <!-- main -->
   <main id="main">
     <div class="container">
+      <!-- carousel -->
+      <section class="carousel">
+        <div class="carousel__inner">
+          <div class="carousel__item">
+            <a href="#!" class="carousel__link">
+              <picture>
+                <source media="(max-width: 767.98px)" srcset="./assets/imgs/carousel/item-1-md.png">
+                <img src="./assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img ">
+              </picture>
+            </a>
+          </div>
+        </div>
 
+        <div class="carousel__indicators">
+          <span class="carousel__num">1</span>
+          <span class="carousel__rectangle"></span>
+          <span class="carousel__num">5</span>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer id="footer"></footer>
   <script>load("footer", "./template/footer.html");</script>
 
+  <script src="./js/scripts.js"></script>
 </body>
 
 </html>
