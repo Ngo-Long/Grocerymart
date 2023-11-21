@@ -16,6 +16,16 @@ html {
     --header-shadow-color: rgba(237, 237, 246, 0.2);
   }
 
+  /* ------------ BUTTON ------------*/
+  // filter btn
+  --filter-btn-bg: #fff;
+  --filter-btn-icon-color: #1a162e;
+  --filter-btn-title-color: #6c6c72;
+
+  // like-btn
+  --like-btn-shadow: rgba(237, 237, 246, 0.2);
+  /* ------------******* ------------ */
+
   // dropdown
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
@@ -27,4 +37,25 @@ html {
   // Sidebar
   --sidebar-bg: #fff;
   --sidebar-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
+
+  // cate-item
+  --cate-item-bg: #eee;
+  --cate-item-color-title: #000;
+  --cate-item-bg-thumb: #fff;
+
+  @include abstracts.screen(md) {
+    --cate-item-bg: #fff;
+  }
+
+  // product-item
+  --product-item-bg: #fff;
+  --product-item-shadow: rgba(237, 237, 246, 0.2);
+  --product-item-btn-like: #fff;
+
+  // filter form
+  --filter-form-bg: #fff;
+  --filter-form-shadow: rgba(200, 200, 200, 0.4);
+  --filter-form-heading: #1a162e;
+  --filter-form-tag-bg: #f8f8fb;
+  --filter-form-tag-bg-hover: #e7e7eb;
 }

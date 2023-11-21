@@ -29,4 +29,32 @@ html.dark {
   // Sidebar
   --sidebar-bg: #292e39;
   --sidebar-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
+
+  // cate-item
+  --cate-item-bg: #171c28;
+  --cate-item-color-title: #fff;
+  --cate-item-bg-thumb: #292e39;
+
+  // filter btn
+  --filter-btn-bg: #171c28;
+  --filter-btn-icon-color: #fff;
+  --filter-btn-title-color: #fff;
+
+  // like-btn
+  --like-btn-shadow: rgba(124, 124, 124, 0.2);
+
+  // product-item
+  --product-item-bg: #171c28;
+  --product-item-shadow: rgba(0, 0, 0, 0.2);
+  --product-item-btn-like: #292e39;
+  --filter-form-size-bg: #171c28;
+
+  // filter form
+  --filter-form-bg: #292e39;
+  --filter-form-shadow: rgba(0, 0, 0, 0.4);
+  --filter-form-heading: #fff;
+  --filter-form-tag-bg: #171c28;
+  --filter-form-tag-bg-hover: #e7e7eb;
+  --filter-form-placeholder-color: #9e9da8;
+  --filter-form-arrow: var(--filter-form-bg);
 }

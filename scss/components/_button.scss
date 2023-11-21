@@ -1,0 +1,94 @@
+@use '../abstracts';
+
+// buttons
+.btn {
+  display: block;
+  height: 44px;
+  padding: 0 20px;
+  font-size: 1.8rem;
+  border-radius: 6px;
+
+  user-select: none;
+  background: #f8f8f8;
+
+  &--text {
+    color: #9e9da8;
+    font-weight: 400;
+    background: transparent;
+  }
+
+  &--primary {
+    color: #171c28;
+    background: #ffb700;
+  }
+
+  &--outline {
+    border: 1px solid #d2d1d6;
+    background: transparent;
+  }
+
+  &--rounded {
+    border-radius: 999px;
+  }
+
+  &[disabled],
+  &--disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  height: 36px;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  color: var(--filter-btn-title-color);
+  background: var(--filter-btn-bg);
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 142.857%;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    padding: 2px;
+    color: var(--filter-btn-icon-color);
+  }
+}
+
+.like-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  box-shadow: 0 20px 60px var(--like-btn-shadow);
+
+  &:not(&--liked) &__icon--liked {
+    display: none;
+  }
+
+  &--liked &__icon {
+    display: none;
+  }
+
+  &__icon--liked {
+    margin-top: 6px;
+  }
+}
