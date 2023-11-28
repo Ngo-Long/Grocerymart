@@ -1,0 +1,21 @@
+@use '../abstracts';
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.4);
+
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: opacity, visibility;
+  transition-timing-function: ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

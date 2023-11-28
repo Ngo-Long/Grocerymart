@@ -86,7 +86,7 @@
       visibility: visible;
     }
 
-    &.show ~ &--overlay {
+    &.show ~ .overlay {
       opacity: 1;
       visibility: visible;
     }
@@ -142,23 +142,6 @@
         padding: 0 20px;
         max-height: calc(min(582px, 100vh - 167px));
       }
-    }
-  }
-
-  &--overlay {
-    opacity: 0;
-    visibility: hidden;
-
-    @include abstracts.screen(lg) {
-      position: fixed;
-      inset: 0;
-      z-index: 9;
-      background: rgba($color: #000, $alpha: 0.4);
-
-      transition-delay: 0.1s;
-      transition-duration: 0.2s;
-      transition-property: opacity, visibility;
-      transition-timing-function: ease-in-out;
     }
   }
 
