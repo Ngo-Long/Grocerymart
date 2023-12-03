@@ -1,6 +1,41 @@
 @use '../abstracts';
 
 .form {
+  &__search {
+    display: flex;
+    position: relative;
+
+    &-input {
+      width: 100%;
+      height: 44px;
+
+      padding: 10px 56px 10px 16px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 146.667%;
+
+      border-radius: 0.6rem;
+      border: 1px solid #d2d1d6;
+
+      &::placeholder {
+        font-weight: 400;
+        color: var(--filter-form-placeholder-color);
+      }
+
+      @include abstracts.screen(sm) {
+        width: 100%;
+        font-size: 1.6rem;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      right: 16px;
+    }
+  }
+
   &__icon {
     width: 24px;
     height: 24px;
@@ -37,7 +72,6 @@
 
   &__group {
     width: 100%;
-    max-width: 350px;
     margin-top: 20px;
 
     &--horizontal {
@@ -65,15 +99,22 @@
     @include abstracts.screen(xl) {
       width: 100%;
     }
+
+    &::placeholder {
+      color: var(--form-input-text-color);
+    }
+
+    &-icon {
+      margin-left: 12px;
+    }
   }
 
-  &__label,
   &__select-wrap {
     border: 1px solid #d2d1d6;
     border-radius: 6px;
   }
 
-  &-label {
+  &__label {
     &--small {
       display: block;
       color: var(--form-heading-color);
@@ -87,6 +128,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 272px;
     height: 44px;
     padding: 5px 0;
   }
@@ -134,6 +176,10 @@
     border: 1.5px solid #d2d1d6;
     cursor: pointer;
 
+    & .form__input {
+      padding: 0;
+    }
+
     @include abstracts.screen(md) {
       height: 48px;
     }
@@ -145,26 +191,6 @@
 
   &__text-input + &__text-input {
     margin-top: 20px;
-  }
-
-  &__input {
-    flex: 1;
-    height: 100%;
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 144.444%;
-
-    @include abstracts.screen(md) {
-      font-size: 1.6rem;
-    }
-
-    &::placeholder {
-      color: var(--form-input-text-color);
-    }
-
-    &-icon {
-      margin-left: 12px;
-    }
   }
 
   &__checkbox {

@@ -5,6 +5,8 @@
   flex-direction: column;
   background: var(--product-page-bg-color);
 
+  padding-bottom: 30px;
+
   @include abstracts.screen(md) {
     background: var(--product-page-md-bg-color);
   }
@@ -12,7 +14,7 @@
 
 .product__all {
   @include abstracts.screen(md) {
-    border-radius: 2rem;
+    border-radius: 10px;
     background: var(--product-all-bg-md);
     box-shadow: 0px 20px 60px 10px var(--product-property-icon-filter);
   }
@@ -20,6 +22,10 @@
 
 .product__home {
   margin-top: 30px;
+
+  @include abstracts.screen(md) {
+    margin-top: 20px;
+  }
 }
 
 .product__preview {
@@ -49,31 +55,10 @@
   }
 }
 
-.product__search {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 50px;
-  padding: 13px 15px;
-  border-radius: 10px;
-  background: var(--product-search-bg);
-
-  &-input {
-    color: var(--product-search-input-color);
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 2rem;
-  }
-
-  &-icon {
-    filter: var(--product-search-filter);
-  }
-}
-
 .product-info {
   background: var(--product-info-bg-color);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 10px;
 
   @include abstracts.screen(md) {
     background: var(--product-info-bg-color-md);

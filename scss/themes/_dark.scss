@@ -82,12 +82,13 @@ html.dark {
   --breadcrums-link-color: #9e9da8;
   --breadcrums-link-current: #fff;
 
-  // product property
-  --product-search-bg: #171c28;
-  --product-search-filter: brightness(0) saturate(100%) invert(81%) sepia(10%) saturate(36%)
+  // search bar
+  --search-bar-bg: #171c28;
+  --search-bar-filter: brightness(0) saturate(100%) invert(81%) sepia(10%) saturate(36%)
     hue-rotate(238deg) brightness(96%) contrast(78%);
-  --product-search-input-color: #b9babe;
+  --search-bar-input-color: #b9babe;
 
+  // product property
   --product-all-bg-md: #171c28;
   --product-property-title: #eee;
   --product-property-span: var(--product-property-title);

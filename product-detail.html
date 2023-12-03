@@ -18,6 +18,16 @@
   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
   <script src="./js/scripts.js"></script>
+
+  <style>
+    main {
+      margin-bottom: 30px;
+    }
+
+    .footer {
+      height: 446px;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,13 +35,15 @@
   <script>load("header", "./template/header-logined.html");</script>
 
   <!-- main -->
-  <main class="product-page">
+  <main id="main" class="product-page">
     <div class="container">
       <!-- Search -->
       <div class="product__home d-none d-md-block">
-        <div class="product__search">
-          <input type="search" name="" id="" value="" placeholder="Search for item" class="product__search-input">
-          <img src="./assets/icons/search.svg" alt="" class="product__search-icon">
+        <div class="search-bar">
+          <input type="text" name="" id="" value="" placeholder="Search for item" class="search-bar__input">
+          <button class="search-bar__btn">
+            <img src="./assets/icons/search.svg" alt="" class="search-bar__icon">
+          </button>
         </div>
       </div>
 
@@ -174,6 +186,8 @@
           </div>
         </div>
       </div>
+
+      <!--  -->
     </div>
   </main>
 
