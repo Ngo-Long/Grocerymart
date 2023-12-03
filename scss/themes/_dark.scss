@@ -73,21 +73,32 @@ html.dark {
 
   // product detail
   --product-page-bg-color: #292e39;
+  --product-page-md-bg-color: #292e39;
 
   // breadcrums
   --breadcrums-bg-color: #171c28;
+  --breadcrums-md-bg-color: #171c28;
   --breadcrums-shadow-color: rgba(23, 28, 40, 0.2);
   --breadcrums-link-color: #9e9da8;
   --breadcrums-link-current: #fff;
 
   // product property
+  --product-search-bg: #171c28;
+  --product-search-filter: brightness(0) saturate(100%) invert(81%) sepia(10%) saturate(36%)
+    hue-rotate(238deg) brightness(96%) contrast(78%);
+  --product-search-input-color: #b9babe;
+
+  --product-all-bg-md: #171c28;
   --product-property-title: #eee;
   --product-property-span: var(--product-property-title);
   --product-property-tag-bg: #292e39;
+  --product-property-icon-filter: brightness(0) saturate(100%) invert(98%) sepia(3%) saturate(464%)
+    hue-rotate(269deg) brightness(118%) contrast(87%);
 
   // product info
   --product-info-card-border: #b9babe;
   --product-info-bg-color: #171c28;
+  --product-info-bg-color-md: #171c28;
   --product-info-heading: var(--product-property-title);
   --product-info-price-color: var(--product-property-title);
   --product-info-btn-color: var(--product-property-title);

@@ -15,6 +15,7 @@
 
   @include abstracts.screen(md) {
     gap: 16px;
+    background: var(--breadcrums-md-bg-color);
   }
 
   &__item {

@@ -27,6 +27,14 @@
   <!-- main -->
   <main class="product-page">
     <div class="container">
+      <!-- Search -->
+      <div class="product__home d-none d-md-block">
+        <div class="product__search">
+          <input type="search" name="" id="" value="" placeholder="Search for item" class="product__search-input">
+          <img src="./assets/icons/search.svg" alt="" class="product__search-icon">
+        </div>
+      </div>
+
       <!-- Breadcrumbs -->
       <div class="product__home">
         <ul class="breadcrums">
@@ -60,9 +68,9 @@
       </div>
 
       <!-- Product info -->
-      <div class="product__home">
-        <div class="row row-cols-lg-1">
-          <div class="col-5">
+      <div class="product__home product__all">
+        <div class="row row-cols-md-1">
+          <div class="col-5 col-lg-5">
             <div class="product__preview">
               <div class="product__preview-main">
                 <img src="./assets/imgs/product/product-1.png" alt="" class="product__preview-main-img">
@@ -78,7 +86,7 @@
             </div>
           </div>
 
-          <div class="col-7">
+          <div class="col-7 col-lg-7">
             <section class="product-info">
               <div class="product-info__heading">
                 Coffee Beans - Espresso Arabica and Robusta Beans

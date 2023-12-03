@@ -76,21 +76,32 @@ html {
 
   // product detail
   --product-page-bg-color: #fff;
+  --product-page-md-bg-color: #f6f6f6;
 
   // breadcrums
   --breadcrums-bg-color: #f6f6f6;
+  --breadcrums-md-bg-color: #fff;
   --breadcrums-shadow-color: rgba(237, 237, 246, 0.2);
   --breadcrums-link-color: #9e9da8;
   --breadcrums-link-current: #1a162e;
 
   // product property
+  --product-search-bg: #fff;
+  --product-search-filter: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7425%)
+    hue-rotate(213deg) brightness(93%) contrast(96%);
+  --product-search-input-color: #9e9da8;
+
+  --product-all-bg-md: #fff;
   --product-property-title: #000;
   --product-property-span: #1a162e;
   --product-property-tag-bg: #ededf6;
-
+  --product-property-icon-filter: brightness(0) saturate(100%) invert(10%) sepia(19%)
+    saturate(1410%) hue-rotate(210deg) brightness(95%) contrast(102%);
   // product info
   --product-info-card-border: #b9babe;
+
   --product-info-bg-color: #f6f6f6;
+  --product-info-bg-color-md: #fff;
   --product-info-heading: #1a162e;
   --product-info-price-color: #000;
   --product-info-btn-bg: #1a162e;
