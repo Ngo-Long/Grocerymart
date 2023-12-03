@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up | Grocerymart</title>
+  <title>Sign Up - Grocerymart</title>
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
@@ -15,33 +15,91 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- fonts -->
   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
-
-  <!-- style -->
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <!-- Script -->
   <script src="./js/scripts.js"></script>
-
-  <style>
-    h1 {
-      font-family: Gordita, sans-serif;
-    }
-  </style>
 </head>
 
 <body>
-  <header id="header"></header>
-  <script>load("header", "./template/header.html");</script>
+  <main id="main" class="auth">
+    <!-- Auth intro -->
+    <div class="auth__intro">
+      <a href="./index.html" class="logo auth__intro-logo d-none d-md-flex">
+        <img src="./assets/icons/Logo.svg" alt="grocerymart" class="logo__img">
+        <h2 class="logo__title">grocerymart</h2>
+      </a>
 
-  <main id="main">
-    Sign up
+      <img src="./assets/imgs/auth/img-login.svg"
+        alt=" The best of luxury brand values, high quality products, and innovative services" class="auth__intro-img">
+
+      <div class="auth__intro-desc">
+        The best of luxury brand values, high quality products, and innovative services
+      </div>
+
+      <button class="auth__intro-next d-none d-md-block js-toggle" toggle-target="#auth-content">
+        <img src="./assets/imgs/auth/arrow-right-page.svg" alt="">
+      </button>
+    </div>
+
+    <!-- Auth content -->
+    <div id="auth-content" class="auth__content hide">
+      <div class="auth__content-inner">
+        <a href="./index.html" class="logo">
+          <img src="./assets/icons/Logo.svg" alt="grocerymart" class="logo__img">
+
+          <h2 class="logo__title">grocerymart</h2>
+        </a>
+
+        <h1 class="auth__heading">Sign Up</h1>
+        <p class="auth__title">Let’s create your account and Shop like a pro and save money.</p>
+
+        <form action="./index-logined.html" class="form auth__form">
+          <div class="form__group">
+            <div class="form__text-input">
+              <input type="email" name="" placeholder="Email" class="form__input" required>
+              <img src="./assets/icons/message.svg" alt="Message" class="form__input-icon">
+            </div>
+
+            <div class="form__text-input">
+              <input type="password" name="" placeholder="Password" class="form__input" required minlength="6">
+              <img src="./assets/icons/lock.svg" alt="Lock" class="form__input-icon">
+            </div>
+
+            <div class="form__text-input">
+              <input type="password" name="" placeholder="Confirm password" class="form__input" required>
+              <img src="./assets/icons/lock.svg" alt="Lock" class="form__input-icon">
+            </div>
+          </div>
+
+          <div class="form__group form__group--inline">
+            <label class="form__checkbox">
+              <input type="checkbox" name="" id="" class="form__checkbox-input" checked>
+              <span class="form__checkbox-label">Set as default card</span>
+            </label>
+          </div>
+
+          <div class="form__group auth__btn-group">
+            <button class="btn btn--primary auth__btn">Sign Up</button>
+
+            <button class="btn btn--outline auth__btn auth__btn--outline">
+              <img src="./assets/icons/google.svg" alt="Google" class="btn__icon">
+
+              Sign in with Gmail
+            </button>
+          </div>
+        </form>
+
+        <p class="auth__text">
+          You have an account yet?
+          <a href="./sign-in.html" class="ml-10 auth__link">Sign In</a>
+        </p>
+      </div>
+    </div>
   </main>
 
-  <footer id="footer"></footer>
-  <script>load("footer", "./template/footer.html");</script>
-
+  <script>
+    window.dispatchEvent(new Event("template-loaded"))
+  </script>
 </body>
 
 </html>

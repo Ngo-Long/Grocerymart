@@ -1,0 +1,199 @@
+@use '../abstracts';
+
+.form {
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    padding: 0 5px;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    width: 100%;
+    padding: 5px 14px;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+
+    &:first-child {
+      width: 60%;
+      border-right: 1.5px solid #ccc;
+    }
+
+    &:last-child {
+      width: 40%;
+    }
+  }
+
+  &__heading {
+    color: var(--form-heading-color);
+    font-size: 2.2rem;
+    line-height: 145.455%;
+  }
+
+  &__group {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 20px;
+
+    &--horizontal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__group--inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__input {
+    width: 121px;
+    height: 36px;
+    padding: 8px 12px;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 142.857%;
+
+    @include abstracts.screen(xl) {
+      width: 100%;
+    }
+  }
+
+  &__label,
+  &__select-wrap {
+    border: 1px solid #d2d1d6;
+    border-radius: 6px;
+  }
+
+  &-label {
+    &--small {
+      display: block;
+      color: var(--form-heading-color);
+      font-size: 1.4rem;
+      line-height: 142.857%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__select-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 5px 0;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+
+    @include abstracts.screen(sm) {
+      gap: 9px;
+    }
+  }
+
+  &__tag {
+    padding: 6px 12px;
+    background: var(--form-tag-bg);
+    border-radius: 0.6rem;
+
+    color: #9e9da8;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+    transition: color 0.2s, backgroundColor 0.2s;
+
+    @include abstracts.screen(sm) {
+      font-weight: 400;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--text-color);
+      background: var(--form-tag-bg-hover);
+    }
+  }
+
+  &__text-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 50px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1.5px solid #d2d1d6;
+    cursor: pointer;
+
+    @include abstracts.screen(md) {
+      height: 48px;
+    }
+
+    &:focus-within {
+      border-color: #a7a7a8;
+    }
+  }
+
+  &__text-input + &__text-input {
+    margin-top: 20px;
+  }
+
+  &__input {
+    flex: 1;
+    height: 100%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%;
+
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+    }
+
+    &::placeholder {
+      color: var(--form-input-text-color);
+    }
+
+    &-icon {
+      margin-left: 12px;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    @include abstracts.screen(lg) {
+      gap: 0px;
+    }
+
+    @include abstracts.screen(sm) {
+      gap: 10px;
+    }
+  }
+
+  &__checkbox-input {
+    width: 21px;
+    height: 21px;
+  }
+
+  &__checkbox-label {
+    color: var(--form-checkbox-label-color);
+    font-weight: 500;
+    line-height: 146.667%;
+
+    @include abstracts.screen(md) {
+      font-size: 1.4rem;
+    }
+  }
+}

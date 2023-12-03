@@ -18,6 +18,9 @@
   opacity: 1;
 
   @include abstracts.screen(sm) {
+    max-height: 100vh;
+    overflow-y: auto;
+
     position: fixed;
     inset: 0 20% 0 0;
     border-radius: 0rem 2rem 2rem 0rem;
@@ -69,7 +72,7 @@
   }
 
   &__heading {
-    color: var(--filter-form-heading);
+    color: var(--form-heading-color);
     font-size: 2.2rem;
     line-height: 145.455%;
   }
@@ -138,6 +141,10 @@
   }
 
   @include abstracts.screen(sm) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &-content {
@@ -153,26 +160,6 @@
     @include abstracts.screen(sm) {
       max-height: calc(100vh - 80px);
       padding-bottom: 50px;
-    }
-  }
-
-  &-label {
-    &--small {
-      display: block;
-      color: var(--filter-form-heading);
-      font-size: 1.4rem;
-      line-height: 142.857%;
-      margin-bottom: 10px;
-    }
-  }
-
-  &-ground {
-    margin-top: 20px;
-
-    &--horizontal {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
     }
   }
 
@@ -202,99 +189,6 @@
 
     &::after {
       right: var(--max-value);
-    }
-  }
-
-  &-input,
-  &-select-wrap {
-    border: 1px solid #d2d1d6;
-    border-radius: 6px;
-  }
-
-  &-input {
-    width: 121px;
-    height: 36px;
-    padding: 8px 12px;
-
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 142.857%;
-
-    @include abstracts.screen(xl) {
-      width: 100%;
-    }
-  }
-
-  &-select-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    height: 44px;
-    padding: 5px 0;
-  }
-
-  &-select {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-
-    width: 100%;
-    padding: 5px 14px;
-    font-size: 1.4rem;
-    line-height: 142.857%;
-
-    &:first-child {
-      width: 60%;
-    }
-
-    &:last-child {
-      width: 40%;
-    }
-  }
-
-  &-select + &-select {
-    border-left: 1px solid #d2d1d6;
-  }
-
-  &-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    padding: 0 5px;
-  }
-
-  &-tags {
-    display: flex;
-    align-items: center;
-
-    gap: 10px 20px;
-
-    @include abstracts.screen(sm) {
-      gap: 9px;
-      flex-wrap: wrap;
-    }
-  }
-
-  &-tag {
-    padding: 6px 12px;
-    background: var(--filter-form-tag-bg);
-    border-radius: 0.6rem;
-
-    color: #9e9da8;
-    font-size: 1.4rem;
-    line-height: 142.857%;
-    transition: color 0.2s, backgroundColor 0.2s;
-
-    @include abstracts.screen(sm) {
-      font-weight: 400;
-    }
-
-    &:hover {
-      cursor: pointer;
-      color: var(--text-color);
-      background: var(--filter-form-tag-bg-hover);
     }
   }
 

@@ -261,6 +261,14 @@
     padding: 14px 20px;
   }
 
+  &__sign-up {
+    @include abstracts.screen(md) {
+      height: 40px;
+      padding: 0 10px;
+      font-size: 1.5rem;
+    }
+  }
+
   &__group--single &__btn {
     padding: 13px;
   }

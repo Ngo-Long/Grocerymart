@@ -2,10 +2,13 @@
 
 // buttons
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 44px;
   padding: 0 20px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   border-radius: 6px;
 
   user-select: none;
@@ -13,7 +16,6 @@
 
   &--text {
     color: #9e9da8;
-    font-weight: 400;
     background: transparent;
   }
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocerymart</title>
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="./js/scripts.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header"></header>
+  <script>load("header", "./template/header-logined.html");</script>
+
+  <!-- main -->
+  <main class="product-page">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <div class="product__home">
+        <ul class="breadcrums">
+          <li class="breadcrums__item">
+            <a href="#!" class="breadcrums__link">
+              Departments
+              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+            </a>
+          </li>
+
+          <li class="breadcrums__item">
+            <a href="#!" class="breadcrums__link">
+              Coffee
+              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+            </a>
+          </li>
+
+          <li class="breadcrums__item">
+            <a href="#!" class="breadcrums__link">
+              Coffee Beans
+              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+            </a>
+          </li>
+
+          <li class="breadcrums__item">
+            <a href="#!" class="breadcrums__link breadcrums__link--current">
+              LavAzza
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Product info -->
+      <div class="product__home">
+        <div class="row row-cols-lg-1">
+          <div class="col-5">
+            <div class="product__preview">
+              <div class="product__preview-main">
+                <img src="./assets/imgs/product/product-1.png" alt="" class="product__preview-main-img">
+              </div>
+
+              <!-- <div class="product__preview-thumbs">
+                <img src="./assets/imgs/product/product-2.png" alt=""
+                  class="product__preview-thumbs-img product__preview-thumbs-img--current">
+                <img src="./assets/imgs/product/product-3.png" alt="" class="product__preview-thumbs-img">
+                <img src="./assets/imgs/product/product-4.png" alt="" class="product__preview-thumbs-img">
+                <img src="./assets/imgs/product/product-4.png" alt="" class="product__preview-thumbs-img">
+              </div> -->
+            </div>
+          </div>
+
+          <div class="col-7">
+            <section class="product-info">
+              <div class="product-info__heading">
+                Coffee Beans - Espresso Arabica and Robusta Beans
+              </div>
+
+              <div class="row row-cols-2 row-cols-xl-1">
+                <div class="col">
+                  <div class="product-property">
+                    <img src="./assets/icons/start.svg" alt="" class="product-property__icon">
+                    <h4 class="product-property__title">(3.5) 1100 reviews</h4>
+                  </div>
+
+                  <div class="product-property product-property__size">
+                    <label for="" class="form__heading">Size/Weight</label>
+
+                    <div class="form__group">
+                      <div class="form__select-wrap">
+                        <div class="form__select">
+                          <span class="form__gram">500g</span>
+
+                          <img src="./assets/icons/arrow-down.svg" alt="" class="form__icon icon">
+                        </div>
+
+                        <div class="form__select">
+                          <span class="form__gram">Gram</span>
+                          <img src="./assets/icons/arrow-down.svg" alt="" class="form__icon icon">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form__group">
+                      <div class="form__tags">
+                        <div class="form__tag">Small</div>
+                        <div class="form__tag">Medium</div>
+                        <div class="form__tag">Large</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="product-property">
+                    <img src="./assets/icons/document.svg" alt="" class="product-property__icon">
+                    <h4 class="product-property__title">Compare</h4>
+                  </div>
+
+                  <div class="product-property">
+                    <img src="./assets/icons/buy-car.svg" alt="" class="product-property__icon">
+
+                    <div class="product-property__block">
+                      <h4 class="product-property__title">Delivery</h4>
+                      <div class="product-property__span">From $6 for 1-3 days</div>
+                    </div>
+                  </div>
+
+                  <div class="product-property">
+                    <img src="./assets/icons/bag.svg" alt="" class="product-property__icon">
+
+                    <div class="product-property__block">
+                      <h4 class="product-property__title">Pickup</h4>
+                      <div class="product-property__span">Out of 2 store, today</div>
+                    </div>
+                  </div>
+
+                  <div class="product-info__card">
+                    <div class="product-info__row">
+                      <div class="product-info__price">$500.00</div>
+                      <span class="product-info__tax">10%</span>
+                    </div>
+
+                    <p class="product-info__totol-price">$540.00</p>
+
+                    <div class="product-info__row">
+                      <button class="btn btn--primary product-info__btn">Add to cart</button>
+
+                      <button class="btn btn--outline like-btn product-info__like-btn">
+                        <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon">
+                        <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+  <script>load("footer", "./template/footer.html");</script>
+
+  <script src="./js/scripts.js"></script>
+</body>
+
+</html>

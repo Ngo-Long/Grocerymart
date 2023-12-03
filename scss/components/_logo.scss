@@ -15,16 +15,5 @@
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 145.455%;
-
-    @include abstracts.screen(lg) {
-      font-size: 1.8rem;
-      line-height: 144.444%;
-    }
-  }
-
-  &__icon {
-    @include abstracts.screen(lg) {
-      width: 24px;
-    }
   }
 }
