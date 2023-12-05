@@ -93,4 +93,9 @@
   &__icon--liked {
     margin-top: 6px;
   }
+
+  @include abstracts.screen(md) {
+    width: 30px;
+    height: 30px;
+  }
 }

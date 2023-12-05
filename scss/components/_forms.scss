@@ -139,8 +139,8 @@
     gap: 10px 20px;
     flex-wrap: wrap;
 
-    @include abstracts.screen(sm) {
-      gap: 9px;
+    @include abstracts.screen(xl) {
+      gap: 10px;
     }
   }
 
@@ -153,6 +153,10 @@
     font-size: 1.4rem;
     line-height: 142.857%;
     transition: color 0.2s, backgroundColor 0.2s;
+
+    @include abstracts.screen(xl) {
+      padding: 6px 8px;
+    }
 
     @include abstracts.screen(sm) {
       font-weight: 400;

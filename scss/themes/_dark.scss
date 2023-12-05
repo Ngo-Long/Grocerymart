@@ -45,6 +45,7 @@ html.dark {
 
   // product-item
   --product-item-bg: #171c28;
+  --product-item-color: #fff;
   --product-item-shadow: rgba(0, 0, 0, 0.2);
   --product-item-btn-like: #292e39;
   --filter-form-size-bg: #171c28;
@@ -59,6 +60,7 @@ html.dark {
   --filter-form-arrow: var(--filter-form-bg);
 
   // footer
+  --footer-bg-color: #171c28;
   --footer-color-heading: var(--cate-item-color-title);
 
   // auth
@@ -103,4 +105,10 @@ html.dark {
   --product-info-heading: var(--product-property-title);
   --product-info-price-color: var(--product-property-title);
   --product-info-btn-color: var(--product-property-title);
+
+  // product tab
+  --product-tab-color: #9e9da8;
+  --product-tab-color-active: #fff;
+  --product-tab-heading: #fff;
+  --review-card-bg-color: #171c28;
 }
