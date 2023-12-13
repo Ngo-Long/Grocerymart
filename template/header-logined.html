@@ -1302,16 +1302,61 @@
       </div>
 
       <div class="top-action__group d-md-none">
-        <button class="top-action__btn">
-          <img src="./assets/icons/heart.svg" alt="Heart" class="icon top-action__icon">
-          <span class="top-action__title">03</span>
-        </button>
-
-        <div class="top-action__separate"></div>
-
-        <button class="top-action__btn">
+        <button class="top-action__btn top-action__btn-cart">
           <img src="./assets/icons/buy-car.svg" alt="Buy" class="icon top-action__icon">
-          <span class="top-action__title">$65.42</span>
+          <span class="top-action__title">4</span>
+
+          <!-- dropdown cart -->
+          <div class="act-dropdown collapsed-dropdown">
+            <div class="act-dropdown__inner">
+
+              <img id="filter-icon" src="./assets/icons/arrow-up.png" alt=""
+                class="icon filter__icon act-dropdown__icon">
+
+              <div class="flexCenterBetween">
+                <h2 class="act-dropdown__title">You have 3 item</h2>
+                <a href="" class="act-dropdown__view-all">See All</a>
+              </div>
+
+              <div class="act-dropdown__content">
+                <article class="cart-review">
+                  <a href="#!" class="cart-review__link">
+                    <img src="./assets/imgs/product/product-1.png" alt="" class="cart-review__thumb">
+                    <p class="cart-review__title two-line-limit">Lavazza Coffee Blends</p>
+                    <div class="cart-review__price">$329.00</div>
+                  </a>
+                </article>
+
+                <article class="cart-review">
+                  <a href="#!" class="cart-review__link">
+                    <img src="./assets/imgs/product/product-2.png" alt="" class="cart-review__thumb">
+                    <p class="cart-review__title two-line-limit">Coffee Beans Espresso</p>
+                    <div class="cart-review__price">$39.99</div>
+                  </a>
+                </article>
+
+                <article class="cart-review">
+                  <a href="#!" class="cart-review__link">
+                    <img src="./assets/imgs/product/product-3.png" alt="" class="cart-review__thumb">
+                    <p class="cart-review__title two-line-limit">Qualità Oro Mountain</p>
+                    <div class="cart-review__price">$47.00</div>
+                  </a>
+                </article>
+
+                <article class="cart-review">
+                  <a href="#!" class="cart-review__link">
+                    <img src="./assets/imgs/product/product-3.png" alt="" class="cart-review__thumb">
+                    <p class="cart-review__title two-line-limit">Qualità Oro Mountain</p>
+                    <div class="cart-review__price">$47.00</div>
+                  </a>
+                </article>
+              </div>
+
+              <a href="#!" class="btn btn--primary act-dropdown__checkout-btn">
+                Check Out All
+              </a>
+            </div>
+          </div>
         </button>
       </div>
 

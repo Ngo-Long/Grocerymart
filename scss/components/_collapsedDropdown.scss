@@ -1,0 +1,21 @@
+.collapsed-dropdown {
+  scale: 0;
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform-origin: 78% top;
+
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: scale opacity max-height visibility pointer-events transform-origin;
+  transition-timing-function: linear;
+
+  &.show {
+    scale: 1;
+    opacity: 1;
+    max-height: 100%;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
