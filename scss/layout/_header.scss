@@ -36,6 +36,7 @@
   }
 
   @include abstracts.screen(md) {
+    height: 70px;
     padding: 24px 0;
   }
 
@@ -43,6 +44,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100px;
+  }
+
+  @include abstracts.screen(lg) {
+    height: 90px;
   }
 
   &__more {
@@ -418,7 +424,11 @@
 
     &:hover {
       cursor: pointer;
-      background: rgb(0, 0, 0, 0.03);
+      background: var(--act-dropdown-cart-hover);
+    }
+
+    &:hover .cart-review__thumb {
+      border: 1px solid var(--act-dropdown-cart-border-hover);
     }
   }
 

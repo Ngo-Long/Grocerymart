@@ -31,13 +31,27 @@
     font-weight: 500;
     line-height: 150%;
     white-space: nowrap;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--breadcrums-link-current);
+    }
 
     @include abstracts.screen(md) {
       font-size: 1.4rem;
     }
 
     &--current {
+      transition: opacity 0.2s;
       color: var(--breadcrums-link-current);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &--current .breadcrums__icon {
+      display: none;
     }
   }
 
