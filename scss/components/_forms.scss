@@ -1,6 +1,17 @@
 @use '../abstracts';
 
 .form {
+  &__pay {
+    padding: 10px 0 30px;
+  }
+
+  &__title {
+    color: var(--checkout-text-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+
   &__search {
     display: flex;
     position: relative;
@@ -15,7 +26,7 @@
       line-height: 146.667%;
 
       border-radius: 0.6rem;
-      border: 1px solid #d2d1d6;
+      border: 1px solid var(--input-border-color);
 
       &::placeholder {
         font-weight: 400;
@@ -74,6 +85,10 @@
     width: 100%;
     margin-top: 20px;
 
+    @include abstracts.screen(xl) {
+      margin-top: 14px;
+    }
+
     &--horizontal {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -95,6 +110,8 @@
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 142.857%;
+    border-radius: 10px;
+    border: 1px solid var(--input-border-color);
 
     @include abstracts.screen(xl) {
       width: 100%;
@@ -106,6 +123,27 @@
 
     &-icon {
       margin-left: 12px;
+    }
+  }
+
+  &__input-pay {
+    width: 100%;
+    height: 44px;
+
+    padding: 12px;
+    margin-top: 10px;
+
+    &::placeholder {
+      display: block;
+      color: #d2d1d6;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 144.444%;
+      opacity: 0.8;
+
+      @include abstracts.screen(sm) {
+        font-size: 1.4rem;
+      }
     }
   }
 

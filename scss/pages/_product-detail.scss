@@ -178,6 +178,10 @@
       font-weight: 500;
       line-height: 146.667%;
       background: var(--product-property-tag-bg);
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -225,6 +229,10 @@
 
     padding: 20px 30px;
     user-select: none;
+
+    &:hover {
+      color: var(--product-tab-color-active);
+    }
 
     &:not(&--active) {
       cursor: pointer;

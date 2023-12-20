@@ -6,6 +6,15 @@
     padding: 60px 0;
     background: var(--footer-bg-color);
     box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+
+    @include abstracts.screen(lg) {
+      margin-top: 20px;
+      padding: 40px 0;
+    }
+
+    @include abstracts.screen(lg) {
+      padding: 30px 0;
+    }
   }
 
   &__row {
@@ -14,13 +23,11 @@
 
     @include abstracts.screen(lg) {
       text-align: center;
-      gap: 50px;
       grid-template-columns: 1fr 1fr;
     }
 
     @include abstracts.screen(sm) {
-      text-align: center;
-      gap: 50px;
+      gap: 40px;
       grid-template-columns: 1fr;
     }
   }
@@ -109,6 +116,14 @@
     padding: 40px 0;
     border-top: 1px solid #d2d1d6;
     background: var(--footer-bottom-bg);
+
+    @include abstracts.screen(lg) {
+      padding: 30px 0;
+    }
+
+    @include abstracts.screen(sm) {
+      padding: 20px 0;
+    }
   }
 
   &__bottom-row {
