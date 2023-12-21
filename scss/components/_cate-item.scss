@@ -16,6 +16,10 @@
     flex-direction: column;
   }
 
+  @include abstracts.screen(lg) {
+    padding: 16px 20px;
+  }
+
   @include abstracts.screen(md) {
     flex-direction: row;
   }

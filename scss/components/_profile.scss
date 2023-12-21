@@ -1,0 +1,134 @@
+@use '../abstracts';
+
+.profile {
+  &__home {
+    margin-top: 30px;
+  }
+
+  &-container {
+    display: inline-block;
+    width: 100%;
+    border-radius: 20px;
+    background: var(--profile-container-bg);
+    box-shadow: 0px 20px 60px 10px var(--profile-container-bg-shadow);
+  }
+}
+
+.profile-user {
+  background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 90%),
+    url('../imgs/profile/cover.jpg') no-repeat center;
+
+  padding: 35px 0 20px;
+  text-align: center;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 0px 20px 60px 10px var(--profile-container-bg-shadow);
+
+  &__avatar {
+    width: 116px;
+    height: 116px;
+    border-radius: 116px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    background: url(<path-to-image>), lightgray -475.937px -52.524px / 819.939% 546.626% no-repeat,
+      #dfd2fa;
+    box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  &__name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 144.444%;
+  }
+
+  &__desc {
+    color: #fafafd;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+}
+
+.profile-menu {
+  margin: 25px 30px;
+
+  &--first {
+    margin: 30px 30px 25px;
+  }
+
+  &__title {
+    color: var(--profile-menu-title);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    padding: 5px 0;
+
+    &:first-child {
+      margin-top: 11px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__span {
+    color: var(--Dark-3, #b9babe);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 146.667%;
+  }
+}
+
+.favourite-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 14px;
+
+  &__thumb {
+    width: 150px;
+    height: 108px;
+    object-fit: contain;
+
+    &:hover {
+      border-radius: 20px;
+      border: 1px solid var(--checkout-thumb-hover);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__heading {
+    color: var(--Dark-3, #b9babe);
+    font-size: 15px;
+    line-height: 146.667%;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    color: var(--Dark-3, #b9babe);
+    font-size: 2.2rem;
+    line-height: 145.455%;
+  }
+
+  &__btn {
+    font-size: 1.5rem;
+    height: 42px;
+  }
+}

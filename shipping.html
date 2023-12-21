@@ -66,11 +66,13 @@
 
       <!-- Checkout container -->
       <div class="checkout-container">
-        <div class="row row-cols-lg-1" style="--grid-gutter-y: 30px">
+        <div class="row row-cols-md-1" style="--grid-gutter-y: 30px">
           <div class="col-8">
             <div class="cart-info">
               <div class="cart-info__top">
                 <h1 class="cart-info__heading">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
+
+                <div class="septem"></div>
 
                 <div class="cart-info__top-center">
                   <div class="cart-info__info">
@@ -194,14 +196,15 @@
                       <div class="cart-info__price">$47.00</div>
 
                       <div class="cart-info__ctrl">
-                        <button class="cart-info__ctrl-btn">
-                          <img src="./assets/icons/save.svg" alt="" class="cart-info__ctrl-img">
-                          Save
+                        <button class="like-btn like-btn--liked cart-info__ctrl-btn">
+                          <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon">
+                          <img src="./assets/icons/hearted.svg" alt="" class="like-btn__icon--liked">
+                          <span class="d-lg-none">Save</span>
                         </button>
 
                         <button class="cart-info__ctrl-btn">
                           <img src="./assets/icons/delete.svg" alt="" class="cart-info__ctrl-img">
-                          Delete
+                          <span class="d-lg-none">Delete</span>
                         </button>
                       </div>
                     </div>
@@ -251,14 +254,15 @@
                       <div class="cart-info__price">$47.00</div>
 
                       <div class="cart-info__ctrl">
-                        <button class="cart-info__ctrl-btn">
-                          <img src="./assets/icons/save.svg" alt="" class="cart-info__ctrl-img">
-                          Save
+                        <button class="like-btn cart-info__ctrl-btn">
+                          <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon">
+                          <img src="./assets/icons/hearted.svg" alt="" class="like-btn__icon--liked">
+                          <span class="d-lg-none">Save</span>
                         </button>
 
                         <button class="cart-info__ctrl-btn">
                           <img src="./assets/icons/delete.svg" alt="" class="cart-info__ctrl-img">
-                          Delete
+                          <span class="d-lg-none">Delete</span>
                         </button>
                       </div>
                     </div>
@@ -266,12 +270,20 @@
                 </article>
               </div>
 
-              <div class="cart-info__bottom d-lg-none">
-                <div class="cart-info__continue cart-info__continue--center">
-                  <a href="./checkout.html" class="cart-info__continue-link">
-                    <img src="./assets/icons/down-2.svg" alt="" class="cart-info__continue-img">
-                    Continue Shopping
-                  </a>
+              <div class="cart-info__bottom">
+                <div class="row">
+                  <div class="col-8 col-lg-6 ">
+                    <div class="cart-info__continue">
+                      <a href="./checkout.html" class="cart-info__continue-link">
+                        <img src="./assets/icons/down-2.svg" alt="" class="cart-info__continue-img">
+                        Back
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-4 col-lg-6 ">
+                    <a href="./payment.html" class="btn btn--primary btn--rounded cart-info__btn">Continue</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -305,14 +317,14 @@
 
             </div>
 
-            <div class="cart-info cart-info--right">
-              <div class="flexCenter">
-                <a href="#!" class="cart-info__gift">
+            <div class="cart-info cart-info--right d-md-none">
+              <div class="cart-info__gift">
+                <a href="#!" class="cart-info__gift-link">
                   <img src="./assets/icons/gift.svg" alt="" class="cart-info__icon">
                 </a>
 
-                <div class="ml-20">
-                  <div class="cart-info__title mt-0">Send this order as a gift.</div>
+                <div class="">
+                  <div class="cart-info__title">Send this order as a gift.</div>
                   <div class="cart-info__span">Available items will be shipped to your gift recipient.</div>
                 </div>
               </div>

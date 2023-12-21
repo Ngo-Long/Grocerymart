@@ -28,24 +28,40 @@
   @include abstracts.screen(sm) {
     --grid-gutter-y: 20px;
   }
+
+  & .row {
+    @include abstracts.screen(md) {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 .cart-info {
-  padding: 0 30px;
+  padding: 30px;
   border-radius: 2rem;
   background: var(--checkout-cart-info-bg);
   box-shadow: 0px 20px 60px 10px var(--checkout-cart-info-shadow);
 
   @include abstracts.screen(lg) {
-    padding: 0 20px;
+    padding: 20px;
   }
 
   @include abstracts.screen(sm) {
-    padding: 0 16px;
+    padding: 16px;
   }
 
   & + .cart-info {
     margin-top: 30px;
+
+    @include abstracts.screen(sm) {
+      margin-top: 20px;
+    }
+  }
+
+  &__septem {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid var(--checkout-cart-info-item-border);
   }
 
   &__list {
@@ -57,12 +73,20 @@
   &__item {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 16px;
     padding: 30px 0;
     border-bottom: 1px solid var(--checkout-cart-info-item-border);
 
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+
     @include abstracts.screen(xl) {
-      align-items: flex-start;
       gap: 10px;
       padding: 15px 0;
     }
@@ -74,6 +98,16 @@
         border: none;
       }
     }
+
+    @include abstracts.screen(sm) {
+      gap: 0;
+      align-items: start;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
   }
 
   &__link {
@@ -88,8 +122,8 @@
   }
 
   &__thumb {
-    width: 175px;
-    height: 172px;
+    width: 135px;
+    height: 132px;
     object-fit: contain;
 
     &:hover {
@@ -97,33 +131,24 @@
       border: 1px solid var(--checkout-thumb-hover);
     }
 
-    @include abstracts.screen(xl) {
-      width: 100px;
-      height: 97px;
-    }
-
-    @include abstracts.screen(lg) {
-      width: 175px;
-      height: 172px;
-    }
-
-    @include abstracts.screen(md) {
-      width: 100px;
-      height: 97px;
+    @include abstracts.screen(sm) {
+      width: 125px;
+      height: 123px;
     }
 
     @include abstracts.screen(sm) {
-      width: 60px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
     }
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
+    flex: 1;
 
     @include abstracts.screen(xl) {
-      gap: 16px;
+      gap: 10px;
       flex-direction: column;
     }
   }
@@ -131,10 +156,10 @@
   &__content-left {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
 
-    @include abstracts.screen(xl) {
-      gap: 14px;
+    @include abstracts.screen(sm) {
+      gap: 6px;
     }
   }
 
@@ -175,7 +200,7 @@
     }
 
     @include abstracts.screen(sm) {
-      padding: 10px 15px;
+      padding: 6px;
     }
   }
 
@@ -208,12 +233,6 @@
       flex-direction: row;
       align-items: center;
     }
-
-    @include abstracts.screen(sm) {
-      gap: 10px;
-      align-items: flex-start;
-      flex-direction: column;
-    }
   }
 
   &__price {
@@ -232,9 +251,11 @@
     align-items: center;
     gap: 10px;
 
+    width: inherit;
+    height: inherit;
     color: #9e9da8;
     font-weight: 500;
-    padding: 10px 5px;
+    padding: 8px;
 
     &:hover {
       background: var(--checkout-ctrl-btn-hover);
@@ -245,14 +266,28 @@
       padding: 10px 15px;
       margin-left: -15px;
     }
+
+    & .icon {
+      filter: var(--checkout-like-btn);
+    }
+
+    &.like-btn--liked {
+      gap: 0.2px;
+      height: 40px;
+      padding: 0;
+      padding-right: 8px;
+    }
+
+    &.like-btn--liked .like-btn__icon--liked {
+      margin-top: 8px;
+    }
   }
 
   &__bottom {
-    padding-bottom: 30px;
-
     & .row {
       @include abstracts.screen(md) {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: row;
       }
     }
   }
@@ -297,6 +332,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px 10px 0 0;
     gap: 10px;
 
     color: var(--checkout-text-color);
@@ -308,6 +344,10 @@
     &:hover .cart-info__continue-img {
       translate: -5px;
     }
+
+    @include abstracts.screen(lg) {
+      padding: 10px 10px 10px 0;
+    }
   }
 
   &__continue-img {
@@ -317,12 +357,6 @@
   }
 
   &--right {
-    padding: 30px;
-
-    @include abstracts.screen(lg) {
-      padding: 20px;
-    }
-
     & .cart-info__row {
       font-size: 1.6rem;
       font-weight: 500;
@@ -349,7 +383,7 @@
 
   &__btn {
     min-width: min(330px, 100%);
-    height: 60px;
+    height: 54px;
     margin-top: 30px;
 
     font-size: 2.2rem;
@@ -371,10 +405,6 @@
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 144.444%;
-
-    @include abstracts.screen(sm) {
-      margin-top: 16px;
-    }
   }
 
   &__span {
@@ -383,9 +413,30 @@
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 142.857%;
+
+    &--total {
+      font-size: 1.8rem;
+      margin-top: 3px;
+    }
   }
 
   &__gift {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include abstracts.screen(lg) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @include abstracts.screen(md) {
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+
+  &__gift-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -442,17 +493,12 @@
     font-weight: 700;
     line-height: 141.667%;
 
-    padding: 30px 0;
-    border-bottom: 1px solid var(--checkout-cart-info-item-border);
-
     @include abstracts.screen(lg) {
-      padding: 20px 0;
       font-size: 2rem;
       line-height: 150%;
     }
 
     @include abstracts.screen(sm) {
-      padding: 16px 0;
       font-size: 1.6rem;
       line-height: 150%;
     }
@@ -467,8 +513,9 @@
   }
 
   &__desc {
+    color: var(--checkout-text-color);
     margin-top: 4px;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 146.667%;
   }
@@ -584,6 +631,11 @@
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 144.444%;
+    padding: 12px;
+
+    @include abstracts.screen(lg) {
+      font-size: 1.6rem;
+    }
   }
 
   &__btn-edit {
@@ -621,6 +673,7 @@
   }
 
   &__input {
+    margin-top: 8px;
     appearance: none;
 
     &::before {
@@ -651,6 +704,12 @@
   &__checkbox {
     &--pay {
       display: flex;
+      gap: 14px;
+    }
+
+    &--checkout {
+      display: flex;
+      align-items: center;
       gap: 14px;
     }
   }

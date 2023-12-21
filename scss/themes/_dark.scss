@@ -2,9 +2,8 @@
 
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
-    hue-rotate(306deg) brightness(103%) contrast(101%);
-
+  --icon-color: brightness(0) saturate(100%) invert(72%) sepia(0%) saturate(6797%)
+    hue-rotate(298deg) brightness(102%) contrast(99%);
   --body-bg-color: #292e39;
   --header-bg-color: #171c28;
   --input-border-color: #292e39;
@@ -134,4 +133,10 @@ html.dark {
   --checkout-cart-info-normal: #9e9da8;
   --checkout-cart-info-gift-bg: #292e39;
   --checkout-cart-info-shadow-bg: rgba(23, 28, 40, 0.4);
+
+  // profile
+  --profile-container-bg: #171c28;
+  --profile-container-bg-shadow: rgba(23, 28, 40, 0.2);
+  --profile-menu-title: #b9babe;
+  --profile-menu-span: #b9babe;
 }

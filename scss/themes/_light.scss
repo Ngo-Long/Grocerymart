@@ -142,4 +142,13 @@ html {
     ),
     #7644e1;
   --checkout-cart-info-shadow-bg: rgba(237, 237, 246, 0.2);
+  --checkout-like-btn: brightness(0) saturate(100%) invert(68%) sepia(10%) saturate(224%)
+    hue-rotate(206deg) brightness(92%) contrast(87%);
+
+  // profile
+  --profile-container-bg: #fff;
+  --profile-container-bg-shadow: rgba(237, 237, 246, 0.2);
+  --profile-menu-title: #1a162e;
+  --profile-menu-span: #1a162e;
+  // --profile-payment-card-color: #fff;
 }
