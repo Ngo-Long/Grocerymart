@@ -3,13 +3,12 @@
 .footer {
   &__top {
     margin-top: 30px;
-    padding: 60px 0;
+    padding: 40px 0 30px;
     background: var(--footer-bg-color);
     box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
 
     @include abstracts.screen(lg) {
       margin-top: 20px;
-      padding: 40px 0;
     }
 
     @include abstracts.screen(lg) {
@@ -113,13 +112,9 @@
   }
 
   &__bottom {
-    padding: 40px 0;
+    padding: 30px 0;
     border-top: 1px solid #d2d1d6;
     background: var(--footer-bottom-bg);
-
-    @include abstracts.screen(lg) {
-      padding: 30px 0;
-    }
 
     @include abstracts.screen(sm) {
       padding: 20px 0;
@@ -188,6 +183,12 @@
 
     @include abstracts.screen(sm) {
       width: 18px;
+    }
+  }
+
+  &__copyright {
+    @include abstracts.screen(sm) {
+      font-size: 1.4rem;
     }
   }
 }

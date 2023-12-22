@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add new card | Grocerymart</title>
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <script src="./js/scripts.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header"></header>
+  <script>load("header", "./template/header-logined.html");</script>
+
+  <!-- main -->
+  <main id="main">
+    <div class="container">
+      <!-- Search -->
+      <div class="profile__home d-none d-md-block">
+        <div class="search-bar">
+          <input type="text" name="" id="" value="" placeholder="Search for item" class="search-bar__input">
+          <button class="search-bar__btn">
+            <img src="./assets/icons/search.svg" alt="" class="search-bar__icon">
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile profile__home">
+        <div class="row row-cols-md-1">
+          <div class="col col-3 col-xl-4 col-lg-5 d-md-none">
+            <aside class="profile-container">
+              <!-- user -->
+              <div class="profile-user">
+                <img src="./assets/imgs/avatar/avatar-1.jpg" alt="" class="profile-user__avatar">
+                <h1 class="profile-user__name">Imran Khan</h1>
+                <p class="profile-user__desc">Registered: 17th May 2022</p>
+              </div>
+
+              <!-- menu 1 -->
+              <div class="profile-menu">
+                <h3 class="profile-menu__title">Manage Account</h3>
+
+                <ul class="profile-menu__list">
+                  <li class="profile-menu__item">
+                    <a href="./edit-personal-info.html" class="profile-menu__link">
+                      <img src="./assets/icons/user.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Personal info</div>
+                    </a>
+                  </li>
+
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/map.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Addresses</div>
+                    </a>
+                  </li>
+
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/email.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Communications & privacy</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- menu 2 -->
+              <div class="profile-menu">
+                <h3 class="profile-menu__title">My items</h3>
+
+                <ul class="profile-menu__list">
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/down.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Reorder</div>
+                    </a>
+                  </li>
+
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/heart.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Lists</div>
+                    </a>
+                  </li>
+
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/gift-small.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Registries</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- menu 3 -->
+              <div class="profile-menu">
+                <h3 class="profile-menu__title">Subscriptions & plans</h3>
+
+                <ul class="profile-menu__list">
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/protection.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Protection plans</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- menu 4 -->
+              <div class="profile-menu">
+                <h3 class="profile-menu__title">Customer Service</h3>
+
+                <ul class="profile-menu__list">
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/help.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Help</div>
+                    </a>
+                  </li>
+
+                  <li class="profile-menu__item">
+                    <a href="#!" class="profile-menu__link">
+                      <img src="./assets/icons/error.svg" alt="" class="profile-menu__icon icon">
+                      <div class="profile-menu__span">Terms of Use</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="col col-9 col-xl-8 col-lg-7">
+            <div class="cart-info">
+              <div class="flexCenter" style="gap: 7px;">
+                <a href="./profile.html" class="profile__icon-link">
+                  <img src="./assets/icons/arrow-left.svg" alt="" class="profile__icon cart-info__icon icon">
+                </a>
+
+                <h2 class="cart-info__heading">Add credit or debit card</h2>
+              </div>
+
+              <form action="" class="form form-card">
+                <div class="row row-cols-2 row-cols-lg-1">
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="first-name" class="form__label form-card__label">First Name</label>
+
+                      <div class="form__text-input">
+                        <input type="text" name="" id="first-name" placeholder="First Name"
+                          class="form__input form-card__input" required autofocus>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="last-name" class="form__label form-card__label">Last Name</label>
+
+                      <div class="form__text-input">
+                        <input type="text" name="" id="last-name" placeholder="Last Name"
+                          class="form__input form-card__input" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="card-information" class="form__label form-card__label">Card Information</label>
+
+                      <div class="form__text-input">
+                        <input type="number" name="" id="card-information" placeholder="Card Number"
+                          class="form__input form-card__input" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="expiration-date" class="form__label form-card__label">Expiration Datex</label>
+
+                      <div class="form__text-input">
+                        <input type="date" name="" id="expiration-date" class="form__input form-card__input" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="id-cvv" class="form__label form-card__label">CVV</label>
+
+                      <div class="form__text-input">
+                        <input type="number" name="" id="id-cvv" placeholder="123" class="form__input form-card__input"
+                          required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form__group">
+                      <label for="phone-number" class="form__label form-card__label">Phone Number</label>
+
+                      <div class="form__text-input">
+                        <input type="text" name="" id="phone-number" placeholder="+ 84"
+                          class="form__input form-card__input" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <!-- checkbox -->
+                    <div class="form__group">
+                      <label for="card-preferences" class="form__label form-card__label mb-0">Card
+                        Preferences</label>
+
+                      <div class="form-card__choose">
+                        <label class="form-card__checkbox">
+                          <input type="checkbox" name="" checked class="form-card__input-checkbox user-address__input">
+                          <div class="form-card__desc">Set as default card</div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- button -->
+                <div class="form-card__bottom">
+                  <button class="btn btn--text form-card__btn">Cancel</button>
+                  <button class="btn btn--primary btn--rounded form-card__btn">Save Card</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+  <script>load("footer", "./template/footer.html");</script>
+
+  <script src="./js/scripts.js"></script>
+</body>
+
+</html>

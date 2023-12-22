@@ -8,9 +8,13 @@
   align-items: center;
   gap: 20px;
 
-  padding: 20px 26px;
+  padding: 20px;
   border-radius: 16px;
   background: var(--cate-item-bg);
+
+  &:hover {
+    box-shadow: 0px 20px 60px 10px var(--dropdown-shadow-color);
+  }
 
   @include abstracts.screen(xl) {
     flex-direction: column;
@@ -30,6 +34,10 @@
     object-fit: contain;
     background: var(--cate-item-bg-thumb);
     border-radius: 8px;
+
+    &:hover {
+      border: 1px solid var(--top-action-separate-color);
+    }
 
     @include abstracts.screen(xl) {
       width: 100%;

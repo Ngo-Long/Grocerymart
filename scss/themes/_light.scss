@@ -17,6 +17,9 @@ html {
   //   --header-shadow-color: rgba(237, 237, 246, 0.2);
   // }
 
+  // form
+  --form-label-text: #d2d1d6;
+
   /* ------------ BUTTON ------------*/
   // filter btn
   --filter-btn-bg: #fff;
@@ -59,9 +62,6 @@ html {
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --form-heading-color: #1a162e;
   --form-tag-bg: #f8f8fb;
-  --form-tag-bg-hover: #e7e7eb;
-
-  // form
 
   // footer
   --footer-bg-color: #eee;
@@ -150,5 +150,6 @@ html {
   --profile-container-bg-shadow: rgba(237, 237, 246, 0.2);
   --profile-menu-title: #1a162e;
   --profile-menu-span: #1a162e;
-  // --profile-payment-card-color: #fff;
+  --profile-account-info: #f6f6f6;
+  --profile-form-label: #1a162e;
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grocerymart | Profile</title>
+  <title>Profile | Grocerymart</title>
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
@@ -40,14 +40,14 @@
 
       <!-- Profile -->
       <div class="profile profile__home">
-        <div class="row">
-          <div class="col-3">
+        <div class="row row-cols-md-1">
+          <div class="col col-3 col-xl-4 col-lg-5">
             <aside class="profile-container">
               <!-- user -->
               <div class="profile-user">
-                <img src="./assets/imgs/avatar/avatar-1.jpg" alt="" class="profile-user__avatar">
-                <h1 class="profile-user__name">Imran Khan</h1>
-                <p class="profile-user__desc">Registered: 17th May 2022</p>
+                <img src="./assets/imgs/avatar/avatar-4.jpg" alt="" class="profile-user__avatar">
+                <h1 class="profile-user__name">Ngo Long</h1>
+                <p class="profile-user__desc">Registered: 31th May 2022</p>
               </div>
 
               <!-- menu 1 -->
@@ -143,86 +143,88 @@
             </aside>
           </div>
 
-          <div class="col-9">
+          <div class="col col-9 col-xl-8 col-lg-7">
             <div class="cart-info">
               <div class="cart-info__top">
                 <h2 class="cart-info__heading">My Wallet</h2>
                 <p class="cart-info__desc">Payment methods</p>
 
-                <div class="row mt-16">
-                  <!-- Payment card 1 -->
-                  <div class="col-4">
-                    <article class="payment-card" style="--bg-color-payment: #1e2e69">
-                      <img src="./assets/icons/plane-big.svg" alt="" class="payment-card__img">
+                <div class="payment">
+                  <div class="row row-cols-3 row-cols-xl-2 row-cols-lg-1">
+                    <!-- Payment card 1 -->
+                    <div class="col">
+                      <article class="payment-card" style="--bg-color-payment: #1e2e69">
+                        <img src="./assets/icons/plane-big.svg" alt="" class="payment-card__img">
 
-                      <div class="payment-card__top">
-                        <img src="./assets/icons/plane.svg" alt="" class="payment-card__icon">
+                        <div class="payment-card__top">
+                          <img src="./assets/icons/plane.svg" alt="" class="payment-card__icon">
 
-                        <div class="payment-card__type">FeatherCard</div>
-                      </div>
-
-                      <div class="payment-card__number">1234 4567 8901 2221</div>
-
-                      <div class="payment-card__bottom">
-                        <div class="payment-card__left">
-                          <div class="payment-card__card">
-                            <span class="payment-card__card-title">Card Holder</span>
-                            <div class="payment-card__card-desc">Imran Khan</div>
-                          </div>
-
-                          <div class="payment-card__card">
-                            <span class="payment-card__card-title">Expired</span>
-                            <div class="payment-card__card-desc">10/22</div>
-                          </div>
+                          <div class="payment-card__type">FeatherCard</div>
                         </div>
 
-                        <div class="payment-card__right">
-                          <img src="./assets/icons/oval.svg" alt="" class="payment-card__right-icon">
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                        <div class="payment-card__number">1234 4567 8901 2221</div>
 
-                  <!-- Payment card 2 -->
-                  <div class="col-4">
-                    <article class="payment-card" style="--bg-color-payment: #354151">
-                      <img src="./assets/icons/leaf-big.svg" alt="" class="payment-card__img">
+                        <div class="payment-card__bottom">
+                          <div class="payment-card__left">
+                            <div class="payment-card__card">
+                              <span class="payment-card__card-title">Card Holder</span>
+                              <div class="payment-card__card-desc">Imran Khan</div>
+                            </div>
 
-                      <div class="payment-card__top">
-                        <img src="./assets/icons/leaf.svg" alt="" class="payment-card__icon">
-
-                        <div class="payment-card__type">FeatherCard</div>
-                      </div>
-
-                      <div class="payment-card__number">1234 4567 8901 2221</div>
-
-                      <div class="payment-card__bottom">
-                        <div class="payment-card__left">
-                          <div class="payment-card__card">
-                            <span class="payment-card__card-title">Card Holder</span>
-                            <div class="payment-card__card-desc">Imran Khan</div>
+                            <div class="payment-card__card">
+                              <span class="payment-card__card-title">Expired</span>
+                              <div class="payment-card__card-desc">10/22</div>
+                            </div>
                           </div>
 
-                          <div class="payment-card__card">
-                            <span class="payment-card__card-title">Expired</span>
-                            <div class="payment-card__card-desc">11/22</div>
+                          <div class="payment-card__right">
+                            <img src="./assets/icons/oval.svg" alt="" class="payment-card__right-icon">
                           </div>
                         </div>
+                      </article>
+                    </div>
 
-                        <div class="payment-card__right">
-                          <img src="./assets/icons/oval.svg" alt="" class="payment-card__right-icon">
+                    <!-- Payment card 2 -->
+                    <div class="col">
+                      <article class="payment-card" style="--bg-color-payment: #354151">
+                        <img src="./assets/icons/leaf-big.svg" alt="" class="payment-card__img">
+
+                        <div class="payment-card__top">
+                          <img src="./assets/icons/leaf.svg" alt="" class="payment-card__icon">
+
+                          <div class="payment-card__type">FeatherCard</div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
 
-                  <!-- Add new payment card -->
-                  <div class="col-4">
-                    <div class="new-card">
-                      <button class="new-card__btn">
-                        <img src="./assets/icons/puls.svg" alt="" class="new-card__icon icon">
-                        <div class="new-card__title">Add New Card</div>
-                      </button>
+                        <div class="payment-card__number">1234 4567 8901 2221</div>
+
+                        <div class="payment-card__bottom">
+                          <div class="payment-card__left">
+                            <div class="payment-card__card">
+                              <span class="payment-card__card-title">Card Holder</span>
+                              <div class="payment-card__card-desc">Imran Khan</div>
+                            </div>
+
+                            <div class="payment-card__card">
+                              <span class="payment-card__card-title">Expired</span>
+                              <div class="payment-card__card-desc">11/22</div>
+                            </div>
+                          </div>
+
+                          <div class="payment-card__right">
+                            <img src="./assets/icons/oval.svg" alt="" class="payment-card__right-icon">
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+
+                    <!-- Add new payment card -->
+                    <div class="col">
+                      <div class="new-card">
+                        <a href="./add-new-card.html" class="new-card__btn">
+                          <img src="./assets/icons/puls.svg" alt="" class="new-card__icon icon">
+                          <div class="new-card__title">Add New Card</div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,93 +234,105 @@
                 <h2 class="cart-info__heading">Account info</h2>
                 <p class="cart-info__desc">Addresses, contact information and password</p>
 
-                <div class="row gx-2 gy-2 pt-16">
-                  <!-- account info 1 -->
-                  <div class="col-6">
-                    <article class="account-info">
-                      <div class="account-info__top">
-                        <img src="./assets/icons/message.svg" alt="" class="account-info__icon icon">
-                      </div>
+                <div class="account">
+                  <div class="row row-cols-2 row-cols-lg-1">
+                    <!-- account info 1 -->
+                    <div class="col">
+                      <a href="./edit-personal-info.html">
+                        <article class="account-info">
+                          <div class="account-info__top">
+                            <img src="./assets/icons/message.svg" alt="" class="account-info__icon icon">
+                          </div>
 
-                      <div class="account-info__content">
-                        <h3 class="account-info__title">Email Address</h3>
-                        <p class="account-info__desc">tarek97.ta@gmail.com</p>
-                      </div>
-                    </article>
-                  </div>
+                          <div class="account-info__content">
+                            <h3 class="account-info__title">Email Address</h3>
+                            <p class="account-info__desc">ngolong.hh@gmail.com</p>
+                          </div>
+                        </article>
+                      </a>
+                    </div>
 
-                  <!-- account info 2 -->
-                  <div class="col-6">
-                    <article class="account-info">
-                      <div class="account-info__top">
-                        <img src="./assets/icons/phone.svg" alt="" class="account-info__icon icon">
-                      </div>
+                    <!-- account info 2 -->
+                    <div class="col">
+                      <a href="./edit-personal-info.html">
+                        <article class="account-info">
+                          <div class="account-info__top">
+                            <img src="./assets/icons/phone.svg" alt="" class="account-info__icon icon">
+                          </div>
 
-                      <div class="account-info__content">
-                        <h3 class="account-info__title">Phone number</h3>
-                        <p class="account-info__desc">+000 11122 2345 657</p>
-                      </div>
-                    </article>
-                  </div>
+                          <div class="account-info__content">
+                            <h3 class="account-info__title">Phone number</h3>
+                            <p class="account-info__desc">+8479337929</p>
+                          </div>
+                        </article>
+                      </a>
+                    </div>
 
-                  <!-- account info 3 -->
-                  <div class="col-6">
-                    <article class="account-info">
-                      <div class="account-info__top">
-                        <img src="./assets/icons/map.svg" alt="" class="account-info__icon icon">
-                      </div>
+                    <!-- account info 3 -->
+                    <div class="col">
+                      <a href="./edit-personal-info.html">
+                        <article class="account-info">
+                          <div class="account-info__top">
+                            <img src="./assets/icons/map.svg" alt="" class="account-info__icon icon">
+                          </div>
 
-                      <div class="account-info__content">
-                        <h3 class="account-info__title">Add an address</h3>
-                        <p class="account-info__desc">Bangladesh Embassy, DC 20008</p>
-                      </div>
-                    </article>
+                          <div class="account-info__content">
+                            <h3 class="account-info__title">Add an address</h3>
+                            <p class="account-info__desc">Tran Thi He, Hiep Thanh, Quan 12, HCM city</p>
+                          </div>
+                        </article>
+                      </a>
+                    </div>
                   </div>
                 </div>
-
               </div>
 
               <div class="cart-info__top profile__home">
                 <h2 class="cart-info__heading">List</h2>
                 <p class="cart-info__desc">2 items - Primary</p>
 
-                <!-- favourite item 1 -->
-                <div class="favourite-item">
-                  <a href="./product-detail.html" class="cart-info__thumb-link favourite-item__link">
-                    <img src="./assets/imgs/product/product-1.png" alt="" class="favourite-item__thumb">
-                  </a>
-
-                  <div class="">
-                    <a href="./product-detail.html">
-                      <h4 class="favourite-item__heading">Coffee Beans - Espresso Arabica and Robusta Beans</h4>
+                <div class="row row-cols-2 row-cols-xxl-1">
+                  <!-- favourite item 1 -->
+                  <div class="favourite-item">
+                    <a href="./product-detail.html" class="cart-info__thumb-link favourite-item__link">
+                      <img src="./assets/imgs/product/product-1.png" alt="" class="favourite-item__thumb">
                     </a>
 
-                    <div class="favourite-item__content">
-                      <div class="favourite-item__price">$47.00</div>
-                      <a href="./product-detail.html" class="btn btn--primary btn--rounded favourite-item__btn">Add to
-                        cart</a>
+                    <div class="">
+                      <a href="./product-detail.html">
+                        <h4 class="favourite-item__heading two-line-limit">Coffee Beans - Espresso Arabica and Robusta
+                          Beans</h4>
+                      </a>
+
+                      <div class="favourite-item__content">
+                        <div class="favourite-item__price">$47.00</div>
+                        <a href="./product-detail.html" class="btn btn--primary btn--rounded favourite-item__btn">Add to
+                          cart</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- favourite item 2 -->
+                  <div class="favourite-item">
+                    <a href="./product-detail.html">
+                      <img src="./assets/imgs/product/product-1.png" alt="" class="favourite-item__thumb">
+                    </a>
+
+                    <div>
+                      <a href="./product-detail.html">
+                        <h4 class="favourite-item__heading two-line-limit">Coffee Beans - Espresso Arabica and Robusta
+                          Beans</h4>
+                      </a>
+
+                      <div class="favourite-item__content">
+                        <div class="favourite-item__price">$47.00</div>
+                        <a href="./product-detail.html" class="btn btn--primary btn--rounded favourite-item__btn">Add to
+                          cart</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <!-- favourite item 2 -->
-                <div class="favourite-item">
-                  <a href="./product-detail.html">
-                    <img src="./assets/imgs/product/product-1.png" alt="" class="favourite-item__thumb">
-                  </a>
-
-                  <div>
-                    <a href="./product-detail.html">
-                      <h4 class="favourite-item__heading">Coffee Beans - Espresso Arabica and Robusta Beans</h4>
-                    </a>
-
-                    <div class="favourite-item__content">
-                      <div class="favourite-item__price">$47.00</div>
-                      <a href="./product-detail.html" class="btn btn--primary btn--rounded favourite-item__btn">Add to
-                        cart</a>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

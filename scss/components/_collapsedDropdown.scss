@@ -4,7 +4,7 @@
   max-height: 0;
   visibility: hidden;
   pointer-events: none;
-  transform-origin: 78% top;
+  transform-origin: var(--transform-origin) top;
 
   transition-delay: 0.1s;
   transition-duration: 0.2s;

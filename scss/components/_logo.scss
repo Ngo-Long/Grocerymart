@@ -15,5 +15,28 @@
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 145.455%;
+
+    @include abstracts.screen(lg) {
+      font-size: 2rem;
+    }
+
+    @include abstracts.screen(sm) {
+      font-size: 1.8rem;
+      line-height: 144.444%;
+    }
+  }
+
+  &__icon {
+    object-fit: cover;
+
+    @include abstracts.screen(lg) {
+      width: 28px;
+      height: 28px;
+    }
+
+    @include abstracts.screen(sm) {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

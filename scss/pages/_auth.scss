@@ -119,13 +119,16 @@
 
   &__form {
     width: 100%;
-    margin-top: 20px;
   }
 
   &__link {
     color: #0071dc;
     font-weight: 500;
     line-height: 146.667%;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__btn {

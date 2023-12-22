@@ -7,12 +7,20 @@
 
   padding: 10px;
   border-radius: 10px;
-  background: var(--Dark-2, #292e39);
+  background: var(--profile-account-info);
+
+  @include abstracts.screen(sm) {
+    gap: 6px;
+  }
 
   &__top {
     padding: 15px;
     border-radius: 8px;
-    background: var(--Dark-1, #171c28);
+    background: var(--profile-container-bg);
+
+    @include abstracts.screen(sm) {
+      padding: 10px;
+    }
   }
 
   &__icon {
@@ -24,16 +32,20 @@
   }
 
   &__title {
-    color: #b9babe;
+    color: var(--profile-menu-title);
     font-size: 1.5rem;
     line-height: 146.667%;
   }
 
   &__desc {
     margin-top: 6px;
-    color: #b9babe;
+    color: var(--profile-menu-title);
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 142.857%;
+
+    @include abstracts.screen(xl) {
+      margin-top: 0;
+    }
   }
 }

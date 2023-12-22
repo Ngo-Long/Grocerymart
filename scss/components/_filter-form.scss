@@ -9,7 +9,6 @@
   top: calc(100% + 20px);
   right: 0;
   z-index: 10;
-  padding: 30px 0 0;
   border-radius: 20px;
   background: var(--filter-form-bg);
   box-shadow: 0px 40px 90px var(--filter-form-shadow);
@@ -82,7 +81,7 @@
 
   &__icon {
     position: absolute;
-    top: -4.1%;
+    top: -5.8%;
     right: 2.5%;
     height: 19px;
     filter: var(--filter-form-bg);

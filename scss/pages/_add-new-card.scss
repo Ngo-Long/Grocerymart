@@ -1,0 +1,68 @@
+@use '../abstracts';
+
+.form-card {
+  margin-top: 20px;
+  --grid-gutter-x: 25px;
+  --grid-gutter-y: 25px;
+
+  @include abstracts.screen(lg) {
+    --grid-gutter-x: 20px;
+    --grid-gutter-y: 20px;
+  }
+
+  & .form__group {
+    margin: 0;
+  }
+
+  &__label {
+    display: block;
+    color: var(--profile-form-label);
+    font-size: 1.8rem;
+    line-height: 144.444%;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    &::placeholder {
+      color: var(--Secondary-Color-Secondary-3, #d2d1d6);
+      font-size: 1.8rem;
+      line-height: 144.444%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+
+    margin-top: 20px;
+  }
+
+  &__btn {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__choose {
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__input {
+  }
+
+  &__desc {
+    color: var(--profile-form-label);
+    font-size: 1.5rem;
+    line-height: 146.667%;
+  }
+}

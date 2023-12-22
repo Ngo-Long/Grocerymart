@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
   <script src="./js/scripts.js"></script>
+
 </head>
 
 <body>
@@ -29,9 +30,9 @@
     <div class="container home">
       <!-- carousel -->
       <div class="home__container">
-        <div class="carousel">
+        <div id="carouselExample" class="carousel slide">
           <div class="carousel__inner">
-            <div class="carousel__item">
+            <div class="carousel__item active">
               <a href="#!" class="carousel__link">
                 <picture>
                   <source media="(max-width: 767.98px)" srcset="./assets/imgs/carousel/item-1-md.png">
@@ -39,13 +40,47 @@
                 </picture>
               </a>
             </div>
+
+            <div class="carousel__item active">
+              <a href="#!" class="carousel__link">
+                <picture>
+                  <source media="(max-width: 767.98px)" srcset="./assets/imgs/carousel/item-1-md.png">
+                  <img src="./assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img ">
+                </picture>
+              </a>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
 
-          <div class="carousel__indicators">
-            <span class="carousel__num">1</span>
-            <span class="carousel__rectangle"></span>
-            <span class="carousel__num">5</span>
-          </div>
+          <!-- <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/imgs/carousel/item-1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/avatar/avatar-1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/avatar/avatar-2.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
         </div>
       </div>
 
@@ -56,7 +91,7 @@
         <div class="home__cate row row-cols-3 row-cols-md-1">
           <!-- category item 1 -->
           <div class="col">
-            <a href="./package.json">
+            <a href="./product-detail.html">
               <article class="cate-item">
                 <img src="./assets/imgs/category-item/caphe-1.png" alt="Cà phê" class="cate-item__thumb">
 
@@ -71,7 +106,7 @@
 
           <!-- category item 2 -->
           <div class="col">
-            <a href="./package.json">
+            <a href="./product-detail.html">
               <article class="cate-item">
                 <img src="./assets/imgs/category-item/caphe-2.png" alt="Cà phê" class="cate-item__thumb">
 
@@ -86,7 +121,7 @@
 
           <!-- category item 3 -->
           <div class="col">
-            <a href="./package.json">
+            <a href="./product-detail.html">
               <article class="cate-item">
                 <img src="./assets/imgs/category-item/caphe-3.png" alt="Cà phê" class="cate-item__thumb">
 
@@ -182,7 +217,7 @@
                     <div class="form__group">
                       <div class="form__search">
                         <input type="text" placeholder="Search brand name" class="form__search-input">
-                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon">
+                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon">
                       </div>
                     </div>
 
@@ -454,6 +489,12 @@
   <script>load("footer", "./template/footer.html");</script>
 
   <script src="./js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
