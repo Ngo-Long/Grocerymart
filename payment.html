@@ -19,7 +19,11 @@
   <link rel="stylesheet" href="./assets/css/main.css">
 
   <script type="module" src="./js/scripts.js"></script>
-
+  <style>
+    .header {
+      height: 86px;
+    }
+  </style>
 </head>
 
 <body>
@@ -37,7 +41,7 @@
         <div class="search-bar">
           <input type="text" name="" id="" value="" placeholder="Search for item" class="search-bar__input">
           <button class="search-bar__btn">
-            <img src="./assets/icons/search.svg" alt="" class="search-bar__icon">
+            <img src="/assets/icons/search.svg" alt="" class="search-bar__icon">
           </button>
         </div>
       </div>
@@ -48,28 +52,28 @@
           <li class="breadcrums__item">
             <a href="./index-logined.html" class="breadcrums__link">
               Home
-              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
             </a>
           </li>
 
           <li class="breadcrums__item">
             <a href="./checkout.html" class="breadcrums__link">
               Checkout
-              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
             </a>
           </li>
 
           <li class="breadcrums__item">
             <a href="./shipping.html" class="breadcrums__link">
               Shipping
-              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
             </a>
           </li>
 
           <li class="breadcrums__item">
             <a href="./shipping.html" class="breadcrums__link breadcrums__link--current">
               Payment method
-              <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
+              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
             </a>
           </li>
         </ul>
@@ -85,7 +89,7 @@
                   <h1 class="cart-pay__heading">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
 
                   <button class="user-address__btn-edit pl-15">
-                    <img src="./assets/icons/edit.svg" alt="" class="user-address__icon">
+                    <img src="/assets/icons/edit.svg" alt="" class="user-address__icon">
                     Edit
                   </button>
                 </div>
@@ -138,7 +142,7 @@
                     </div>
 
                     <div class="flex" style="gap: 20px;">
-                      <img src="./assets/icons/Fedex-logo.png" alt="" class="user-address__img">
+                      <img src="/assets/icons/Fedex-logo.png" alt="" class="user-address__img">
 
                       <div class="user-address__info">
                         <h3 class="user-address__title">Fedex Delivery</h3>
@@ -157,7 +161,7 @@
                     </div>
 
                     <div class="flex" style="gap: 20px;">
-                      <img src="./assets/icons/DHLDelivery.png" alt="" class="user-address__img">
+                      <img src="/assets/icons/DHLDelivery.png" alt="" class="user-address__img">
 
                       <div class="user-address__info">
                         <h3 class="user-address__title">DHL Delivery</h3>
@@ -252,7 +256,7 @@
               <div class="form__text-input form__text-input--small">
                 <input type="text" name="name" id="name" placeholder="Name" class="form__input" required
                   minlength="2" />
-                <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+                <img src="/assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
               </div>
               <p class="form__error">Name must be at least 2 characters</p>
             </div>
@@ -261,7 +265,7 @@
               <div class="form__text-input form__text-input--small">
                 <input type="tel" name="phone" id="phone" placeholder="Phone" class="form__input" required
                   minlength="10" />
-                <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+                <img src="/assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
               </div>
               <p class="form__error">Phone must be at least 10 characters</p>
             </div>
@@ -271,7 +275,7 @@
             <div class="form__text-area">
               <textarea name="address" id="address" placeholder="Address (Area and street)"
                 class="form__text-area-input" required></textarea>
-              <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+              <img src="/assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
             </div>
             <p class="form__error">Address not empty</p>
           </div>
@@ -280,7 +284,7 @@
             <div class="form__text-input form__text-input--small">
               <input type="text" name="" placeholder="City/District/Town" id="city" readonly
                 class="form__input js-toggle" toggle-target="#city-dialog" />
-              <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+              <img src="/assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
 
               <div id="city-dialog" class="form__select-dialog hide">
                 <h2 class="form__dialog-heading d-none d-sm-block">City/District/Town</h2>
@@ -289,7 +293,7 @@
                 </button>
                 <div class="form__search">
                   <input type="text" placeholder="Search" class="form__search-input" />
-                  <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />
+                  <img src="/assets/icons/search.svg" alt="" class="form__search-icon icon" />
                 </div>
                 <ul class="form__options-list">
                   <li class="form__option">Ha Noi</li>
