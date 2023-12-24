@@ -17,20 +17,28 @@
 
   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-  <script src="./js/scripts.js"></script>
 
+  <script type="module" src="./js/scripts.js"></script>
+  <style>
+    .header {
+      height: 86px;
+    }
+  </style>
 </head>
 
 <body>
   <header id="header" class="header"></header>
-  <script>load("header", "./template/header-logined.html");</script>
+  <script type="module">
+    import { load } from './js/scripts.js';
+    load("header", "./template/header-logined.html");
+  </script>
 
   <!-- main -->
   <main id="main">
     <div class="container home">
       <!-- carousel -->
       <div class="home__container">
-        <div id="carouselExample" class="carousel slide">
+        <div id="carousel-id" class="carousel slide">
           <div class="carousel__inner">
             <div class="carousel__item active">
               <a href="#!" class="carousel__link">
@@ -41,24 +49,36 @@
               </a>
             </div>
 
-            <div class="carousel__item active">
+            <div class="carousel__item">
               <a href="#!" class="carousel__link">
                 <picture>
                   <source media="(max-width: 767.98px)" srcset="./assets/imgs/carousel/item-1-md.png">
-                  <img src="./assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img ">
+                  <img src="./assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img">
                 </picture>
               </a>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel__item">
+              <a href="#!" class="carousel__link">
+                <picture>
+                  <source media="(max-width: 767.98px)" srcset="./assets/imgs/carousel/item-1-md.png">
+                  <img src="./assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img">
+                </picture>
+              </a>
+            </div>
           </div>
+
+          <button class="carousel__control carousel__control--prev" type="button" data-bs-target="#carousel-id"
+            data-bs-slide="prev">
+            <img src="./assets/icons/angle-left-solid.svg" alt="" class="carousel__control-prev-icon icon"
+              aria-hidden="true">
+          </button>
+
+          <button class="carousel__control carousel__control--next" type="button" data-bs-target="#carousel-id"
+            data-bs-slide="next">
+            <img src="./assets/icons/angle-right-solid.svg" alt="" class="carousel__control-prev-icon icon"
+              aria-hidden="true">
+          </button>
 
           <!-- <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -86,7 +106,7 @@
 
       <!-- Browse Categories -->
       <section class="home__container">
-        <h2 class="home__heading mb-20">Browse Categories</h2>
+        <h2 class="home__heading home__heading--mb">Browse Categories</h2>
 
         <div class="home__cate row row-cols-3 row-cols-md-1">
           <!-- category item 1 -->
@@ -246,7 +266,7 @@
         </div>
 
         <div class="home__product">
-          <div class="home__product row row-cols-4 row-cols-xl-3 row-cols-lg-2">
+          <div class="home__product row row-cols-5 row-cols-xxl-4 row-cols-lg-3 row-cols-md-2">
             <!-- product 1 -->
             <div class="col">
               <article class="product-item">
@@ -485,10 +505,15 @@
     </div>
   </main>
 
-  <footer class="footer"></footer>
-  <script>load("footer", "./template/footer.html");</script>
+  <footer id="footer"></footer>
+  <script type="module">
+    import { load } from './js/scripts.js';
+    load("footer", "./template/footer.html");
+  </script>
 
-  <script src="./js/scripts.js"></script>
+  <script type="module" src="./js/scripts.js"></script>
+
+  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>

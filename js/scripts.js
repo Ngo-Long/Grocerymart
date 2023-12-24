@@ -1,6 +1,37 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+/**
+ * Hàm tải template
+ *
+ * Cách dùng:
+ * <div id="parent"></div>
+ * <script>
+ *  load("parent", "./path-to-template.html");
+ * </script>
+ */
+export function load(selector, path) {
+  const element = document.getElementById(selector);
+  if (!element) return;
+
+  const cached = localStorage.getItem(path);
+  if (cached) {
+    element.innerHTML = cached;
+  }
+
+  fetch(path)
+    .then((res) => res.text())
+    .then((html) => {
+      if (html !== cached) {
+        element.innerHTML = html;
+        localStorage.setItem(path, html);
+      }
+    })
+    .finally(() => {
+      window.dispatchEvent(new Event('template-loaded'));
+    });
+}
+
 // Switch dark mode
 window.addEventListener('template-loaded', () => {
   const switchBtn = document.querySelector('#switch-theme-btn');
@@ -18,34 +49,6 @@ window.addEventListener('template-loaded', () => {
 
 const isDark = localStorage.dark === 'true';
 document.querySelector('html').classList.toggle('dark', isDark);
-
-/**
- * Hàm tải template
- *
- * Cách dùng:
- * <div id="parent"></div>
- * <script>
- *  load("#parent", "./path-to-template.html");
- * </script>
- */
-function load(selector, path) {
-  const cached = localStorage.getItem(path);
-  if (cached) {
-    $(selector).innerHTML = cached;
-  }
-
-  fetch(path)
-    .then((res) => res.text())
-    .then((html) => {
-      if (html !== cached) {
-        $(selector).innerHTML = html;
-        localStorage.setItem(path, html);
-      }
-    })
-    .finally(() => {
-      window.dispatchEvent(new Event('template-loaded'));
-    });
-}
 
 /**
  * Hàm kiểm tra một phần tử
@@ -267,4 +270,3 @@ window.addEventListener('template-loaded', () => {
   // Đóng mở dropdown
   toggleDropdown();
 })();
-x;

@@ -28,4 +28,41 @@
     object-fit: cover;
     border-radius: 20px;
   }
+
+  &__control {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 80px;
+    border-radius: 4px;
+    transform: translateY(-50%);
+    background: rgba(220, 220, 220, 0.3);
+
+    &:hover {
+      background: rgba(220, 220, 220, 0.5);
+    }
+
+    &:hover &-prev-icon {
+      opacity: 0.9;
+    }
+
+    &--prev {
+      left: 14px;
+    }
+
+    &--next {
+      right: 14px;
+    }
+  }
+
+  &__control-prev-icon {
+    width: 20px;
+    opacity: 0.7;
+    filter: brightness(0) saturate(100%) invert(8%) sepia(22%) saturate(1026%) hue-rotate(184deg)
+      brightness(94%) contrast(93%);
+
+    @include abstracts.screen(sm) {
+      width: 15px;
+    }
+  }
 }

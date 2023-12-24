@@ -28,6 +28,10 @@
     flex-direction: row;
   }
 
+  @include abstracts.screen(md) {
+    padding: 10px;
+  }
+
   &__thumb {
     width: 116px;
     height: 116px;
