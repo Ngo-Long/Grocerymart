@@ -1934,10 +1934,14 @@ html {
   overflow: hidden;
 }
 .carousel__item {
+  display: none;
   position: relative;
   flex-shrink: 0;
   width: 100%;
   padding-top: 28%;
+}
+.carousel__item.active {
+  display: block;
 }
 @media (max-width: 767.98px) {
   .carousel__item {

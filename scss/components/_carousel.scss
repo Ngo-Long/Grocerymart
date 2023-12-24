@@ -9,10 +9,15 @@
   }
 
   &__item {
+    display: none;
     position: relative;
     flex-shrink: 0;
     width: 100%;
     padding-top: 28%;
+
+    &.active {
+      display: block;
+    }
 
     @include abstracts.screen(md) {
       padding-top: 50%;

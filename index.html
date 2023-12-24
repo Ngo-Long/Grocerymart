@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 
-  <script type="module" src="./js/scripts.js"></script>
+  <script type="module" src="/js/scripts.js"></script>
   <style>
     .header {
       height: 86px;
@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="header"></header>
   <script type="module">
-    import { load } from './js/scripts.js';
+    import { load } from '/js/scripts.js';
     load("header", "./template/header.html");
   </script>
 
@@ -42,56 +42,39 @@
           <div class="carousel__inner">
             <div class="carousel__item active">
               <a href="#!" class="carousel__link">
-                <picture>
+                <picture class="">
                   <source media="(max-width: 767.98px)" srcset="/assets/imgs/carousel/item-1-md.png">
                   <img src="/assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img ">
                 </picture>
               </a>
             </div>
 
-            <div class="carousel__item active">
+            <div class="carousel__item">
               <a href="#!" class="carousel__link">
-                <picture>
+                <picture class="">
                   <source media="(max-width: 767.98px)" srcset="/assets/imgs/carousel/item-1-md.png">
-                  <img src="/assets/imgs/carousel/item-1.png" alt="Order your favorite coffee" class="carousel__img">
+                  <img src="/assets/imgs/carousel/item-2.jpg" alt="Order your favorite coffee" class="carousel__img ">
                 </picture>
               </a>
             </div>
 
-            <button class="carousel__control carousel__control--prev" type="button" data-bs-target="#carousel-id"
-              data-bs-slide="prev">
-              <img src="/assets/icons/angle-left-solid.svg" alt="" class="carousel__control-prev-icon icon"
-                aria-hidden="true">
-            </button>
-
-            <button class="carousel__control carousel__control--next" type="button" data-bs-target="#carousel-id"
-              data-bs-slide="next">
-              <img src="/assets/icons/angle-right-solid.svg" alt="" class="carousel__control-prev-icon icon"
-                aria-hidden="true">
-            </button>
+            <div class="carousel__item">
+              <a href="#!" class="carousel__link">
+                <picture class="">
+                  <source media="(max-width: 767.98px)" srcset="/assets/imgs/carousel/item-1-md.png">
+                  <img src="/assets/imgs/carousel/item-3.jpg" alt="Order your favorite coffee" class="carousel__img ">
+                </picture>
+              </a>
+            </div>
           </div>
 
-          <!-- <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/assets/imgs/carousel/item-1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/assets/imgs/avatar/avatar-1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/assets/imgs/avatar/avatar-2.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div> -->
+          <button class="carousel__control carousel__control--prev" type="button" data-bs-slide="prev">
+            <img src="/assets/icons/angle-left-solid.svg" alt="" class="carousel__control-prev-icon icon">
+          </button>
+
+          <button class="carousel__control carousel__control--next" type="button" data-bs-slide="next">
+            <img src="/assets/icons/angle-right-solid.svg" alt="" class="carousel__control-prev-icon icon">
+          </button>
         </div>
 
         <!-- Browse Categories -->
@@ -500,6 +483,8 @@
     load("footer", "./template/footer.html");
   </script>
 
+  <!-- script -->
+  <script type="module" src="/js/home.js"></script>
 </body>
 
 </html>
