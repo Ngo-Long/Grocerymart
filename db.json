@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Coffee Beans - Espresso Arabica and Robusta Beans",
+      "price": 47.99,
+      "brand": "Lavazza",
+      "rating": 4.3,
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-1.png",
+      "thumbnailImages": [
+        "https://example.com/thumb1.jpg",
+        "https://example.com/thumb2.jpg",
+        "https://example.com/thumb3.jpg"
+      ],
+      "description": "Mô tả sản phẩm 1",
+      "isFavorite": true,
+      "createdAt": 1702717219160,
+      "updatedAt": 1702717219160
+    },
+    {
+      "id": 2,
+      "name": "Lavazza Coffee Blends - Try the Italian Espresso",
+      "price": 53.0,
+      "brand": "Lavazza",
+      "rating": 3.8,
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-2.png",
+      "thumbnailImages": [
+        "https://example.com/thumb4.jpg",
+        "https://example.com/thumb5.jpg",
+        "https://example.com/thumb6.jpg"
+      ],
+      "description": "Mô tả sản phẩm 2",
+      "isFavorite": false,
+      "createdAt": 1702717219160,
+      "updatedAt": 1702717219160
+    },
+    {
+      "id": 3,
+      "name": "Lavazza - Caffee Espresso Black Tin - group coffee",
+      "price": 99.99,
+      "brand": "welikecoffee",
+      "rating": 5.0,
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-3.png",
+      "thumbnailImages": [
+        "https://example.com/thumb7.jpg",
+        "https://example.com/thumb8.jpg",
+        "https://example.com/thumb9.jpg"
+      ],
+      "description": "Mô tả sản phẩm 3",
+      "isFavorite": false,
+      "createdAt": 1702717219160,
+      "updatedAt": 1702717219160
+    }
+  ]
+}
