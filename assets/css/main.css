@@ -1972,6 +1972,12 @@ html {
 .carousel__control:hover .carousel__control-prev-icon {
   opacity: 0.9;
 }
+@media (max-width: 575.98px) {
+  .carousel__control {
+    width: 30px;
+    height: 50px;
+  }
+}
 .carousel__control--prev {
   left: 14px;
 }
