@@ -1,8 +1,24 @@
 import productApi from './api/productApi';
-import { startCarousel } from './utils/index.js';
+import { startCarousel, setElementSourceBySelector, setElementTextContent } from './utils/index.js';
+
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime); // to use fromNow function
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+
+function isFavoriteProductElement(container, selector, isFavorite) {
+  if (!container || typeof isFavorite !== 'boolean') return;
+
+  const targetElement = container.querySelector(selector);
+  if (!targetElement) return;
+
+  // Add or remove classes  depending on the value of isFavorite
+  return isFavorite === true
+    ? targetElement.classList.add('like-btn--liked')
+    : targetElement.classList.remove('like-btn--liked');
+}
 
 function createProductItem(dataItem) {
   if (!dataItem) return;
@@ -15,27 +31,18 @@ function createProductItem(dataItem) {
   const productItem = productTemplate.content.firstElementChild.cloneNode(true);
   if (!productItem) return;
 
-  // Update title, brand, price, score, image, thumbList
-  const titleProduct = productItem.querySelector('[data-id="titleProduct"]');
-  if (titleProduct) titleProduct.textContent = dataItem.title;
+  // Update title, brand, price, score, imageUrl, description, thumbList
+  setElementTextContent(productItem, '[data-id="titleProduct"]', dataItem.title);
+  setElementTextContent(productItem, '[data-id="priceProduct"]', dataItem.price);
+  setElementTextContent(productItem, '[data-id="brandProduct"]', dataItem.brand);
+  setElementTextContent(productItem, '[data-id="scoreProduct"]', dataItem.score);
+  setElementTextContent(productItem, '[data-id="descProduct"]', dataItem.description);
 
-  const priceProduct = productItem.querySelector('[data-id="priceProduct"]');
-  if (priceProduct) priceProduct.textContent = dataItem.price;
+  setElementSourceBySelector(productItem, '[data-id="imageUrlProduct"]', dataItem.imageUrl);
+  isFavoriteProductElement(productItem, '[data-id="isFavoriteProduct"]', dataItem.isFavorite);
 
-  const brandProduct = productItem.querySelector('[data-id="brandProduct"]');
-  if (brandProduct) brandProduct.textContent = dataItem.brand;
-
-  const scoreProduct = productItem.querySelector('[data-id="scoreProduct"]');
-  if (scoreProduct) scoreProduct.textContent = dataItem.score;
-
-  const imageUrlProduct = productItem.querySelector('[data-id="imageUrlProduct"]');
-  if (imageUrlProduct) imageUrlProduct.textContent = dataItem.imageUrl;
-
-  const isFavoriteProduct = productItem.querySelector('[data-id="isFavoriteProduct"]');
-  if (isFavoriteProduct) isFavoriteProduct.textContent = dataItem.isFavorite;
-
-  const descProduct = productItem.querySelector('[data-id="descProduct"]');
-  if (descProduct) descProduct.textContent = dataItem.description;
+  // calulate timespan
+  // console.log('timespan', dayjs(dataItem.updatedAt).fromNow());
 
   return productItem;
 }
@@ -43,6 +50,7 @@ function createProductItem(dataItem) {
 function renderProductList(dataList) {
   if (!Array.isArray(dataList) || !dataList.length) return;
 
+  // product List
   const productList = $('#productList');
   if (!productList) return;
 

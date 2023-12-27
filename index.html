@@ -37,18 +37,36 @@
               alt="Coffee Beans - Espresso Arabica and Robusta Beans" class="product-item__thumb">
           </a>
 
-          <button data-id="isFavoriteProduct" class="like-btn like-btn--liked product-item__like-btn">
+          <div class="product-item__menu">
+            <button data-id="editProduct" class="product-item__menu-icon">
+              <i class="fas fa-pen"></i>
+            </button>
+            <button data-id="removeProduct" class="product-item__menu-icon">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+
+          <div class="product-item__septem"></div>
+
+          <!-- Product favorite add class: like-btn--liked  -->
+          <button data-id="isFavoriteProduct" class="like-btn product-item__like-btn">
             <img src="/assets/icons/heart.svg" alt="" class="like-btn__icon icon">
             <img src="/assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked">
           </button>
         </div>
 
-        <h3 data-id="titleProduct" class="product-item__title">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
+        <a href="./product-detail.html">
+          <h3 data-id="titleProduct" class="product-item__title three-line-limit">Coffee Beans - Espresso Arabica and
+            Robusta Beans</h3>
+        </a>
 
         <p data-id="brandProduct" class="product-item__brand">Lavazza</p>
 
         <div class="product-item__row">
-          <span data-id="priceProduct" class="product-item__price">$47.00</span>
+          <span class="product-item__price">
+            $
+            <span data-id="priceProduct">47.00</span>
+          </span>
 
           <img src="/assets/icons/start.svg" alt="" class="product-item__start">
 
@@ -162,121 +180,105 @@
 
         <!-- Product -->
         <section class="home__container">
-          <div class="home__row mb-20">
+          <div class="home__row">
             <h2 class="home__heading">Browse Products</h2>
 
-            <div class="filter-wrap">
-              <button class="filter-btn js-toggle" toggle-target="#home__filter">
-                <span class="filter-btn__title">Filter</span>
+            <button class="filter-btn">
+              <span class="filter-btn__title">Filter</span>
+              <img src="/assets/icons/filter.svg" alt="" class="icon filter-btn__icon">
+            </button>
+          </div>
 
-                <img src="/assets/icons/filter.svg" alt="" class="icon filter-btn__icon">
-              </button>
+          <!-- content filter show -->
+          <div class="filter">
+            <img id="filter-icon" src="/assets/icons/arrow-up.png" alt="" class="icon filter__icon">
 
+            <div class="filter__form">
+              <div class="filter__row filter__form-content">
+                <!-- filtet column 1 -->
+                <div class="filter__col">
+                  <div class="form__group filter__row">
+                    <label class="form__heading">Grounps</label>
 
-              <!-- content filter show -->
-              <div id="home__filter" class="filter hide">
-                <img id="filter-icon" src="/assets/icons/arrow-up.png" alt="" class="icon filter__icon">
+                    <div class="form__group form__group--horizontal">
+                      <div class="form__select-wrap">
+                        <div class="form__select">
+                          <span class="form__gram">500g</span>
 
-                <from class="filter__form">
-                  <div class="filter__row filter__form-content">
-                    <!-- filtet column 1 -->
-                    <div class="filter__col">
-                      <label for="" class="form__heading">Price</label>
-
-                      <div class="form__group">
-                        <div class="filter__form-slider mt-30 mb-30" style="--min-value: 10%; --max-value: 60%"></div>
-                      </div>
-
-                      <div class="form__group form__group--horizontal">
-                        <div class="">
-                          <label for="" class="form__label form__label--small">Minimum</label>
-
-                          <input type="text" name="" id="" value="$30.00" class="form__input filter__input">
-                        </div>
-
-                        <div class="">
-                          <label for="" class="form__label form__label--small">Maximum</label>
-
-                          <input type="text" name="" id="" value="$100.00" class="form__input filter__input">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="filter--separate"></div>
-
-                    <!-- filtet column 2 -->
-                    <div class="filter__col">
-                      <label for="" class="form__heading">Size/Weight</label>
-
-                      <div class="form__group">
-                        <div class="form__select-wrap">
-                          <div class="form__select">
-                            <span class="form__gram">500g</span>
-
-                            <img src="/assets/icons/arrow-down.svg" alt="" class="form__icon icon">
-                          </div>
-
-                          <div class="form__select">
-                            <span class="form__gram">Gram</span>
-                            <img src="/assets/icons/arrow-down.svg" alt="" class="form__icon icon">
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form__group">
-                        <div class="form__tags">
-                          <div class="form__tag">Small</div>
-                          <div class="form__tag">Medium</div>
-                          <div class="form__tag">Large</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="filter--separate"></div>
-
-                    <!-- filtet column 3 -->
-                    <div class="filter__col filter__col--big">
-                      <label for="" class="form__heading">Brand</label>
-
-                      <div class="form__group">
-                        <div class="form__search">
-                          <input type="text" placeholder="Search brand name" class="form__search-input">
-                          <img src="/assets/icons/search.svg" alt="" class="form__search-icon icon">
-                        </div>
-                      </div>
-
-                      <div class="form__group">
-                        <div class="form__tags">
-                          <div class="form__tag">Lavazza</div>
-                          <div class="form__tag">Nescafe</div>
-                          <div class="form__tag">Starbucks</div>
+                          <img src="/assets/icons/arrow-down.svg" alt="" class="form__icon icon">
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="filter__row filter__btn">
-                    <button class="btn btn--text filter__btn--cancel js-toggle"
-                      toggle-target="#home__filter">Cancel</button>
+                <div class="filter--separate"></div>
 
-                    <button class="btn btn--primary filter__btn--submit">Show Result</button>
+                <!-- filtet column 2 -->
+                <div class="filter__col">
+                  <label class="form__heading">Size/Weight</label>
+
+                  <div class="form__group">
+                    <div class="form__select-wrap">
+                      <div class="form__select">
+                        <span class="form__gram">500g</span>
+
+                        <img src="/assets/icons/arrow-down.svg" alt="" class="form__icon icon">
+                      </div>
+
+                      <div class="form__select">
+                        <span class="form__gram">Gram</span>
+                        <img src="/assets/icons/arrow-down.svg" alt="" class="form__icon icon">
+                      </div>
+                    </div>
                   </div>
-                </from>
+
+                  <div class="form__group">
+                    <div class="form__tags">
+                      <div class="form__tag">Small</div>
+                      <div class="form__tag">Medium</div>
+                      <div class="form__tag">Large</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter--separate"></div>
+
+                <!-- filtet column 3 -->
+                <div class="filter__col filter__col--big">
+                  <label class="form__heading">Brand</label>
+
+                  <div class="form__group">
+                    <div class="form__search">
+                      <input type="text" placeholder="Search brand name" class="form__search-input">
+                      <img src="/assets/icons/search.svg" alt="" class="form__search-icon icon">
+                    </div>
+                  </div>
+
+                  <div class="form__group">
+                    <div class="form__tags">
+                      <div class="form__tag">Lavazza</div>
+                      <div class="form__tag">Nescafe</div>
+                      <div class="form__tag">Starbucks</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <!-- overlay -->
-              <div class="overlay js-toggle" toggle-target="#home__filter"></div>
             </div>
           </div>
 
+          <!-- overlay -->
+          <div class="overlay js-toggle" toggle-target="#home__filter"></div>
+
           <!-- Product list -->
           <div class="home__product">
-            <div id="productList" class="row row-cols-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-1">
+            <div id="productList" class="row row-cols-4  row-cols-lg-3 row-cols-md-2">
               <!-- product item ... -->
             </div>
           </div>
         </section>
       </div>
+    </div>
   </main>
 
   <footer id="footer"></footer>

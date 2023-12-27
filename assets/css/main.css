@@ -1453,6 +1453,20 @@ input:-webkit-autofill:hover {
   -webkit-box-orient: vertical;
 }
 
+.three-line-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .septem {
   width: 100%;
   margin: 30px 0;
@@ -1500,7 +1514,6 @@ html.dark {
   --filter-btn-bg: #171c28;
   --filter-btn-icon-color: #fff;
   --filter-btn-title-color: #fff;
-  --like-btn-shadow: rgba(124, 124, 124, 0.2);
   --product-item-bg: #171c28;
   --product-item-color: #fff;
   --product-item-shadow: rgba(0, 0, 0, 0.2);
@@ -1595,7 +1608,6 @@ html {
   --filter-btn-bg: #fff;
   --filter-btn-icon-color: #1a162e;
   --filter-btn-title-color: #6c6c72;
-  --like-btn-shadow: rgba(237, 237, 246, 0.2);
   /* ------------******* ------------ */
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
@@ -1610,7 +1622,7 @@ html {
   --product-item-color: #1a162e;
   --product-item-bg: #fff;
   --product-item-shadow: rgba(237, 237, 246, 0.2);
-  --product-item-btn-like: #fff;
+  --product-item-btn-like: #eee;
   --filter-form-bg: #fff;
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --form-heading-color: #1a162e;
@@ -2109,15 +2121,14 @@ html {
   border: 2px solid transparent;
   border-bottom: 1px solid var(--top-action-separate-color);
 }
-@media (max-width: 767.98px) {
-  .product-item {
-    gap: 10px;
-    font-size: 1.4rem;
-  }
+.product-item:hover .product-item__menu {
+  opacity: 1;
+  transform: scale(1);
 }
 @media (max-width: 767.98px) {
   .product-item {
-    gap: 6px;
+    gap: 10px;
+    padding: 12px;
     font-size: 1.4rem;
   }
 }
@@ -2126,14 +2137,16 @@ html {
   padding-top: 100%;
 }
 .product-item__title {
-  font-size: inherit;
+  font-size: 1.8rem;
   font-weight: 500;
   line-height: 150%;
   color: var(--product-item-color);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  -webkit-line-clamp: 3;
+}
+@media (max-width: 767.98px) {
+  .product-item__title {
+    font-size: 1.6rem;
+    line-height: 140%;
+  }
 }
 .product-item__thumb {
   position: absolute;
@@ -2143,22 +2156,55 @@ html {
   height: 100%;
   object-fit: contain;
 }
+.product-item__menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform-origin: top;
+  transform: scale(0.5);
+  transition: all 0.5s;
+}
+.product-item__menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  background: #888;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 0.35s;
+}
+.product-item__menu-icon:hover {
+  color: #fff;
+  opacity: 0.9;
+  background: #666;
+}
 .product-item__like-btn {
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   right: 0;
+  transition: opacity 0.3s, transform 0.3s;
   background: var(--product-item-btn-like);
+}
+.product-item__like-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+.product-item__like-btn .icon {
+  width: 24px;
+  height: 24px;
 }
 .product-item__brand {
   color: #9e9da8;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 146.667%;
-}
-@media (max-width: 767.98px) {
-  .product-item__brand {
-    font-size: 1.4rem;
-  }
 }
 .product-item__row {
   display: flex;
@@ -2167,9 +2213,13 @@ html {
 .product-item__start {
   width: 24px;
   height: 24px;
-  padding: 3.5px 3px;
-  margin-left: auto;
-  margin-right: 6px;
+  margin: -5px 6px 0 auto;
+}
+.product-item__price {
+  font-size: 1.8rem;
+}
+.product-item__score {
+  font-size: 1.8rem;
 }
 
 .btn {
@@ -2206,24 +2256,11 @@ html {
   opacity: 0.9;
 }
 
-.filter-wrap {
-  position: relative;
-}
-
 .filter {
-  position: absolute;
-  top: calc(100% + 20px);
-  right: 0;
-  z-index: 10;
+  margin: 30px 0;
+  border: 1px solid rgba(238, 238, 238, 0.5);
   border-radius: 20px;
   background: var(--filter-form-bg);
-  box-shadow: 0px 40px 90px var(--filter-form-shadow);
-  opacity: 0;
-  visibility: hidden;
-  transition-delay: 0.1s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-property: opacity, vi sibility;
 }
 .filter.show {
   opacity: 1;
@@ -2352,15 +2389,6 @@ html {
   padding: 9px 10px;
 }
 
-.filter__form {
-  display: block;
-  margin-top: 30px;
-}
-@media (max-width: 1199.98px) {
-  .filter__form {
-    margin-top: 0;
-  }
-}
 @media (max-width: 575.98px) {
   .filter__form {
     height: 100%;
@@ -2370,7 +2398,7 @@ html {
   }
 }
 .filter__form-content {
-  padding: 0 30px;
+  padding: 30px;
 }
 @media (max-width: 1199.98px) {
   .filter__form-content {
@@ -2438,11 +2466,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   border-radius: 50%;
-  box-shadow: 0 20px 60px var(--like-btn-shadow);
 }
 .like-btn:not(.like-btn--liked) .like-btn__icon--liked {
   display: none;
@@ -2452,12 +2479,6 @@ html {
 }
 .like-btn__icon--liked {
   margin-top: 6px;
-}
-@media (max-width: 767.98px) {
-  .like-btn {
-    width: 30px;
-    height: 30px;
-  }
 }
 
 .overlay {

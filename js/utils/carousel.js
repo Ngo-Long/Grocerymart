@@ -1,66 +1,62 @@
-function automaticCarousel(intervalTime, currentIndex, itemList) {
-  if (!Number.isInteger(currentIndex) || currentIndex < 0 || !itemList) return;
+export function startCarousel({ carouselId, carouselItem, selectorPrev, selectorNext }) {
+  // Get carousel and all items
+  const carousel = document.querySelector(carouselId);
+  const itemList = carousel.querySelectorAll(carouselItem);
+  if (!carousel || !itemList) return;
+
+  // Get the controls buttons
+  const prevBtn = carousel.querySelector(selectorPrev);
+  const nextBtn = carousel.querySelector(selectorNext);
+  if (!nextBtn || !itemList) return;
+
+  // intervalTime = 4s
+  let timer = automaticCarousel(4000, itemList);
+
+  handleSlide(nextBtn, 1, itemList, timer);
+  handleSlide(prevBtn, -1, itemList, timer);
+}
+
+function getCurrentIndex(itemList) {
+  let currentIndex = Array.from(itemList).findIndex((item) => item.classList.contains('active'));
+  if (!Number.isInteger(currentIndex) || currentIndex < 0) return;
+
+  return currentIndex;
+}
+
+function automaticCarousel(intervalTime, itemList) {
+  if (!Number.isInteger(intervalTime) || !itemList.length) return;
+
+  let currentIndex = getCurrentIndex(itemList);
 
   let timer = setInterval(() => {
-    itemList[currentIndex].classList.remove('active');
+    toggleActive(currentIndex, itemList);
 
     currentIndex = (currentIndex + 1) % itemList.length;
-    itemList[currentIndex].classList.add('active');
+    toggleActive(currentIndex, itemList);
   }, intervalTime);
 
   return timer;
 }
 
-function handleSlidePreviou(prevBtn, currentIndex, itemList, timer) {
-  if (!prevBtn || !itemList) return;
-  if (!Number.isInteger(currentIndex) || currentIndex < 0) return;
+function handleSlide(button, direction, itemList, timer) {
+  if (!button || !itemList.length) return;
 
-  // Move to the previou photo
-  prevBtn.addEventListener('click', () => {
-    itemList[currentIndex].classList.remove('active');
+  // Move to the button next or butotn prev photo
+  button.addEventListener('click', () => {
+    let currentIndex = getCurrentIndex(itemList);
 
-    currentIndex = (currentIndex - 1 + itemList.length) % itemList.length;
-    itemList[currentIndex].classList.add('active');
+    toggleActive(currentIndex, itemList);
 
-    // Reset interval time to 4 seconds
-    clearInterval(timer);
-    timer = automaticCarousel(4000, currentIndex, itemList);
-  });
-}
-
-function handleSlideNext(nextBtn, currentIndex, itemList, timer) {
-  if (!nextBtn || !itemList) return;
-  if (!Number.isInteger(currentIndex) || currentIndex < 0) return;
-
-  // Move to the next photo
-  nextBtn.addEventListener('click', () => {
-    itemList[currentIndex].classList.remove('active');
-
-    currentIndex = (currentIndex + 1) % itemList.length;
-    itemList[currentIndex].classList.add('active');
+    let newIndex = (currentIndex + direction + itemList.length) % itemList.length;
+    toggleActive(newIndex, itemList);
 
     // Reset interval time to 4 seconds
     clearInterval(timer);
-    timer = automaticCarousel(4000, currentIndex, itemList);
+    timer = automaticCarousel(4000, itemList);
   });
 }
 
-export function startCarousel({ carouselId, carouselItem, selectorPrev, selectorNext }) {
-  // Get carousel and all items
-  const carousel = document.querySelector(carouselId);
-  const itemList = carousel.querySelectorAll(carouselItem);
-
-  // Get the controls buttons
-  const prevBtn = carousel.querySelector(selectorPrev);
-  const nextBtn = carousel.querySelector(selectorNext);
-
-  // Set current index
-  let currentIndex = [...itemList].findIndex((item) => item.classList.contains('active'));
-  currentIndex = currentIndex !== -1 ? currentIndex : 0;
-
-  // intervalTime = 4s
-  let timer = automaticCarousel(4000, currentIndex, itemList);
-
-  handleSlideNext(nextBtn, currentIndex, itemList, timer);
-  handleSlidePreviou(prevBtn, currentIndex, itemList, timer);
+function toggleActive(index, itemList) {
+  itemList.forEach((item) => item.classList.remove('active'));
+  itemList[index].classList.add('active');
 }

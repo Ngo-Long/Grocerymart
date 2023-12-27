@@ -1,1 +1,2 @@
-export * from './carousel.js';
+export * from './common';
+export * from './carousel';
