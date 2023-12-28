@@ -3006,6 +3006,51 @@ html {
   }
 }
 
+.productsNav {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--act-dropdown-cart-border-hover);
+  border-radius: 8px;
+}
+
+.page-item {
+  background: var(--filter-btn-bg);
+  border-right: 1px solid var(--act-dropdown-cart-border-hover);
+}
+.page-item:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.page-item:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-right: none;
+}
+
+.page-link {
+  font-size: 1.7rem;
+  display: block;
+  padding: 14px 20px 10px;
+}
+.page-link:hover {
+  color: #ff0000;
+  opacity: 0.6;
+}
+.page-link.disabled {
+  opacity: 0.4;
+  opacity: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .top-action__btn-cart, .top-action__group, .top-action {
   display: flex;
   align-items: center;

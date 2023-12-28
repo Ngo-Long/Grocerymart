@@ -29,8 +29,11 @@ axiosClient.interceptors.request.use(
 // Add a response interceptor
 axiosClient.interceptors.response.use(
   function (response) {
-    // transform data for all responses
-    return response.data;
+    // transform data for all responses and total products
+    return {
+      data: response.data,
+      totalCount: response.headers['x-total-count'],
+    };
   },
   function (error) {
     console.log('axiosClient - response error', error.response);
