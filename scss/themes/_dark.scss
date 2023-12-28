@@ -40,6 +40,7 @@ html.dark {
   --cate-item-bg-thumb: #292e39;
 
   // filter btn
+  --filter-border-color: #3d4048; 
   --filter-btn-bg: #171c28;
   --filter-btn-icon-color: #fff;
   --filter-btn-title-color: #fff;
@@ -52,10 +53,10 @@ html.dark {
   --filter-form-size-bg: #171c28;
 
   // filter form
-  --filter-form-bg: #292e39;
+  --filter-form-bg: #171c28;
   --filter-form-shadow: rgba(0, 0, 0, 0.4);
   --form-heading-color: #fff;
-  --form-tag-bg: #171c28;
+  --form-tag-bg: #292e39;
   --filter-form-placeholder-color: #9e9da8;
   --filter-form-arrow: var(--filter-form-bg);
 
