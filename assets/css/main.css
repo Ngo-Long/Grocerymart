@@ -3308,7 +3308,7 @@ html {
   right: var(--act-dropdown-icon-right);
   width: 46px;
   height: 100%;
-  color: var(--act-dropdown-icon);
+  filter: var(--act-dropdown-icon);
 }
 .act-dropdown__inner {
   width: min(445px, 100vw);
