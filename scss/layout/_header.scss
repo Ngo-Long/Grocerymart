@@ -335,8 +335,13 @@
   z-index: 10;
 
   &__icon {
+    position: absolute;
     top: var(--act-dropdown-icon-top);
     right: var(--act-dropdown-icon-right);
+    width: 46px;
+    height: 100%;
+
+    color: var(--act-dropdown-icon);
   }
 
   &__inner {

@@ -61,7 +61,8 @@ html {
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --form-heading-color: #1a162e;
   --form-tag-bg: #ebebeb;
-  --filter-icon: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(126%) hue-rotate(212deg) brightness(89%) contrast(95%);
+  --filter-icon: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(126%)
+    hue-rotate(212deg) brightness(89%) contrast(95%);
 
   // footer
   --footer-bg-color: #eee;
@@ -116,6 +117,8 @@ html {
   --review-card-bg-color: #fafafd;
 
   // act dropdown cart
+  --act-dropdown-icon: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%)
+    hue-rotate(161deg) brightness(110%) contrast(100%);
   --act-dropdown-cart-bg: #fff;
   --act-dropdown-border: #d2d1d6;
   --act-dropdown-cart-shadow: rgba(200, 200, 200, 0.4);

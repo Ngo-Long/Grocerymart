@@ -1563,6 +1563,8 @@ html.dark {
   --product-tab-color-active: #fff;
   --product-tab-heading: #fff;
   --review-card-bg-color: #171c28;
+  --act-dropdown-icon: brightness(0) saturate(100%) invert(14%) sepia(11%) saturate(1111%)
+    hue-rotate(183deg) brightness(102%) contrast(90%);
   --act-dropdown-cart-bg: #292e39;
   --act-dropdown-border: #171c28;
   --act-dropdown-cart-shadow: rgba(23, 28, 40, 0.4);
@@ -1629,7 +1631,8 @@ html {
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --form-heading-color: #1a162e;
   --form-tag-bg: #ebebeb;
-  --filter-icon: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(126%) hue-rotate(212deg) brightness(89%) contrast(95%);
+  --filter-icon: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(126%)
+    hue-rotate(212deg) brightness(89%) contrast(95%);
   --footer-bg-color: #eee;
   --footer-color-link: var(--filter-btn-title-color);
   --footer-color-heading: #1a162e;
@@ -1666,6 +1669,8 @@ html {
   --product-tab-color-active: #1a162e;
   --product-tab-heading: #1a162e;
   --review-card-bg-color: #fafafd;
+  --act-dropdown-icon: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%)
+    hue-rotate(161deg) brightness(110%) contrast(100%);
   --act-dropdown-cart-bg: #fff;
   --act-dropdown-border: #d2d1d6;
   --act-dropdown-cart-shadow: rgba(200, 200, 200, 0.4);
@@ -3298,8 +3303,12 @@ html {
   z-index: 10;
 }
 .act-dropdown__icon {
+  position: absolute;
   top: var(--act-dropdown-icon-top);
   right: var(--act-dropdown-icon-right);
+  width: 46px;
+  height: 100%;
+  color: var(--act-dropdown-icon);
 }
 .act-dropdown__inner {
   width: min(445px, 100vw);
