@@ -6,7 +6,7 @@
       "price": "47.99",
       "brand": "Lavazza",
       "score": "4.7",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-1.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-1.png",
       "thumbnailImages": [
         "https://example.com/thumb1.jpg",
         "https://example.com/thumb2.jpg",
@@ -23,7 +23,7 @@
       "price": "53.0",
       "brand": "Lavazza",
       "score": "3.8",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-2.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-2.png",
       "thumbnailImages": [
         "https://example.com/thumb4.jpg",
         "https://example.com/thumb5.jpg",
@@ -40,7 +40,7 @@
       "price": "99.99",
       "brand": "welikecoffee",
       "score": "5.0",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-3.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-3.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -57,7 +57,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -74,7 +74,7 @@
       "price": "47.99",
       "brand": "Lavazza",
       "score": "4.3",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-1.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-1.png",
       "thumbnailImages": [
         "https://example.com/thumb1.jpg",
         "https://example.com/thumb2.jpg",
@@ -91,7 +91,7 @@
       "price": "53.0",
       "brand": "Lavazza",
       "score": "3.8",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-2.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-2.png",
       "thumbnailImages": [
         "https://example.com/thumb4.jpg",
         "https://example.com/thumb5.jpg",
@@ -108,7 +108,7 @@
       "price": "99.99",
       "brand": "welikecoffee",
       "score": "5.0",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-3.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-3.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -125,7 +125,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -142,7 +142,7 @@
       "price": "47.99",
       "brand": "Lavazza",
       "score": "4.7",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-1.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-1.png",
       "thumbnailImages": [
         "https://example.com/thumb1.jpg",
         "https://example.com/thumb2.jpg",
@@ -159,7 +159,7 @@
       "price": "53.0",
       "brand": "Lavazza",
       "score": "3.8",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-2.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-2.png",
       "thumbnailImages": [
         "https://example.com/thumb4.jpg",
         "https://example.com/thumb5.jpg",
@@ -176,7 +176,7 @@
       "price": "99.99",
       "brand": "welikecoffee",
       "score": "5.0",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-3.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-3.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -193,7 +193,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -210,7 +210,7 @@
       "price": "47.99",
       "brand": "Lavazza",
       "score": "4.3",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-1.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-1.png",
       "thumbnailImages": [
         "https://example.com/thumb1.jpg",
         "https://example.com/thumb2.jpg",
@@ -227,7 +227,7 @@
       "price": "53.0",
       "brand": "Lavazza",
       "score": "3.8",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-2.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-2.png",
       "thumbnailImages": [
         "https://example.com/thumb4.jpg",
         "https://example.com/thumb5.jpg",
@@ -244,7 +244,7 @@
       "price": "99.99",
       "brand": "welikecoffee",
       "score": "5.0",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-3.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-3.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -261,7 +261,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -278,7 +278,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",
@@ -295,7 +295,7 @@
       "price": "38.65",
       "brand": "Lavazza",
       "score": "4.4",
-      "imageUrl": "http://localhost:5173/assets/imgs/product/product-4.png",
+      "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/product-4.png",
       "thumbnailImages": [
         "https://example.com/thumb7.jpg",
         "https://example.com/thumb8.jpg",

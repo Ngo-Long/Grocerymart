@@ -7,7 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        indexLogined: resolve(__dirname, 'index-logined.html'),
+        indexLogged: resolve(__dirname, 'index-logged.html'),
         addNewCard: resolve(__dirname, 'add-new-card.html'),
         checkout: resolve(__dirname, 'checkout.html'),
         editPersonalInfo: resolve(__dirname, 'edit-personal-info.html'),
@@ -21,7 +21,7 @@ export default defineConfig({
         signUp: resolve(__dirname, 'sign-up.html'),
 
         header: resolve(__dirname, './template/header.html'),
-        headerLogined: resolve(__dirname, './template/header-logined.html'),
+        headerLogged: resolve(__dirname, './template/header-logged.html'),
         footer: resolve(__dirname, './template/footer.html'),
       },
     },

@@ -1,232 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment | Grocerymart</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment | Grocerymart</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
 
-  <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
-  <link rel="stylesheet" href="./assets/css/main.css">
+    <style>
+      .header {
+        height: 86px;
+      }
+    </style>
+  </head>
 
-  <script type="module" src="./js/scripts.js"></script>
-  <style>
-    .header {
-      height: 86px;
-    }
-  </style>
-</head>
+  <body>
+    <header id="header" class="header"></header>
+    <script type="module">
+      import { load } from './js/scripts.js';
+      load('header', './template/header.html');
+    </script>
 
-<body>
-  <header id="header" class="header"></header>
-  <script type="module">
-    import { load } from './js/scripts.js';
-    load("header", "./template/header.html");
-  </script>
-
-  <!-- main -->
-  <main id="main" class="checkout-page">
-    <div class="container">
-      <!-- Search -->
-      <div class="checkout__home d-none d-md-block">
-        <div class="search-bar">
-          <input type="text" name="" id="" value="" placeholder="Search for item" class="search-bar__input">
-          <button class="search-bar__btn">
-            <img src="/assets/icons/search.svg" alt="" class="search-bar__icon">
-          </button>
+    <!-- main -->
+    <main id="main" class="checkout-page">
+      <div class="container">
+        <!-- Search -->
+        <div class="checkout__home d-none d-md-block">
+          <div class="search-bar">
+            <input
+              type="text"
+              name=""
+              id=""
+              value=""
+              placeholder="Search for item"
+              class="search-bar__input"
+            />
+            <button class="search-bar__btn">
+              <img src="/assets/icons/search.svg" alt="" class="search-bar__icon" />
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!-- Breadcrumbs -->
-      <div class="checkout__home">
-        <ul class="breadcrums">
-          <li class="breadcrums__item">
-            <a href="./index-logined.html" class="breadcrums__link">
-              Home
-              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
-            </a>
-          </li>
+        <!-- Breadcrumbs -->
+        <div class="checkout__home">
+          <ul class="breadcrums">
+            <li class="breadcrums__item">
+              <a href="./index-logged.html" class="breadcrums__link">
+                Home
+                <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
+              </a>
+            </li>
 
-          <li class="breadcrums__item">
-            <a href="./checkout.html" class="breadcrums__link">
-              Checkout
-              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
-            </a>
-          </li>
+            <li class="breadcrums__item">
+              <a href="./checkout.html" class="breadcrums__link">
+                Checkout
+                <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
+              </a>
+            </li>
 
-          <li class="breadcrums__item">
-            <a href="./shipping.html" class="breadcrums__link">
-              Shipping
-              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
-            </a>
-          </li>
+            <li class="breadcrums__item">
+              <a href="./shipping.html" class="breadcrums__link">
+                Shipping
+                <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
+              </a>
+            </li>
 
-          <li class="breadcrums__item">
-            <a href="./shipping.html" class="breadcrums__link breadcrums__link--current">
-              Payment method
-              <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon">
-            </a>
-          </li>
-        </ul>
-      </div>
+            <li class="breadcrums__item">
+              <a href="./shipping.html" class="breadcrums__link breadcrums__link--current">
+                Payment method
+                <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Checkout container -->
-      <div class="checkout-container">
-        <div class="row row-cols-md-1">
-          <div class="col-8">
-            <div class="cart-pay">
-              <div class="cart-pay__top">
-                <div class="flexCenterBetween">
-                  <h1 class="cart-pay__heading">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
+        <!-- Checkout container -->
+        <div class="checkout-container">
+          <div class="row row-cols-md-1">
+            <div class="col-8">
+              <div class="cart-pay">
+                <div class="cart-pay__top">
+                  <div class="flexCenterBetween">
+                    <h1 class="cart-pay__heading">
+                      1. Shipping, arrives between Mon, May 16—Tue, May 24
+                    </h1>
 
-                  <button class="user-address__btn-edit pl-15">
-                    <img src="/assets/icons/edit.svg" alt="" class="user-address__icon">
-                    Edit
-                  </button>
-                </div>
-
-                <div class="user-address">
-                  <div class="user-address__pay ">
-                    <div class="user-address__choose">
-                      <label class="user-address__checkbox">
-                        <input type="checkbox" name="" checked class="user-address__input">
-                      </label>
-                    </div>
-
-                    <div class="user-address__info">
-                      <h3 class="user-address__title">Imran Khan</h3>
-
-                      <p class="user-address__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
-                    </div>
+                    <button class="user-address__btn-edit pl-15">
+                      <img src="/assets/icons/edit.svg" alt="" class="user-address__icon" />
+                      Edit
+                    </button>
                   </div>
 
-                  <div class="user-address__pay">
-                    <div class="user-address__choose">
-                      <p class="user-address__desc">View details</p>
-                    </div>
-
-                    <div class="user-address__info">
-                      <h3 class="user-address__title">Items details</h3>
-
-                      <p class="user-address__desc">2 items</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="cart-pay">
-              <div class="cart-pay__top">
-                <h2 class="cart-pay__heading">2. Shipping method</h2>
-
-                <div class="septem"></div>
-
-                <div class="cart-info__title">Availeble Shipping method</div>
-
-                <div class="user-address">
-                  <div class="user-address__pay user-address__pay--column">
-                    <div class="user-address__choose">
-                      <label class="user-address__checkbox user-address__checkbox--pay">
-                        <span class="user-address__title">Free</span>
-                        <input type="checkbox" name="" checked class="user-address__input">
-                      </label>
-                    </div>
-
-                    <div class="flex" style="gap: 20px;">
-                      <img src="/assets/icons/Fedex-logo.png" alt="" class="user-address__img">
+                  <div class="user-address">
+                    <div class="user-address__pay">
+                      <div class="user-address__choose">
+                        <label class="user-address__checkbox">
+                          <input type="checkbox" name="" checked class="user-address__input" />
+                        </label>
+                      </div>
 
                       <div class="user-address__info">
-                        <h3 class="user-address__title">Fedex Delivery</h3>
+                        <h3 class="user-address__title">Imran Khan</h3>
 
-                        <p class="user-address__desc">Delivery: 2-3 days work</p>
+                        <p class="user-address__desc">
+                          Museum of Rajas, Sylhet Sadar, Sylhet 3100.
+                        </p>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="user-address__pay user-address__pay--column">
-                    <div class="user-address__choose user-address__choose--left">
-                      <label class="user-address__checkbox user-address__checkbox--pay">
-                        <span class="user-address__span">$12.00</span>
-                        <input type="checkbox" name="" class="user-address__input">
-                      </label>
-                    </div>
-
-                    <div class="flex" style="gap: 20px;">
-                      <img src="/assets/icons/DHLDelivery.png" alt="" class="user-address__img">
+                    <div class="user-address__pay">
+                      <div class="user-address__choose">
+                        <p class="user-address__desc">View details</p>
+                      </div>
 
                       <div class="user-address__info">
-                        <h3 class="user-address__title">DHL Delivery</h3>
+                        <h3 class="user-address__title">Items details</h3>
 
-                        <p class="user-address__desc">Delivery: 2-3 days work</p>
+                        <p class="user-address__desc">2 items</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="col-4">
-            <div class="cart-info cart-info--right">
-              <div class="cart-info__top">
-                <div class="cart-pay__heading">Payment Details</div>
-                <div class="user-address__desc">Complete your purchase item by providing your payment details order.
+              <div class="cart-pay">
+                <div class="cart-pay__top">
+                  <h2 class="cart-pay__heading">2. Shipping method</h2>
+
+                  <div class="septem"></div>
+
+                  <div class="cart-info__title">Availeble Shipping method</div>
+
+                  <div class="user-address">
+                    <div class="user-address__pay user-address__pay--column">
+                      <div class="user-address__choose">
+                        <label class="user-address__checkbox user-address__checkbox--pay">
+                          <span class="user-address__title">Free</span>
+                          <input type="checkbox" name="" checked class="user-address__input" />
+                        </label>
+                      </div>
+
+                      <div class="flex" style="gap: 20px">
+                        <img src="/assets/icons/Fedex-logo.png" alt="" class="user-address__img" />
+
+                        <div class="user-address__info">
+                          <h3 class="user-address__title">Fedex Delivery</h3>
+
+                          <p class="user-address__desc">Delivery: 2-3 days work</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="user-address__pay user-address__pay--column">
+                      <div class="user-address__choose user-address__choose--left">
+                        <label class="user-address__checkbox user-address__checkbox--pay">
+                          <span class="user-address__span">$12.00</span>
+                          <input type="checkbox" name="" class="user-address__input" />
+                        </label>
+                      </div>
+
+                      <div class="flex" style="gap: 20px">
+                        <img src="/assets/icons/DHLDelivery.png" alt="" class="user-address__img" />
+
+                        <div class="user-address__info">
+                          <h3 class="user-address__title">DHL Delivery</h3>
+
+                          <p class="user-address__desc">Delivery: 2-3 days work</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <form action="" class="form">
-                <div class="form__group">
-                  <h3 class="form__title">Email Address</h3>
-
-                  <div class="form__text-input mt-10">
-                    <input type="text" name="" id="" placeholder="example@gmail.com" class="form__input">
+            <div class="col-4">
+              <div class="cart-info cart-info--right">
+                <div class="cart-info__top">
+                  <div class="cart-pay__heading">Payment Details</div>
+                  <div class="user-address__desc">
+                    Complete your purchase item by providing your payment details order.
                   </div>
                 </div>
 
-                <div class="form__group">
-                  <h3 class="form__title">Card Holder</h3>
+                <form action="" class="form">
+                  <div class="form__group">
+                    <h3 class="form__title">Email Address</h3>
 
-                  <div class="form__text-input mt-10">
-                    <input type="text" name="" id="" placeholder="example@gmail.com" class="form__input">
+                    <div class="form__text-input mt-10">
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="example@gmail.com"
+                        class="form__input"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div class="form__group">
-                  <h3 class="form__title">Card Details</h3>
+                  <div class="form__group">
+                    <h3 class="form__title">Card Holder</h3>
 
-                  <div class="form__text-input mt-10">
-                    <input type="text" name="" id="" placeholder="example@gmail.com" class="form__input">
+                    <div class="form__text-input mt-10">
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="example@gmail.com"
+                        class="form__input"
+                      />
+                    </div>
                   </div>
-                </div>
-              </form>
 
-              <button class="btn btn--primary btn--rounded cart-info__btn">Continue</button>
+                  <div class="form__group">
+                    <h3 class="form__title">Card Details</h3>
+
+                    <div class="form__text-input mt-10">
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="example@gmail.com"
+                        class="form__input"
+                      />
+                    </div>
+                  </div>
+                </form>
+
+                <button class="btn btn--primary btn--rounded cart-info__btn">Continue</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer id="footer"></footer>
-  <script type="module">
-    import { load } from './js/scripts.js';
-    load("footer", "./template/footer.html");
-  </script>
+    <footer id="footer"></footer>
+    <script type="module">
+      import { load } from './js/scripts.js';
+      load('footer', './template/footer.html');
+    </script>
 
-  <script type="module" src="./js/scripts.js"></script>
+    <!-- script -->
+    <script type="module" src="/js/home.js"></script>
+    <script type="module" src="/js/scripts.js"></script>
 
-  <!-- Dialog / modal -->
-  <!-- <div class="modal" tabindex="-1">
+    <!-- Dialog / modal -->
+    <!-- <div class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -244,8 +274,8 @@
     </div>
   </div> -->
 
-  <!-- Modal: address new shipping address -->
-  <!-- <div id="add-new-address" class="modal hide" style="--content-width: 650px">
+    <!-- Modal: address new shipping address -->
+    <!-- <div id="add-new-address" class="modal hide" style="--content-width: 650px">
     <div class="modal__content">
       <form action="" class="form">
         <h2 class="modal__heading">Add new shipping address</h2>
@@ -357,6 +387,5 @@
     </div>
     <div class="modal__overlay"></div>
   </div> -->
-</body>
-
+  </body>
 </html>
