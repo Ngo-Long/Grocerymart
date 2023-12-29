@@ -1,11 +1,15 @@
 import productApi from './api/productApi';
-import { startCarousel, setElementSourceBySelector, setElementTextContent } from './utils/index.js';
+import {
+  startCarousel,
+  setElementSourceBySelector,
+  setElementTextContent,
+  getPaginationElement,
+} from './utils/index';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime); // to use fromNow function
 
-// NOTE: TODO: FIXME:
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -48,63 +52,90 @@ function createProductItem(dataItem) {
   return productItem;
 }
 
-function renderProductList(dataList) {
-  if (!Array.isArray(dataList) || !dataList.length) return;
+function renderProductList(elementId, dataList) {
+  if (!elementId || !Array.isArray(dataList) || !dataList.length) return;
 
-  // product List
-  const productList = $('#productList');
+  // product list element
+  const productList = $(elementId);
   if (!productList) return;
 
+  // Clear current product list
+  productList.textContent = '';
+
+  // get each data in dataList
   dataList.forEach((dataItem) => {
     const productItem = createProductItem(dataItem);
 
+    // append productItem in productList
     productList.appendChild(productItem);
   });
 }
 
-function initPagination({ elementId }) {
-  if (!elementId) return;
-
-  const paginationElement = $(elementId);
+function initPagination() {
+  const paginationElement = getPaginationElement();
   if (!paginationElement) return;
 
-  const nextBtn = paginationElement.firstElementChild?.firstElementChild;
-  if (nextBtn) nextBtn.addEventListener('click', handleNextClick);
-
-  const prevBtn = paginationElement.lastElementChild?.firstElementChild;
+  const prevBtn = paginationElement.firstElementChild?.firstElementChild;
   if (prevBtn) prevBtn.addEventListener('click', handlePrevClick);
+
+  const nextBtn = paginationElement.lastElementChild?.firstElementChild;
+  if (nextBtn) nextBtn.addEventListener('click', handleNextClick);
 }
 
 function handleNextClick(e) {
   e.preventDefault();
-  console.log('next link clicked');
+
+  const paginationElement = getPaginationElement();
+  if (!paginationElement) return;
+
+  const page = Number.parseInt(paginationElement.dataset.page) || 1;
+  const totalPages = Number.parseInt(paginationElement.dataset.totalPages);
+  if (page >= totalPages) return;
+
+  handleFilterChange('_page', page + 1);
 }
 
 function handlePrevClick(e) {
   e.preventDefault();
-  console.log('prev link clicked');
+
+  const paginationElement = getPaginationElement();
+  if (!paginationElement) return;
+
+  const page = Number.parseInt(paginationElement.dataset.page) || 1;
+  if (page <= 1) return;
+
+  handleFilterChange('_page', page - 1);
 }
 
-function handleFilterChange(filterName, filterValue) {
-  // Update query parameters
-  const url = new URL(window.location);
-  url.searchParams.set(filterName, filterValue);
+async function handleFilterChange(filterName, filterValue) {
+  try {
+    // Update query parameters
+    const url = new URL(window.location);
+    const queryParams = url.searchParams;
+    queryParams.set(filterName, filterValue);
 
-  history.pushState({}, '', url);
+    history.pushState({}, '', url);
 
-  // Fetch API
-  // re-render product list
+    // Fetch API
+    // re-render product list
+    const { data, totalCount } = await productApi.getAll(queryParams);
+
+    renderProductList('#productList', data);
+    renderPagination('#productsPagination', totalCount, queryParams);
+  } catch (error) {
+    console.log('Failded to fetch product list: ', error);
+  }
 }
 
-function renderPagination(totalCount, queryParams) {
-  if (!totalCount || !queryParams) return;
+function renderPagination(elementId, totalCount, queryParams) {
+  if (!elementId || !totalCount || !queryParams) return;
 
   // calc total pages
   const page = queryParams.get('_page');
   const limit = queryParams.get('_limit');
   const totalPages = Math.ceil(totalCount / limit);
 
-  const paginationElement = document.getElementById('productsPagination');
+  const paginationElement = $(elementId);
   if (!paginationElement) return;
 
   // save page and totalPages to paginationElement
@@ -143,9 +174,9 @@ function renderPagination(totalCount, queryParams) {
       selectorNext: 'button[data-bs-slide="next"]',
     });
 
-    renderProductList(data);
-    initPagination({ elementId: '#productsPagination' });
-    renderPagination(totalCount, queryParams);
+    initPagination();
+    renderProductList('#productList', data);
+    renderPagination('#productsPagination', totalCount, queryParams);
   } catch (error) {
     console.log('Get all failed', error);
   }

@@ -36,7 +36,6 @@ export function load(selector, path) {
 document.addEventListener('DOMContentLoaded', () => {
   const switchBtn = document.querySelector('#switch-theme-btn');
   const themeSwitchCheckbox = document.querySelector('.theme-switch__checkbox');
-
   if (!switchBtn || !themeSwitchCheckbox) return;
 
   function toggleDarkMode(isDark) {

@@ -34,7 +34,7 @@
             <a href="./product-detail.html">
               <img
                 data-id="imageUrlProduct"
-                src="/assets/imgs/product/product-1.png"
+                src="http://localhost:5173/assets/imgs/product/product-1.png"
                 alt="Coffee Beans - Espresso Arabica and Robusta Beans"
                 class="product-item__thumb"
               />
@@ -53,8 +53,16 @@
 
             <!-- Product favorite add class: like-btn--liked  -->
             <button data-id="isFavoriteProduct" class="like-btn product-item__like-btn">
-              <img src="/assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-              <img src="/assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
+              <img
+                src="http://localhost:5173/assets/icons/heart.svg"
+                alt=""
+                class="like-btn__icon icon"
+              />
+              <img
+                src="http://localhost:5173/assets/icons/heart-red.svg"
+                alt=""
+                class="like-btn__icon--liked"
+              />
             </button>
           </div>
 
@@ -72,7 +80,11 @@
               <span data-id="priceProduct">47.00</span>
             </span>
 
-            <img src="/assets/icons/start.svg" alt="" class="product-item__start" />
+            <img
+              src="http://localhost:5173/assets/icons/start.svg"
+              alt=""
+              class="product-item__start"
+            />
 
             <span data-id="scoreProduct" class="product-item__score">4.3</span>
           </div>
@@ -252,8 +264,18 @@
                     <label class="filter__heading">Grounps</label>
 
                     <div class="filter__container">
-                      <div class="filter__select">
+                      <!-- <div class="filter__select">
                         Lavazza
+                        <img src="/assets/icons/arrow-down.svg" alt="" class="filter__icon icon" />
+                      </div> -->
+
+                      <div class="filter__custom-select">
+                        <select class="filter__select">
+                          <option selected>Lavazza</option>
+                          <option value="1">Nescafe</option>
+                          <option value="2">Starbucks</option>
+                        </select>
+
                         <img src="/assets/icons/arrow-down.svg" alt="" class="filter__icon icon" />
                       </div>
 
