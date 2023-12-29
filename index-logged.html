@@ -22,6 +22,9 @@
         height: 86px;
       }
     </style>
+
+    <!-- script -->
+    <script type="module" src="/js/scripts.js" defer></script>
   </head>
 
   <body>
@@ -263,20 +266,11 @@
                     <label class="filter__heading">Grounps</label>
 
                     <div class="filter__container">
-                      <!-- <div class="filter__select">
-                        Lavazza
-                        <img src="/assets/icons/arrow-down.svg" alt="" class="filter__icon icon" />
-                      </div> -->
-
-                      <div class="filter__custom-select">
-                        <select class="filter__select">
-                          <option selected>Lavazza</option>
-                          <option value="1">Nescafe</option>
-                          <option value="2">Starbucks</option>
-                        </select>
-
-                        <img src="/assets/icons/arrow-down.svg" alt="" class="filter__icon icon" />
-                      </div>
+                      <select class="filter__select">
+                        <option value="1">Nescafe</option>
+                        <option value="2">Starbucks</option>
+                        <option value="0" selected>Lavazza</option>
+                      </select>
 
                       <div class="filter__tags">
                         <div class="filter__tag">Lavazza</div>
@@ -293,10 +287,11 @@
                     <label class="filter__heading">Price</label>
 
                     <div class="filter__container">
-                      <div class="filter__select">
-                        No choice
-                        <img src="/assets/icons/arrow-down.svg" alt="" class="filter__icon icon" />
-                      </div>
+                      <select class="filter__select">
+                        <option value="0" selected>No choice</option>
+                        <option value="1">From low to high</option>
+                        <option value="2">From high to low</option>
+                      </select>
 
                       <div class="filter__tags">
                         <div class="filter__tag">From low to high</div>
@@ -312,18 +307,22 @@
                     <label class="filter__heading">Search</label>
 
                     <div class="filter__container">
-                      <div class="form__search">
+                      <form action="" class="form__search" style="width: 90%">
                         <input
                           type="text"
                           placeholder="Search brand name"
                           class="form__search-input"
+                          style="height: 36px"
                         />
-                        <img
-                          src="/assets/icons/search.svg"
-                          alt=""
-                          class="form__search-icon filter__icon filter__icon--big icon"
-                        />
-                      </div>
+
+                        <button
+                          type="submit"
+                          class="search-form__btn form__search-icon"
+                          style="top: 55%"
+                        >
+                          <img src="/assets/icons/search.svg" alt="" class="filter__icon icon" />
+                        </button>
+                      </form>
 
                       <div class="filter__tags">
                         <div class="filter__tag">Lavazza</div>
@@ -366,12 +365,11 @@
 
     <footer id="footer"></footer>
     <script type="module">
-      import { load } from './js/scripts.js';
+      import { load } from '/js/scripts.js';
       load('footer', './template/footer.html');
     </script>
 
     <!-- script -->
     <script type="module" src="/js/home.js"></script>
-    <script type="module" src="/js/scripts.js"></script>
   </body>
 </html>

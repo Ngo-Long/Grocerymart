@@ -22,13 +22,16 @@
         height: 86px;
       }
     </style>
+
+    <!-- script -->
+    <script type="module" src="/js/scripts.js" defer></script>
   </head>
 
   <body>
     <header id="header" class="header"></header>
     <script type="module">
-      import { load } from './js/scripts.js';
-      load('header', './template/header.html');
+      import { load } from '/js/scripts.js';
+      load('header', './template/header-logged.html');
     </script>
 
     <!-- main -->
@@ -342,13 +345,12 @@
 
     <footer id="footer"></footer>
     <script type="module">
-      import { load } from './js/scripts.js';
+      import { load } from '/js/scripts.js';
       load('footer', './template/footer.html');
     </script>
 
     <!-- script -->
     <script type="module" src="/js/home.js"></script>
-    <script type="module" src="/js/scripts.js"></script>
 
     <!-- Dialog / modal -->
     <!-- <div class="modal" tabindex="-1">

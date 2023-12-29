@@ -33,40 +33,40 @@ export function load(selector, path) {
 }
 
 // Switch dark mode
-document.addEventListener('DOMContentLoaded', () => {
+function switchTheme() {
   const switchBtn = document.querySelector('#switch-theme-btn');
   const themeSwitchCheckbox = document.querySelector('.theme-switch__checkbox');
   if (!switchBtn || !themeSwitchCheckbox) return;
 
-  function toggleDarkMode(isDark) {
+  const updateDarkMode = (isDark) => {
     document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('dark', isDark);
-
-    switchBtn.querySelector('span').textContent = isDark ? 'Light mode' : 'Dark mode';
-  }
-
-  // Button event
-  switchBtn.addEventListener('click', () => {
-    const isDark = localStorage.getItem('dark') === 'true';
-    toggleDarkMode(!isDark);
-
-    themeSwitchCheckbox.checked = !isDark;
-    localStorage.setItem('dark', !isDark); // Save new state to localStorage
-  });
-
-  // Change event on dark mode toggle checkbox
-  themeSwitchCheckbox.addEventListener('change', () => {
-    const isDark = themeSwitchCheckbox.checked;
-    toggleDarkMode(isDark);
-
     localStorage.setItem('dark', isDark); // Save new state to localStorage
-  });
+    switchBtn.querySelector('span').textContent = isDark ? 'Light mode' : 'Dark mode';
+  };
+
+  // Attach event button switch
+  switchBtn.onclick = function () {
+    const isDark = localStorage.dark === 'true';
+    updateDarkMode(!isDark);
+    themeSwitchCheckbox.click();
+  };
+
+  // Attach event button label theme switch
+  themeSwitchCheckbox.onclick = () => {
+    const isDark = themeSwitchCheckbox.checked;
+    updateDarkMode(isDark);
+  };
 
   // Test and apply dark mode on page load
-  const isDark = localStorage.getItem('dark') === 'true';
-  toggleDarkMode(isDark);
+  const isDark = localStorage.dark === 'true';
+  updateDarkMode(isDark);
   themeSwitchCheckbox.checked = isDark;
-});
+}
+
+const isDark = localStorage.dark === 'true';
+document.querySelector('html').classList.toggle('dark', isDark);
+
+window.addEventListener('template-loaded', switchTheme);
 
 /**
  * Hàm kiểm tra một phần tử
@@ -287,4 +287,6 @@ window.addEventListener('template-loaded', () => {
 
   // Đóng mở dropdown
   toggleDropdown();
+
+  switchTheme();
 })();

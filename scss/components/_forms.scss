@@ -44,10 +44,12 @@
     }
 
     &-icon {
+      height: 100%;
       position: absolute;
       top: 50%;
       translate: 0 -50%;
-      right: 16px;
+      right: 0;
+      padding: 0 16px 0 5px;
     }
   }
 
