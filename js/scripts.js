@@ -33,22 +33,41 @@ export function load(selector, path) {
 }
 
 // Switch dark mode
-window.addEventListener('template-loaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const switchBtn = document.querySelector('#switch-theme-btn');
-  if (switchBtn) {
-    switchBtn.onclick = function () {
-      const isDark = localStorage.dark === 'true';
-      document.querySelector('html').classList.toggle('dark', !isDark);
-      localStorage.setItem('dark', !isDark);
-      switchBtn.querySelector('span').textContent = isDark ? 'Dark mode' : 'Light mode';
-    };
-    const isDark = localStorage.dark === 'true';
+  const themeSwitchCheckbox = document.querySelector('.theme-switch__checkbox');
+
+  if (!switchBtn || !themeSwitchCheckbox) return;
+
+  function toggleDarkMode(isDark) {
+    document.documentElement.classList.toggle('dark', isDark);
+    localStorage.setItem('dark', isDark);
+
     switchBtn.querySelector('span').textContent = isDark ? 'Light mode' : 'Dark mode';
   }
-});
 
-const isDark = localStorage.dark === 'true';
-document.querySelector('html').classList.toggle('dark', isDark);
+  // Button event
+  switchBtn.addEventListener('click', () => {
+    const isDark = localStorage.getItem('dark') === 'true';
+    toggleDarkMode(!isDark);
+
+    themeSwitchCheckbox.checked = !isDark;
+    localStorage.setItem('dark', !isDark); // Save new state to localStorage
+  });
+
+  // Change event on dark mode toggle checkbox
+  themeSwitchCheckbox.addEventListener('change', () => {
+    const isDark = themeSwitchCheckbox.checked;
+    toggleDarkMode(isDark);
+
+    localStorage.setItem('dark', isDark); // Save new state to localStorage
+  });
+
+  // Test and apply dark mode on page load
+  const isDark = localStorage.getItem('dark') === 'true';
+  toggleDarkMode(isDark);
+  themeSwitchCheckbox.checked = isDark;
+});
 
 /**
  * Hàm kiểm tra một phần tử
