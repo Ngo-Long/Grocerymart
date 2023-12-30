@@ -71,7 +71,7 @@
 
     padding: 0.4em 1.4em 0.3em 0.8em;
     outline: none;
-    background-color: #fff;
+    background-color: var(--top-action-bg-color);
     background-image: url('/assets/icons/arrow-down.svg');
     background-size: 0.65em, 100%;
     background-repeat: no-repeat, repeat;
@@ -81,6 +81,7 @@
     -webkit-appearance: none;
 
     &:hover {
+      cursor: pointer;
       border-color: rgb(136, 136, 136);
     }
 
@@ -93,20 +94,6 @@
       outline: 5px auto -webkit-focus-ring-color;
       outline-offset: -2px;
     }
-
-    // & option {
-    //   padding: 20px;
-    //   color: #333;
-    //   background: #fff;
-    // }
-
-    // & option:hover {
-    //   background-color: #f2f2f2;
-    // }
-
-    // & option:checked {
-    //   background-color: #ccc;
-    // }
   }
 
   &__icon {
