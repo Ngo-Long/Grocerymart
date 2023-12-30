@@ -256,6 +256,7 @@
     gap: 10px;
     cursor: pointer;
     padding: 12px;
+    z-index: 20;
   }
 
   &__btn {
@@ -330,10 +331,14 @@
 
 .act-dropdown {
   position: absolute;
-  top: 100%;
+  // top: 100%;
+  top: var(--act-dropdown-top);
   right: var(--act-dropdown-right);
   padding-top: 17px;
   z-index: 10;
+
+  &--cart {
+  }
 
   &__icon {
     position: absolute;
