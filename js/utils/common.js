@@ -1,3 +1,6 @@
+export const $ = document.querySelector.bind(document);
+export const $$ = document.querySelectorAll.bind(document);
+
 export function setElementSourceBySelector(container, selector, source) {
   if (!container) return;
 

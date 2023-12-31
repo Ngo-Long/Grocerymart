@@ -2131,15 +2131,6 @@ html {
 .product-item:hover {
   box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.1);
 }
-.product-item::after {
-  content: "";
-  position: absolute;
-  top: 60%;
-  left: 0;
-  width: 100%;
-  border: 2px solid transparent;
-  border-bottom: 1.5px solid var(--top-action-separate-color);
-}
 .product-item:hover .product-item__thumb {
   border: none;
 }
