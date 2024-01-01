@@ -5,6 +5,7 @@ import {
   renderProductList,
   initPagination,
   renderPagination,
+  handleSelectChange,
 } from './utils/index';
 
 async function handleFilterChange(filterName, filterValue) {
@@ -12,19 +13,25 @@ async function handleFilterChange(filterName, filterValue) {
     // Update query parameters
     const url = new URL(window.location);
     const queryParams = url.searchParams;
-
-    // Update
     queryParams.set(filterName, filterValue);
 
-    // Reset page while searching
-    if (filterName === 'title-like') queryParams.set('_page', 1);
+    let data, totalCount;
 
-    // Push
+    // Fetch API, re-render product list
+    if (filterName === 'brand' && filterValue) {
+      queryParams.set('_page', 1); // Reset page
+      ({ data, totalCount } = await productApi.getByBrand(filterValue));
+    }
+
+    if (filterName === 'title_like' && filterValue) {
+      queryParams.set('_page', 1); // Reset page
+      ({ data, totalCount } = await productApi.getByTitle(filterValue));
+    }
+
+    ({ data, totalCount } = await productApi.getAll(queryParams));
+
+    // Push updated URL to history
     history.pushState({}, '', url);
-
-    // Fetch API
-    // re-render product list
-    const { data, totalCount } = await productApi.getAll(queryParams);
 
     renderProductList('#productList', data);
     renderPagination({
@@ -53,6 +60,8 @@ async function handleFilterChange(filterName, filterValue) {
     const queryParams = url.searchParams;
     const { data, totalCount } = await productApi.getAll(queryParams);
 
+    renderProductList('#productList', data);
+
     // Attach click event for links in pagination
     initPagination({
       elementId: '#productsPagination',
@@ -66,17 +75,18 @@ async function handleFilterChange(filterName, filterValue) {
       totalCount,
     });
 
-    // Render product list
-    renderProductList('#productList', data);
-
-    // Attach event search input product list
     registerSearchInput({
       elementId: '#inputSearchProduct',
       defaultParams: queryParams,
-      onChange: (value) => handleFilterChange('title-like', value),
+      onChange: (value) => handleFilterChange('title_like', value),
     });
 
-    // Start carousel
+    handleSelectChange({
+      elementId: '#filterSelect',
+      defaultParams: queryParams,
+      onChange: (value) => handleFilterChange('brand', value),
+    });
+
     startCarousel({
       carouselId: '#carousel-id',
       carouselItem: '.carousel__item',

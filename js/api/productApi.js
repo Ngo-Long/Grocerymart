@@ -11,6 +11,16 @@ const productApi = {
     return axiosClient.get(url);
   },
 
+  getByTitle(value) {
+    const url = `/products?title_like="${value}"`;
+    return axiosClient.get(url);
+  },
+
+  getByBrand(value) {
+    const url = `/products?brand="${value}"`;
+    return axiosClient.get(url);
+  },
+
   add(data) {
     const url = '/products';
     return axiosClient.post(url, data);
