@@ -1,7 +1,9 @@
+import { $, $$ } from './common';
+
 export function startCarousel({ carouselId, carouselItem, selectorPrev, selectorNext }) {
   // Get carousel and all items
-  const carousel = document.querySelector(carouselId);
-  const itemList = carousel.querySelectorAll(carouselItem);
+  const carousel = $(carouselId);
+  const itemList = $$(carouselItem);
   if (!carousel || !itemList) return;
 
   // Get the controls buttons

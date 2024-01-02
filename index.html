@@ -266,17 +266,17 @@
                     <label class="filter__heading">Grounps</label>
 
                     <div class="filter__container">
-                      <select class="filter__select" id="filterSelect">
+                      <select class="filter__select" id="selectedBrand">
                         <option value="" selected>Select group</option>
                         <option value="Lavazza">Lavazza</option>
                         <option value="Nescafe">Nescafe</option>
                         <option value="Starbucks">Starbucks</option>
                       </select>
 
-                      <div class="filter__tags">
-                        <button class="filter__tag">Lavazza</button>
-                        <button class="filter__tag">Nescafe</button>
-                        <button class="filter__tag">Starbucks</button>
+                      <div class="filter__tags" id="taggedBrand">
+                        <button value="Lavazza" class="filter__tag">Lavazza</button>
+                        <button value="Nescafe" class="filter__tag">Nescafe</button>
+                        <button value="Starbucks" class="filter__tag">Starbucks</button>
                       </div>
                     </div>
                   </div>
@@ -288,15 +288,15 @@
                     <label class="filter__heading">Price</label>
 
                     <div class="filter__container">
-                      <select class="filter__select">
-                        <option selected>No choice</option>
-                        <option value="2">From high to low</option>
-                        <option value="1">From low to high</option>
+                      <select class="filter__select" id="selectedPrice">
+                        <option value="" selected>No choice</option>
+                        <option value="asc">From low to high</option>
+                        <option value="desc">From high to low</option>
                       </select>
 
-                      <div class="filter__tags">
-                        <div class="filter__tag">From low to high</div>
-                        <div class="filter__tag">From high to low</div>
+                      <div class="filter__tags" id="taggedPrice">
+                        <button value="asc" class="filter__tag">From low to high</button>
+                        <button value="desc" class="filter__tag">From high to low</button>
                       </div>
                     </div>
                   </div>
@@ -314,7 +314,7 @@
                           type="text"
                           placeholder="Search name"
                           class="form__search-input"
-                          style="height: 36px"
+                          style="height: 36px; background-color: var(--top-action-bg-color)"
                         />
 
                         <button

@@ -21,13 +21,13 @@
     grid-template-columns: 0.6fr 1fr 1fr 1fr 1fr 1.6fr;
 
     @include abstracts.screen(lg) {
+      gap: 30px 0;
       text-align: center;
       grid-template-columns: 1fr 1fr;
     }
 
     @include abstracts.screen(sm) {
-      gap: 25px;
-      grid-template-columns: 1fr;
+      gap: 20px 0;
     }
   }
 
@@ -45,7 +45,7 @@
   }
 
   &__heading {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 142.857%;
     color: var(--footer-color-heading);
@@ -53,7 +53,8 @@
     margin-bottom: 14px;
     text-transform: uppercase;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
+      margin: 0;
       padding: 0;
     }
   }
@@ -70,9 +71,9 @@
     display: inline-block;
     padding: 6px 20px 6px 0;
 
-    font-weight: 400;
+    color: #6c6c72;
+    font-weight: 500;
     font-size: 1.4rem;
-    color: var(--footer-color-link);
 
     @include abstracts.screen(lg) {
       padding: 6px;
@@ -89,17 +90,18 @@
     gap: 14px;
 
     @include abstracts.screen(md) {
-      padding: 0 40px;
+      padding: 8px 40px 0;
     }
   }
 
   &__input {
     height: 44px;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 146.667%;
 
+    color: #1a162e;
     padding-left: 20px;
     background: #fff;
     border-radius: 0.6rem;
@@ -107,6 +109,10 @@
 
     &::placeholder {
       font-size: 1.4rem;
+    }
+
+    @include abstracts.screen(sm) {
+      padding-left: 10px;
     }
   }
 

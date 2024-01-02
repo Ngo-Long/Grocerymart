@@ -139,13 +139,25 @@
     width: 24px;
     height: 24px;
     margin: -5px 6px 0 auto;
+
+    @include abstracts.screen(sm) {
+      margin: -5px 3px 0 auto;
+    }
   }
 
   &__price {
     font-size: 1.8rem;
+
+    @include abstracts.screen(sm) {
+      font-size: 1.6rem;
+    }
   }
 
   &__score {
     font-size: 1.8rem;
+
+    @include abstracts.screen(sm) {
+      font-size: 1.6rem;
+    }
   }
 }

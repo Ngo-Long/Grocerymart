@@ -15,24 +15,22 @@ async function handleFilterChange(filterName, filterValue) {
     const queryParams = url.searchParams;
     queryParams.set(filterName, filterValue);
 
-    let data, totalCount;
-
-    // Fetch API, re-render product list
-    if (filterName === 'brand' && filterValue) {
-      queryParams.set('_page', 1); // Reset page
-      ({ data, totalCount } = await productApi.getByBrand(filterValue));
+    // Reset page
+    if (['title_like', 'brand_like', 'price_range'].includes(filterName)) {
+      queryParams.set('_page', 1);
     }
 
-    if (filterName === 'title_like' && filterValue) {
-      queryParams.set('_page', 1); // Reset page
-      ({ data, totalCount } = await productApi.getByTitle(filterValue));
-    }
-
-    ({ data, totalCount } = await productApi.getAll(queryParams));
-
-    // Push updated URL to history
+    // Fetch API - Push updated URL to history
+    const { data, totalCount } = await productApi.getAll(queryParams);
     history.pushState({}, '', url);
 
+    // Sort data by price
+    if (filterName === 'price_range' && filterValue) {
+      if (filterValue === 'asc') data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    }
+
+    // re-render
     renderProductList('#productList', data);
     renderPagination({
       elementId: '#productsPagination',
@@ -60,6 +58,7 @@ async function handleFilterChange(filterName, filterValue) {
     const queryParams = url.searchParams;
     const { data, totalCount } = await productApi.getAll(queryParams);
 
+    // r-render
     renderProductList('#productList', data);
 
     // Attach click event for links in pagination
@@ -76,15 +75,23 @@ async function handleFilterChange(filterName, filterValue) {
     });
 
     registerSearchInput({
-      elementId: '#inputSearchProduct',
+      elementsId: ['#inputSearchProduct', '#btnSearchProduct'],
       defaultParams: queryParams,
       onChange: (value) => handleFilterChange('title_like', value),
     });
 
     handleSelectChange({
-      elementId: '#filterSelect',
+      elementsId: ['#selectedBrand', '#taggedBrand'],
       defaultParams: queryParams,
-      onChange: (value) => handleFilterChange('brand', value),
+      filterType: 'brand_like',
+      onChange: (value) => handleFilterChange('brand_like', value),
+    });
+
+    handleSelectChange({
+      elementsId: ['#selectedPrice', '#taggedPrice'],
+      defaultParams: queryParams,
+      filterType: 'price_range',
+      onChange: (value) => handleFilterChange('price_range', value),
     });
 
     startCarousel({
