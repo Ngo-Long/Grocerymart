@@ -29,6 +29,12 @@
     background: transparent;
   }
 
+  &--support {
+    color: #ffb700;
+    background: rgb(255, 183, 0, 0.1);
+    border: 1.5px solid #ffb700;
+  }
+
   &--rounded {
     border-radius: 999px;
   }

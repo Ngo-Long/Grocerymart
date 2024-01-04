@@ -69,6 +69,7 @@
     border-image: initial;
     background-position: right 0.7em top 50%, 0px 0px;
 
+    transition: color 0.3s, border-color 0.3s;
     padding: 0.4em 1.4em 0.3em 0.8em;
     outline: none;
     background-color: var(--top-action-bg-color);
@@ -82,6 +83,7 @@
 
     &:hover {
       cursor: pointer;
+      color: var(--text-color);
       border-color: rgb(136, 136, 136);
     }
 
@@ -122,11 +124,13 @@
     color: #9e9da8;
     font-size: 1.4rem;
     line-height: 142.857%;
-    transition: color 0.2s, backgroundColor 0.2s;
+    border: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s, outline 0.2s;
 
     &:hover {
       cursor: pointer;
-      opacity: 0.7;
+      color: var(--text-color);
+      border-color: rgb(179, 179, 179);
     }
 
     &:focus {

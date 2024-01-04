@@ -20,17 +20,17 @@ async function handleFilterChange(filterName, filterValue) {
       queryParams.set('_page', 1);
     }
 
-    // Fetch API - Push updated URL to history
-    const { data, totalCount } = await productApi.getAll(queryParams);
+    // Update the URL in the history
     history.pushState({}, '', url);
 
-    // Sort data by price
-    if (filterName === 'price_range' && filterValue) {
-      if (filterValue === 'asc') data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-      if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-    }
+    // Fetch API - Push updated URL to history
+    const { data, totalCount } = await productApi.getAll(queryParams);
 
-    // re-render
+    // Sort data by price
+    // filterName === 'price_range' && filterValue
+    if (filterValue === 'asc') data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+
     renderProductList('#productList', data);
     renderPagination({
       elementId: '#productsPagination',

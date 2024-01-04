@@ -47,7 +47,7 @@ export function handleSelectChange({ elementsId, defaultParams, filterType, onCh
     selectElementId.value = defaultParams.get(filterType);
   }
 
-  // Attach event search input
+  // Attach event
   selectElementId.addEventListener('change', (e) => onChange?.(e.target.value));
 
   btnTagId.addEventListener('click', (e) => {

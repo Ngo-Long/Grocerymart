@@ -28,19 +28,17 @@
   </head>
 
   <body>
-    <!-- This is a template HTML for a product item -->
+    <!-- A template HTML for a product item -->
     <template id="productTemplate">
       <div class="col">
         <article class="product-item">
           <div class="product-item__img-wrap">
-            <a href="./product-detail.html">
-              <img
-                data-id="imageUrlProduct"
-                src="http://127.0.0.1:5500/assets/imgs/product/product-1.png"
-                alt="Coffee Beans - Espresso Arabia and Robust Beans"
-                class="product-item__thumb"
-              />
-            </a>
+            <img
+              data-id="imageUrlProduct"
+              src="http://127.0.0.1:5500/assets/imgs/product/product-1.png"
+              alt="Coffee Beans - Espresso Arabia and Robust Beans"
+              class="product-item__thumb"
+            />
 
             <div class="product-item__menu">
               <button data-id="editProduct" class="product-item__menu-icon">
@@ -68,11 +66,9 @@
             </button>
           </div>
 
-          <a href="./product-detail.html">
-            <h3 data-id="titleProduct" class="product-item__title three-line-limit">
-              Coffee Beans - Espresso Arabic and Rousts Beans
-            </h3>
-          </a>
+          <h3 data-id="titleProduct" class="product-item__title three-line-limit">
+            Coffee Beans - Espresso Arabic and Rousts Beans
+          </h3>
 
           <p data-id="brandProduct" class="product-item__brand">Lavazza</p>
 
@@ -131,7 +127,7 @@
                       srcset="/assets/imgs/carousel/item-1-md.png"
                     />
                     <img
-                      src="/assets/imgs/carousel/item-2.jpg"
+                      src="/assets/imgs/carousel/item-2.png"
                       alt="Order your favorite coffee"
                       class="carousel__img"
                     />
@@ -148,6 +144,22 @@
                     />
                     <img
                       src="/assets/imgs/carousel/item-3.jpg"
+                      alt="Order your favorite coffee"
+                      class="carousel__img"
+                    />
+                  </picture>
+                </a>
+              </div>
+
+              <div class="carousel__item">
+                <a href="#!" class="carousel__link">
+                  <picture class="">
+                    <source
+                      media="(max-width: 767.98px)"
+                      srcset="/assets/imgs/carousel/item-1-md.png"
+                    />
+                    <img
+                      src="/assets/imgs/carousel/item-4.jpg"
                       alt="Order your favorite coffee"
                       class="carousel__img"
                     />
@@ -326,10 +338,6 @@
                           <img src="/assets/icons/search.svg" alt="" class="filter__icon icon" />
                         </button>
                       </form>
-
-                      <div class="filter__tags">
-                        <div class="filter__tag">Lavazza</div>
-                      </div>
                     </div>
                   </div>
                 </div>

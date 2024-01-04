@@ -37,24 +37,6 @@
     <!-- main -->
     <main id="main" class="product-page">
       <div class="container">
-        <!-- Search -->
-        <div class="product__home d-none d-md-block">
-          <div class="search-bar">
-            <input
-              type="text"
-              name=""
-              id=""
-              value=""
-              placeholder="Search for item"
-              class="search-bar__input"
-            />
-
-            <button class="search-bar__btn">
-              <img src="/assets/icons/search.svg" alt="" class="search-bar__icon" />
-            </button>
-          </div>
-        </div>
-
         <!-- Breadcrumbs -->
         <div class="product__home">
           <ul class="breadcrums">
@@ -107,6 +89,11 @@
                 <img src="/assets/imgs/product/product-4.png" alt="" class="product__preview-thumbs-img">
                 <img src="/assets/imgs/product/product-4.png" alt="" class="product__preview-thumbs-img">
               </div> -->
+
+                <!-- <button class="btn btn--outline like-btn product-info__like-btn">
+                      <img src="/assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
+                      <img src="/assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
+                    </button> -->
               </div>
             </div>
 
@@ -124,36 +111,20 @@
                     </div>
 
                     <div class="product-property product-property__size">
-                      <label for="" class="form__heading">Size/Weight</label>
+                      <div class="form__heading">Size/Weight</div>
 
-                      <div class="form__group">
-                        <div class="form__select-wrap">
-                          <div class="form__select">
-                            <span class="form__gram">500g</span>
+                      <div class="filter__container form_group" style="gap: 15px; margin-top: 5px">
+                        <select class="filter__select" id="selectedBrand">
+                          <option value="" selected>Gram</option>
+                          <option value="500g">500g</option>
+                          <option value="750g">750g</option>
+                          <option value="1000g">1000g</option>
+                        </select>
 
-                            <img
-                              src="/assets/icons/arrow-down.svg"
-                              alt=""
-                              class="form__icon icon"
-                            />
-                          </div>
-
-                          <div class="form__select">
-                            <span class="form__gram">Gram</span>
-                            <img
-                              src="/assets/icons/arrow-down.svg"
-                              alt=""
-                              class="form__icon icon"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form__group">
-                        <div class="form__tags">
-                          <div class="form__tag">Small</div>
-                          <div class="form__tag">Medium</div>
-                          <div class="form__tag">Large</div>
+                        <div class="filter__tags" id="taggedBrand">
+                          <button value="500g" class="filter__tag">500g</button>
+                          <button value="750g" class="filter__tag">750g</button>
+                          <button value="1000g" class="filter__tag">1000g</button>
                         </div>
                       </div>
                     </div>
@@ -170,7 +141,7 @@
 
                       <div class="product-property__block">
                         <h4 class="product-property__title">Delivery</h4>
-                        <div class="product-property__span">From $6 for 1-3 days</div>
+                        <div class="product-property__span">From free for 1-3 days</div>
                       </div>
                     </div>
 
@@ -182,30 +153,22 @@
                         <div class="product-property__span">Out of 2 store, today</div>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    <div class="product-info__card">
-                      <div class="product-info__row">
-                        <div class="product-info__price">$500.00</div>
-                        <span class="product-info__tax">10%</span>
-                      </div>
+                <div class="product-info__card">
+                  <div class="product-info__row">
+                    <div class="product-info__price">$500.00</div>
+                    <p class="product-info__totol-price">$540.00</p>
+                    <span class="product-info__tax">10%</span>
+                  </div>
 
-                      <p class="product-info__totol-price">$540.00</p>
+                  <div class="product-info__row">
+                    <a href="./checkout.html" class="btn btn--support product-info__btn"
+                      >Add to cart</a
+                    >
 
-                      <div class="product-info__row">
-                        <a href="./checkout.html" class="btn btn--primary product-info__btn"
-                          >Add to cart</a
-                        >
-
-                        <button class="btn btn--outline like-btn product-info__like-btn">
-                          <img src="/assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                          <img
-                            src="/assets/icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                    </div>
+                    <a href="./checkout.html" class="btn btn--primary product-info__btn">Buy now</a>
                   </div>
                 </div>
               </section>

@@ -18,6 +18,11 @@
     background: var(--breadcrums-md-bg-color);
   }
 
+  @include abstracts.screen(sm) {
+    gap: 10px;
+    padding: 10px;
+  }
+
   &__item {
   }
 

@@ -59,7 +59,12 @@
   background: var(--product-info-bg-color);
   box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
 
+  @include abstracts.screen(lg) {
+    padding: 20px;
+  }
+
   @include abstracts.screen(md) {
+    padding: 12px;
     background: var(--product-info-bg-color-md);
   }
 
@@ -79,6 +84,7 @@
     flex-direction: column;
     gap: 20px;
 
+    max-width: min(390px, 100%);
     padding: 20px;
     border-radius: 6px;
     border: 1px solid var(--product-info-card-border);
@@ -91,14 +97,15 @@
   &__row {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   &__price {
-    color: var(--product-info-price-color);
+    color: #9e9da8;
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 150%;
+    text-decoration: line-through;
   }
 
   &__tax {
@@ -120,7 +127,7 @@
   }
 
   &__btn {
-    width: 213px;
+    width: 170px;
     height: 46px;
     padding: 0;
 
@@ -148,10 +155,10 @@
   display: flex;
   align-items: flex-start;
   gap: 0 16px;
-  margin: 30px 0;
+  margin: 20px 0;
 
   @include abstracts.screen(lg) {
-    margin: 16px 0;
+    margin: 10px 0;
   }
 
   &__icon {
@@ -166,10 +173,7 @@
 
     & .form__group {
       width: 100%;
-
-      @include abstracts.screen(lg) {
-        margin-top: 16px;
-      }
+      margin-top: 10px;
     }
 
     & .form__tag {

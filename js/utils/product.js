@@ -47,6 +47,14 @@ export function createProductItem(dataItem) {
   // calulate timespan
   // console.log('timespan', dayjs(dataItem.updatedAt).fromNow());
 
+  const elementLink = productItem.firstElementChild;
+  if (!elementLink) return;
+
+  elementLink.addEventListener('click', () => {
+    // /product-detail.html?_page=1&_limit=8&id=1
+    window.location.assign(`/product-detail.html?id=${dataItem.id}`);
+  });
+
   return productItem;
 }
 
