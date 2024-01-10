@@ -35,6 +35,9 @@
   }
 
   &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 50%;
     width: 40px;
@@ -63,6 +66,11 @@
     &--next {
       right: 14px;
     }
+  }
+
+  &__control--small {
+    width: 30px;
+    height: 60px;
   }
 
   &__control-prev-icon {

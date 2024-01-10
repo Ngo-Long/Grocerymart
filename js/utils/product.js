@@ -1,4 +1,9 @@
-import { $, setElementSourceBySelector, setElementTextContent } from './common';
+import {
+  $,
+  setElementSourceBySelector,
+  setElementTextContent,
+  isFavoriteProductElement,
+} from './common';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -51,21 +56,8 @@ export function createProductItem(dataItem) {
   if (!elementLink) return;
 
   elementLink.addEventListener('click', () => {
-    // /product-detail.html?_page=1&_limit=8&id=1
     window.location.assign(`/product-detail.html?id=${dataItem.id}`);
   });
 
   return productItem;
-}
-
-export function isFavoriteProductElement(container, selector, isFavorite) {
-  if (!container || typeof isFavorite !== 'boolean') return;
-
-  const targetElement = container.querySelector(selector);
-  if (!targetElement) return;
-
-  // Add or remove classes depending on the value of isFavorite
-  return isFavorite === true
-    ? targetElement.classList.add('like-btn--liked')
-    : targetElement.classList.remove('like-btn--liked');
 }

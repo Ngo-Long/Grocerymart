@@ -1,0 +1,39 @@
+@use '../abstracts';
+
+.modal {
+  &.show {
+    display: block;
+  }
+
+  &__dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    width: 836px;
+    height: 540px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  &__left {
+    width: 516px;
+    height: 516px;
+  }
+
+  &__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    color: var(--text-color);
+    font-size: 2.4rem;
+  }
+}

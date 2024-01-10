@@ -21,5 +21,17 @@ export function setElementTextContent(container, selector, text) {
   if (!container) return;
 
   const targetElement = container.querySelector(selector);
-  if (targetElement) targetElement.textContent = text;
+  if (targetElement) targetElement.innerHTML = text;
+}
+
+export function isFavoriteProductElement(container, selector, isFavorite) {
+  if (!container || typeof isFavorite !== 'boolean') return;
+
+  const targetElement = container.querySelector(selector);
+  if (!targetElement) return;
+
+  // Add or remove classes depending on the value of isFavorite
+  return isFavorite === true
+    ? targetElement.classList.add('like-btn--liked')
+    : targetElement.classList.remove('like-btn--liked');
 }

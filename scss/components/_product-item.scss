@@ -1,16 +1,31 @@
 @use '../abstracts';
 
 .product-item {
+  --font-size: 1.8rem;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 16px;
-  font-size: 1.6rem;
   border-radius: 20px;
   background: var(--product-item-bg);
   box-shadow: 0px 20px 60px 10px var(--product-item-shadow);
   transition: box-shadow 0.3s ease;
+
+  &--small {
+    --font-size: 1.4rem;
+    gap: 10px;
+
+    & .product-item__price {
+      font-size: 1.6rem;
+    }
+
+    & .like-btn__icon,
+    & .product-item__start {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
 
   &:hover {
     cursor: pointer;
@@ -35,20 +50,10 @@
   &__img-wrap {
     position: relative;
     padding-top: 100%;
-
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 60%;
-    //   left: 0;
-    //   width: 100%;
-    //   border: 2px solid transparent;
-    //   border-bottom: 1.5px solid var(--top-action-separate-color);
-    // }
   }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: var(--font-size);
     font-weight: 500;
     line-height: 150%;
     color: var(--product-item-color);
@@ -147,7 +152,7 @@
   }
 
   &__price {
-    font-size: 1.8rem;
+    font-size: var(--font-size);
 
     @include abstracts.screen(sm) {
       font-size: 1.6rem;
@@ -155,7 +160,7 @@
   }
 
   &__score {
-    font-size: 1.8rem;
+    font-size: var(--font-size);
 
     @include abstracts.screen(sm) {
       font-size: 1.6rem;
