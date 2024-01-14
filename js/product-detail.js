@@ -2,39 +2,41 @@ import productApi from './api/productApi';
 import {
   $,
   registerLightBox,
+  renderthumbnailImages,
   isFavoriteProductElement,
   setElementSourceBySelector,
   setElementTextContent,
 } from './utils/index';
 
-function renderthumbnailImages(thumbnailImages) {
-  if (!thumbnailImages) return;
-
-  const target = $('[data-id="thumbnailImages"]');
-  if (!target) return;
-
-  thumbnailImages.forEach((urlImg) => {
-    const imgElement = document.createElement('img');
-    imgElement.src = urlImg;
-    imgElement.classList.add('product__preview-thumbs-img');
-    imgElement.dataset.album = 'thumbnail-image-product';
-
-    target.appendChild(imgElement);
-  });
-}
-
 function displayProductDetail(product) {
   if (!product) return;
 
   // Update the product detail element
-  const { title, description, price, brand, score, imageUrl, thumbnailImages } = product;
+  const { title, description, price, brand, score, imageUrl, thumbnailImages, isFavorite } =
+    product;
+
   setElementTextContent(document, '#productHeading', title);
   setElementTextContent(document, '#productPrice', price);
   setElementTextContent(document, '#productScore', score);
   setElementTextContent(document, '#productBrand', brand);
   setElementTextContent(document, '#productContent', description);
   setElementSourceBySelector(document, '#productImage', imageUrl);
-  renderthumbnailImages(thumbnailImages);
+  isFavoriteProductElement(document, '[data-id="isFavoriteProduct"]', isFavorite);
+  renderthumbnailImages({
+    elementId: '#thumbnailImages',
+    selectorClass: 'product__preview-thumbs-img',
+    datasetAlbum: 'thumbnail-image-product',
+    thumbnailImages,
+  });
+
+  // Update the modal
+  setElementTextContent(document, '[data-id="productHeading"]', title);
+  renderthumbnailImages({
+    elementId: '#thumbnailImagesShow',
+    selectorClass: 'product__preview-thumbs-img',
+    datasetAlbum: 'thumbnail-image-show',
+    thumbnailImages,
+  });
 }
 
 // MAIN

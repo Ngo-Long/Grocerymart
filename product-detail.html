@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocerymart | Product detail</title>
+    <title>Product detail | Grocerymart</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
@@ -43,7 +43,11 @@
             <div class="product-item__septem"></div>
 
             <!-- Product favorite add class: like-btn--liked  -->
-            <button data-id="isFavoriteProduct" class="like-btn product-item__like-btn">
+            <button
+              type="button"
+              data-id="isFavoriteProduct"
+              class="like-btn product-item__like-btn"
+            >
               <img
                 src="http://127.0.0.1:5500/assets/icons/heart.svg"
                 alt=""
@@ -102,13 +106,6 @@
 
             <li class="breadcrums__item">
               <a href="#!" class="breadcrums__link">
-                Departments
-                <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
-              </a>
-            </li>
-
-            <li class="breadcrums__item">
-              <a href="#!" class="breadcrums__link">
                 Coffee Beans
                 <img src="/assets/icons/arrow-right.svg" alt="" class="breadcrums__icon" />
               </a>
@@ -116,7 +113,7 @@
 
             <li class="breadcrums__item">
               <a href="./product-detail.html" class="breadcrums__link breadcrums__link--current">
-                LavAzza
+                Coffee Beans - Espresso Arabica and Robusta Beans
               </a>
             </li>
           </ul>
@@ -136,21 +133,25 @@
                     data-album="thumbnail-image-product"
                   />
 
-                  <button class="btn btn--outline like-btn product__preview-btn">
+                  <button
+                    type="button"
+                    data-id="isFavoriteProduct"
+                    class="btn btn--outline like-btn product__preview-btn"
+                  >
                     <img src="/assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
                     <img src="/assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
                   </button>
                 </div>
 
                 <div class="product__preview-bottom">
-                  <div data-id="thumbnailImages" class="product__preview-thumbs">
+                  <div id="thumbnailImages" class="product__preview-thumbs">
                     <!-- Event -->
                   </div>
 
                   <button
                     class="carousel__control carousel__control--small"
                     type="button"
-                    data-bs-slide="prev"
+                    data-slide-image="prev"
                     style="left: 0"
                   >
                     <img
@@ -163,7 +164,7 @@
                   <button
                     class="carousel__control carousel__control--small"
                     type="button"
-                    data-bs-slide="next"
+                    data-slide-image="next"
                     style="right: 0; width: 30px; height: 60px"
                   >
                     <img
@@ -204,7 +205,7 @@
                       <div class="filter__heading">Classify</div>
 
                       <div class="filter__container form_group" style="gap: 15px; margin-top: 5px">
-                        <div class="filter__tags" id="taggedBrand">
+                        <div class="filter__tags" id="taggedClassify">
                           <button value="500g" class="filter__tag">Morning</button>
                           <button value="500g" class="filter__tag">Pike</button>
                           <button value="500g" class="filter__tag">Sumatra</button>
@@ -216,7 +217,7 @@
                       <div class="filter__heading">Size/Weight</div>
 
                       <div class="filter__container form_group" style="gap: 15px; margin-top: 5px">
-                        <div class="filter__tags" id="taggedBrand">
+                        <div class="filter__tags" id="taggedWeight">
                           <button value="500g" class="filter__tag">500g</button>
                           <button value="750g" class="filter__tag">750g</button>
                           <button value="1000g" class="filter__tag">1000g</button>
@@ -228,7 +229,7 @@
                       <div class="filter__heading">Quantity</div>
 
                       <div class="filter__container form_group" style="gap: 15px; margin-top: 5px">
-                        <div class="filter__tags" id="taggedBrand">
+                        <div class="filter__tags" id="taggedQuantity">
                           <div class="filter__tags--quantity">
                             <button class="filter__tag">
                               <i class="fa-solid fa-minus icon"></i>
@@ -434,7 +435,7 @@
                   <div id="productList" class="row row-cols-5 row-cols-lg-3 row-cols-sm-2">
                     <!-- product 1 -->
                     <div class="col">
-                      <article class="product-item">
+                      <article class="product-item product-item--small">
                         <div class="product-item__img-wrap">
                           <img
                             data-id="imageUrlProduct"
@@ -447,6 +448,7 @@
 
                           <!-- Product favorite add class: like-btn--liked  -->
                           <button
+                            type="button"
                             data-id="isFavoriteProduct"
                             class="like-btn product-item__like-btn"
                           >
@@ -463,7 +465,7 @@
                           </button>
                         </div>
 
-                        <h3 data-id="titleProduct" class="product-item__title three-line-limit">
+                        <h3 data-id="titleProduct" class="product-item__title two-line-limit">
                           Coffee Beans - Espresso Arabic and Rousts Beans
                         </h3>
 
@@ -500,13 +502,19 @@
       load('footer', './template/footer.html');
     </script>
 
-    <div class="modal overlay show" id="lightBox">
+    <!-- Modal thumbnail image product -->
+    <div class="modal collapsed-dropdown overlay hide" id="lightBox">
       <div class="modal__dialog">
-        <div class="modal__content">
+        <div class="modal__content" id="modal-content">
           <div class="modal__left" style="position: relative">
-            <img src="./assets/imgs/product/Starbucks-4.jpg" alt="" class="modal__main-img" />
+            <img
+              src="./assets/imgs/product/Starbucks-4.jpg"
+              alt=""
+              id="imageModal"
+              class="modal__main-img"
+            />
 
-            <button class="carousel__control" type="button" data-bs-slide="prev" style="left: 0">
+            <button class="carousel__control" type="button" data-bs-slide="prev" style="left: 5px">
               <img
                 src="/assets/icons/angle-left-solid.svg"
                 alt=""
@@ -514,7 +522,7 @@
               />
             </button>
 
-            <button class="carousel__control" type="button" data-bs-slide="next" style="right: 0">
+            <button class="carousel__control" type="button" data-bs-slide="next" style="right: 5px">
               <img
                 src="/assets/icons/angle-right-solid.svg"
                 alt=""
@@ -524,9 +532,14 @@
           </div>
 
           <div class="modal__right">
-            <h3 data-id="titleProduct" class="product-item__title two-line-limit">Coffee Beans</h3>
+            <h4 class="product-info__heading" data-id="productHeading">
+              <!-- Event -->
+            </h4>
 
-            <div data-id="thumbnailImages" class="product__preview-thumbs">
+            <div
+              id="thumbnailImagesShow"
+              class="product__preview-thumbs product__preview-thumbs--modal"
+            >
               <!-- Event -->
             </div>
           </div>
@@ -536,5 +549,6 @@
 
     <!-- script -->
     <script type="module" src="/js/product-detail.js"></script>
+    <script type="module" src="/js/home.js"></script>
   </body>
 </html>

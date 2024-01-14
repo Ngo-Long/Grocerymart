@@ -27,7 +27,6 @@ async function handleFilterChange(filterName, filterValue) {
     const { data, totalCount } = await productApi.getAll(queryParams);
 
     // Sort data by price
-    // filterName === 'price_range' && filterValue
     if (filterValue === 'asc') data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
 

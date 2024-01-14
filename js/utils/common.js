@@ -2,7 +2,7 @@ export const $ = document.querySelector.bind(document);
 export const $$ = document.querySelectorAll.bind(document);
 
 export function setElementSourceBySelector(container, selector, source) {
-  if (!container) return;
+  if (!container || !selector || !source) return;
 
   const targetElement = container.querySelector(selector);
   if (!targetElement) return;
@@ -18,7 +18,7 @@ export function setElementSourceBySelector(container, selector, source) {
 }
 
 export function setElementTextContent(container, selector, text) {
-  if (!container) return;
+  if (!container || !selector || !text) return;
 
   const targetElement = container.querySelector(selector);
   if (targetElement) targetElement.innerHTML = text;
@@ -30,8 +30,29 @@ export function isFavoriteProductElement(container, selector, isFavorite) {
   const targetElement = container.querySelector(selector);
   if (!targetElement) return;
 
-  // Add or remove classes depending on the value of isFavorite
-  return isFavorite === true
-    ? targetElement.classList.add('like-btn--liked')
-    : targetElement.classList.remove('like-btn--liked');
+  // Add or remove 'like-btn--liked' class based on the updated isFavorite status
+  targetElement.classList.toggle('like-btn--liked', isFavorite);
+
+  targetElement.addEventListener('click', (e) => {
+    e.preventDefault();
+    targetElement.classList.toggle('like-btn--liked', (isFavorite = !isFavorite));
+  });
+}
+
+export function renderthumbnailImages({ elementId, selectorClass, datasetAlbum, thumbnailImages }) {
+  if (!elementId || !selectorClass || !datasetAlbum || !thumbnailImages) return;
+
+  thumbnailImages.forEach((urlImg, index) => {
+    // Add class to thumbnail
+    const imgElement = document.createElement('img');
+    imgElement.src = urlImg;
+    imgElement.classList.add(selectorClass);
+    imgElement.dataset.album = datasetAlbum;
+
+    // Add 'active' class to the first image
+    if (index === 0) imgElement.classList.add('active');
+
+    // Append the thumbnail
+    $(elementId).appendChild(imgElement);
+  });
 }

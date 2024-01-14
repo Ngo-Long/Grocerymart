@@ -1,9 +1,7 @@
 @use '../abstracts';
 
 .modal {
-  &.show {
-    display: block;
-  }
+  z-index: 100;
 
   &__dialog {
     display: flex;
@@ -14,22 +12,41 @@
 
   &__content {
     display: flex;
-    width: 836px;
-    height: 540px;
+    width: min(100%, 836px);
+    height: min(100%, 540px);
     padding: 10px;
-    background: #fff;
+    background: var(--body-bg-color);
     border-radius: 8px;
+
+    @include abstracts.screen(lg) {
+      width: 100vh;
+      height: 80vh;
+    }
   }
 
   &__left {
-    width: 516px;
-    height: 516px;
+    width: 60%;
+    margin-right: 5px;
+  }
+
+  &__right {
+    width: 40%;
+    margin-left: 5px;
+
+    & .product-info__heading {
+      margin-top: 30px;
+
+      @include abstracts.screen(lg) {
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+    }
   }
 
   &__main-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__title {

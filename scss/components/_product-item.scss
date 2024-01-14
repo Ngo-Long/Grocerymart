@@ -9,7 +9,7 @@
   padding: 16px;
   border-radius: 20px;
   background: var(--product-item-bg);
-  box-shadow: 0px 20px 60px 10px var(--product-item-shadow);
+  box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.01);
   transition: box-shadow 0.3s ease;
 
   &--small {
@@ -18,6 +18,11 @@
 
     & .product-item__price {
       font-size: 1.6rem;
+    }
+
+    & .product-item__title {
+      font-size: 1.6rem;
+      line-height: 120%;
     }
 
     & .like-btn__icon,
@@ -29,7 +34,7 @@
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 20px 60px 10px var(--product-item-shadow);
   }
 
   &:hover &__thumb {
