@@ -123,7 +123,7 @@
         <div class="product__home product__all">
           <div class="row row-cols-md-1">
             <div class="col-5 col-lg-5">
-              <div class="product__preview">
+              <div class="product__preview" id="productPreview">
                 <div class="product__preview-main">
                   <img
                     src=""
@@ -205,10 +205,17 @@
                       <div class="filter__heading">Classify</div>
 
                       <div class="filter__container form_group" style="gap: 15px; margin-top: 5px">
+                        <select class="filter__select" id="selectedClassify" style="display: none">
+                          <option value="" selected>Select group</option>
+                          <option value="Morning">Morning</option>
+                          <option value="Pike">Pike</option>
+                          <option value="Sumatra">Sumatra</option>
+                        </select>
+
                         <div class="filter__tags" id="taggedClassify">
-                          <button value="500g" class="filter__tag">Morning</button>
-                          <button value="500g" class="filter__tag">Pike</button>
-                          <button value="500g" class="filter__tag">Sumatra</button>
+                          <button value="Morning" class="filter__tag">Morning</button>
+                          <button value="Pike" class="filter__tag">Pike</button>
+                          <button value="Sumatra" class="filter__tag">Sumatra</button>
                         </div>
                       </div>
                     </div>
@@ -549,6 +556,5 @@
 
     <!-- script -->
     <script type="module" src="/js/product-detail.js"></script>
-    <script type="module" src="/js/home.js"></script>
   </body>
 </html>

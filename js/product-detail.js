@@ -6,6 +6,7 @@ import {
   isFavoriteProductElement,
   setElementSourceBySelector,
   setElementTextContent,
+  showImageProductDetail,
 } from './utils/index';
 
 function displayProductDetail(product) {
@@ -53,7 +54,21 @@ function displayProductDetail(product) {
     if (!productData) return;
 
     displayProductDetail(productData.data);
-    registerLightBox();
+
+    registerLightBox({
+      modalId: '#lightBox',
+      imageId: '#imageModal',
+      prevSelector: 'button[data-bs-slide="prev"]',
+      nextSelector: 'button[data-bs-slide="next"]',
+    });
+
+    showImageProductDetail({
+      productId: '#productPreview',
+      imageId: '#productImage',
+      thumbnailList: '#thumbnailImages',
+      prevSelector: 'button[data-slide-image="prev"]',
+      nextSelector: 'button[data-slide-image="next"]',
+    });
   } catch (error) {
     console.log(error);
   }

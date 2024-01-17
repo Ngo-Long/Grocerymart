@@ -1,78 +1,17 @@
 import { $, $$ } from './common';
 
-export function registerLightBox() {
-  const imageModal = $('#imageModal');
-  const imageProduct = $('#productImage');
-  const thumbnailImages = $('#thumbnailImages');
-  if (!imageModal || !imageProduct || !thumbnailImages) return;
+function showImageAtIndex(imageElement, imgList, currentIndex) {
+  // Delete 'active' all images
+  imgList.forEach((img) => img.classList.remove('active'));
 
-  let imgList = [];
-  let currentIndex = 0;
+  // Update image modal when clicked or hovering
+  imageElement.src = imgList[currentIndex].src;
 
-  // Event listeners for navigation buttons
-  const btnScrollPrev = $('button[data-slide-image="prev"]');
-  btnScrollPrev?.addEventListener('click', () => (thumbnailImages.scrollLeft -= 120));
-
-  const btnScrollNext = $('button[data-slide-image="next"]');
-  btnScrollNext?.addEventListener('click', () => (thumbnailImages.scrollLeft += 120));
-
-  // Event listeners for thumbnail images
-  document.addEventListener('click', handleThumbnailClick);
-  document.addEventListener('mouseover', handleThumbnailMouseover);
-
-  function handleThumbnailClick(e) {
-    const { target } = e;
-    if (target.tagName !== 'IMG' || !target.dataset.album) return;
-    if (window.innerWidth < 768) return;
-
-    imgList = $$(`img[data-album="${target.dataset.album}"]`);
-    currentIndex = [...imgList].findIndex((x) => x === target);
-    imgList[currentIndex].classList.add('active');
-
-    // attach event button
-    const btnPrev = $('button[data-bs-slide="prev"]');
-    btnPrev?.addEventListener('click', () => {
-      currentIndex = (--currentIndex + imgList.length) % imgList.length;
-      showImageAtIndex(currentIndex);
-      return;
-    });
-
-    const btnNext = $('button[data-bs-slide="next"]');
-    btnNext?.addEventListener('click', () => {
-      currentIndex = ++currentIndex % imgList.length;
-      showImageAtIndex(currentIndex);
-      return;
-    });
-
-    showImageAtIndex(currentIndex);
-    if (target.dataset.album !== 'thumbnail-image-show') toggleModalLightBox();
-  }
-
-  function handleThumbnailMouseover(e) {
-    const { target } = e;
-    if (target.tagName !== 'IMG' || !target.dataset.album) return;
-    if (target.dataset.album === 'thumbnail-image-show') return;
-
-    imgList = $$(`img[data-album="${target.dataset.album}"]`);
-    currentIndex = [...imgList].findIndex((x) => x === target);
-
-    // Update product image when hovering
-    imageProduct.src = imgList[currentIndex].src;
-    showImageAtIndex(currentIndex);
-  }
-
-  const showImageAtIndex = (currentIndex) => {
-    // Delete 'active' all images
-    imgList.forEach((img) => img.classList.remove('active'));
-
-    // Display new image and add 'active'
-    imageModal.src = imgList[currentIndex].src;
-    imgList[currentIndex].classList.add('active');
-  };
+  // Display new image and add 'active'
+  imgList[currentIndex].classList.add('active');
 }
 
-function toggleModalLightBox() {
-  const modalElement = $('#lightBox');
+function toggleModalLightBox(modalElement) {
   if (!modalElement) return;
 
   const isHidden = modalElement.classList.contains('hide');
@@ -91,4 +30,81 @@ function toggleModalLightBox() {
       modalElement.classList.toggle('show', isHidden);
     });
   };
+}
+
+export function registerLightBox({ modalId, imageId, prevSelector, nextSelector }) {
+  const modalElement = $(modalId);
+
+  // check if this modal is already registered or not
+  if (Boolean(modalElement.dataset.isRegistered)) return;
+
+  const imageModal = modalElement.querySelector(imageId);
+  if (!modalElement || !imageModal) return;
+
+  // common
+  let imgList = [];
+  let currentIndex = 0;
+
+  // attach event button
+  $(prevSelector)?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + imgList.length) % imgList.length;
+    showImageAtIndex(imageModal, imgList, currentIndex);
+  });
+
+  $(nextSelector)?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imgList.length;
+    showImageAtIndex(imageModal, imgList, currentIndex);
+  });
+
+  // Event listeners for image modal
+  document.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.tagName !== 'IMG' || !target.dataset.album) return;
+    if (window.innerWidth < 768) return;
+
+    imgList = $$(`img[data-album="${target.dataset.album}"]`);
+    currentIndex = [...imgList].findIndex((x) => x === target);
+
+    showImageAtIndex(imageModal, imgList, currentIndex);
+    if (target.dataset.album !== 'thumbnail-image-show') {
+      toggleModalLightBox(modalElement);
+    }
+  });
+
+  // mark this modal is already registered
+  modalElement.dataset.isRegistered = true;
+}
+
+export function showImageProductDetail({
+  productId,
+  imageId,
+  thumbnailList,
+  prevSelector,
+  nextSelector,
+}) {
+  if (!productId) return;
+
+  const productPreview = $(productId);
+  const imageProduct = productPreview?.querySelector(imageId);
+  const thumbnailImages = productPreview?.querySelector(thumbnailList);
+
+  // Common
+  let imgList = [];
+  let currentIndex = 0;
+
+  // Event listeners for navigation buttons
+  $(prevSelector)?.addEventListener('click', () => (thumbnailImages.scrollLeft -= 120));
+  $(nextSelector)?.addEventListener('click', () => (thumbnailImages.scrollLeft += 120));
+
+  // Event listeners for thumbnail images
+  document.addEventListener('mouseover', (e) => {
+    const { target } = e;
+    if (target.tagName !== 'IMG' || !target.dataset.album) return;
+    if (target.dataset.album === 'thumbnail-image-show') return;
+
+    imgList = $$(`img[data-album="${target.dataset.album}"]`);
+    currentIndex = [...imgList].findIndex((x) => x === target);
+
+    showImageAtIndex(imageProduct, imgList, currentIndex);
+  });
 }
