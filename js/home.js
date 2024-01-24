@@ -4,7 +4,6 @@ import {
   registerSearchInput,
   renderProductList,
   registerPagination,
-  updatePaginationUI,
   handleSelectChange,
 } from './utils/index';
 
@@ -31,10 +30,11 @@ async function handleFilterChange(filterName, filterValue) {
     if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
 
     renderProductList('#productList', data);
-    updatePaginationUI({
+    registerPagination({
       elementId: '#productsPagination',
       defaultParams: queryParams,
       totalCount,
+      onChange: (page) => handleFilterChange('_page', page),
     });
   } catch (error) {
     console.log('Failed to fetch product list: ', error);
@@ -45,6 +45,13 @@ async function handleFilterChange(filterName, filterValue) {
 // Asynchronous function that make HTTP requests use axiosClient
 (async () => {
   try {
+    startCarousel({
+      carouselId: '#carousel-id',
+      carouselItem: '.carousel__item',
+      selectorPrev: 'button[data-bs-slide="prev"]',
+      selectorNext: 'button[data-bs-slide="next"]',
+    });
+
     const url = new URL(window.location);
 
     // Set default pagination (_limit, _page) on URL
@@ -60,15 +67,10 @@ async function handleFilterChange(filterName, filterValue) {
     // r-render
     renderProductList('#productList', data);
 
-    updatePaginationUI({
-      elementId: '#productsPagination',
-      defaultParams: queryParams,
-      totalCount,
-    });
-
     registerPagination({
       elementId: '#productsPagination',
       defaultParams: queryParams,
+      totalCount,
       onChange: (page) => handleFilterChange('_page', page),
     });
 
@@ -90,13 +92,6 @@ async function handleFilterChange(filterName, filterValue) {
       defaultParams: queryParams,
       filterType: 'price_range',
       onChange: (value) => handleFilterChange('price_range', value),
-    });
-
-    startCarousel({
-      carouselId: '#carousel-id',
-      carouselItem: '.carousel__item',
-      selectorPrev: 'button[data-bs-slide="prev"]',
-      selectorNext: 'button[data-bs-slide="next"]',
     });
   } catch (error) {
     console.log('Get all failed', error);

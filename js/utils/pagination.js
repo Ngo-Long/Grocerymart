@@ -1,37 +1,17 @@
 import { $ } from './common';
 
-export function updatePaginationUI({ elementId, defaultParams, totalCount }) {
-  const paginationElement = $(elementId);
-  if (!paginationElement || !defaultParams || !totalCount) return;
-
-  // Calc total pages
-  const page = defaultParams.get('_page');
-  const limit = defaultParams.get('_limit');
-  const totalPages = Math.ceil(totalCount / limit);
-
-  // Save page and totalPages to paginationElement
-  paginationElement.dataset.page = page;
-  paginationElement.dataset.limit = limit;
-  paginationElement.dataset.totalPages = totalPages;
-
-  // check if disable prev or next links
-  const prevLink = paginationElement?.firstElementChild;
-  page <= 1 ? prevLink?.classList.add('disabled') : prevLink?.classList.remove('disabled');
-
-  const nextLink = paginationElement?.lastElementChild;
-  page >= totalPages ? nextLink?.classList.add('disabled') : nextLink?.classList.remove('disabled');
-}
-
-export function registerPagination({ elementId, defaultParams, onChange }) {
+export function registerPagination({ elementId, defaultParams, totalCount, onChange }) {
   // Get the element
   const paginationElement = $(elementId);
   if (!paginationElement || !defaultParams || !onChange) return;
 
-  let page = Number.parseInt(paginationElement.dataset.page) || 1;
-  const totalPages = Number.parseInt(paginationElement.dataset.totalPages);
+  // Calc total pages
+  const page = Number.parseInt(defaultParams.get('_page'));
+  const limit = Number.parseInt(defaultParams.get('_limit'));
+  const totalPages = Math.ceil(Number.parseInt(totalCount) / limit);
 
   renderPagination(paginationElement, totalPages);
-  attachEventClickButtons(paginationElement, onChange);
+  attachEventClickButtons(paginationElement, page, totalPages, onChange);
 }
 
 function renderPagination(paginationElement, totalPages) {
@@ -42,7 +22,7 @@ function renderPagination(paginationElement, totalPages) {
 
   // Add button first
   paginationElement.innerHTML +=
-    '<button value="1" class="page-item page-link">&laquo; First</button>';
+    '<button value="1" class="page-item page-link">&laquo; Prev</button>';
 
   // Add numbered buttons
   for (let i = 1; i <= totalPages; i++) {
@@ -50,14 +30,11 @@ function renderPagination(paginationElement, totalPages) {
   }
 
   // Add button last
-  paginationElement.innerHTML += `<button value ="${totalPages}" class="page-item page-link">Last &raquo;</button>`;
+  paginationElement.innerHTML += `<button value ="${totalPages}" class="page-item page-link">Next &raquo;</button>`;
 }
 
-function attachEventClickButtons(paginationElement, onChange) {
+function attachEventClickButtons(paginationElement, currentPage, totalPages, onChange) {
   if (!paginationElement || !onChange) return;
-
-  let currentPage = Number.parseInt(paginationElement.dataset.page) || 1;
-  const totalPages = Number.parseInt(paginationElement.dataset.totalPages);
 
   const resetActive = () => {
     const buttonList = paginationElement.querySelectorAll('.page-item.page-link');
@@ -65,10 +42,12 @@ function attachEventClickButtons(paginationElement, onChange) {
   };
 
   // Get number button elements page
-  const numberButtons = paginationElement.querySelectorAll('.page-item.page-link');
+  const numberButtons = paginationElement.querySelectorAll(
+    '.page-item.page-link:not(:first-child):not(:last-child)',
+  );
 
-  // Attach class 'active' when web start
-  numberButtons[currentPage].classList.add('active');
+  // Add class 'active' when web start
+  numberButtons[currentPage - 1].classList.add('active');
 
   // Attach event click for numbered buttons
   numberButtons?.forEach((button) => {
@@ -76,25 +55,25 @@ function attachEventClickButtons(paginationElement, onChange) {
 
     button.addEventListener('click', () => {
       resetActive();
-      numberButtons[pageNum].classList.add('active');
+
+      // Add class 'active' new button
+      numberButtons[pageNum - 1].classList.add('active');
 
       onChange?.(pageNum);
     });
   });
 
+  const prevBtn = paginationElement.firstElementChild;
+  const nextBtn = paginationElement.lastElementChild;
+
+  // check if disable prev or next links
+  currentPage <= 1 ? prevBtn?.classList.add('disabled') : prevBtn?.classList.remove('disabled');
+  currentPage >= totalPages
+    ? nextBtn?.classList.add('disabled')
+    : nextBtn?.classList.remove('disabled');
+
   // Attach event click button first
-  const firstButton = paginationElement.firstElementChild;
-  firstButton?.addEventListener('click', () => {
-    currentPage = Number.parseInt(paginationElement.dataset.page) || 1;
-
-    if (currentPage >= 2) onChange?.(currentPage - 1);
-  });
-
-  // Attach event click button last
-  const lastButton = paginationElement.lastElementChild;
-  lastButton?.addEventListener('click', () => {
-    currentPage = Number.parseInt(paginationElement.dataset.page) || 1;
-
-    if (currentPage < totalPages) onChange?.(currentPage + 1);
-  });
+  if (currentPage >= 2) prevBtn?.addEventListener('click', () => onChange?.(currentPage - 1));
+  if (currentPage < totalPages)
+    nextBtn?.addEventListener('click', () => onChange?.(currentPage + 1));
 }
