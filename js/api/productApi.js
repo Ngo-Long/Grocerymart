@@ -11,6 +11,11 @@ const productApi = {
     return axiosClient.get(url);
   },
 
+  getByBrand(brand) {
+    const url = '/products';
+    return axiosClient.get(url, { params: { brand } });
+  },
+
   add(data) {
     const url = '/products';
     return axiosClient.post(url, data);

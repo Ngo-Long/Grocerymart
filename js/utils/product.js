@@ -12,7 +12,6 @@ dayjs.extend(relativeTime); // to use fromNow function
 export function renderProductList(elementId, dataList) {
   if (!elementId || !Array.isArray(dataList)) return;
 
-  // product list element
   const productList = $(elementId);
   if (!productList) return;
 
@@ -56,7 +55,7 @@ export function createProductItem(dataItem) {
   if (!elementLink) return;
 
   elementLink.addEventListener('click', () => {
-    window.location.assign(`/product-detail.html?id=${dataItem.id}`);
+    window.location.assign(`/product-detail.html?data-id=${dataItem.id}`);
   });
 
   return productItem;

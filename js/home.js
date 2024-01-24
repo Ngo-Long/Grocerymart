@@ -3,8 +3,8 @@ import {
   startCarousel,
   registerSearchInput,
   renderProductList,
-  initPagination,
-  renderPagination,
+  registerPagination,
+  updatePaginationUI,
   handleSelectChange,
 } from './utils/index';
 
@@ -31,7 +31,7 @@ async function handleFilterChange(filterName, filterValue) {
     if (filterValue === 'desc') data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
 
     renderProductList('#productList', data);
-    renderPagination({
+    updatePaginationUI({
       elementId: '#productsPagination',
       defaultParams: queryParams,
       totalCount,
@@ -60,17 +60,16 @@ async function handleFilterChange(filterName, filterValue) {
     // r-render
     renderProductList('#productList', data);
 
-    // Attach click event for links in pagination
-    initPagination({
-      elementId: '#productsPagination',
-      defaultParams: queryParams,
-      onChange: (page) => handleFilterChange('_page', page),
-    });
-
-    renderPagination({
+    updatePaginationUI({
       elementId: '#productsPagination',
       defaultParams: queryParams,
       totalCount,
+    });
+
+    registerPagination({
+      elementId: '#productsPagination',
+      defaultParams: queryParams,
+      onChange: (page) => handleFilterChange('_page', page),
     });
 
     registerSearchInput({

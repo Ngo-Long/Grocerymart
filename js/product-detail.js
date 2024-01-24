@@ -2,6 +2,7 @@ import productApi from './api/productApi';
 import {
   $,
   registerLightBox,
+  renderProductList,
   renderthumbnailImages,
   isFavoriteProductElement,
   setElementSourceBySelector,
@@ -43,17 +44,25 @@ function displayProductDetail(product) {
 // MAIN
 (async () => {
   try {
+    // Get url search
     const searchParams = new URLSearchParams(window.location.search);
 
     // Get id from search params
-    const productId = searchParams.get('id');
+    const productId = searchParams.get('data-id');
     if (!productId) return;
 
     // Get the product from id
     const productData = await productApi.getById(productId);
     if (!productData) return;
 
+    // Get the product from brand
+    const productBrand = productData.data.brand;
+    const productDataBrand = await productApi.getByBrand(productBrand);
+    if (!productBrand || !productDataBrand) return;
+
+    // r-render
     displayProductDetail(productData.data);
+    renderProductList('#productList', productDataBrand.data);
 
     registerLightBox({
       modalId: '#lightBox',

@@ -3165,12 +3165,16 @@ html {
   display: block;
   padding: 14px 20px 10px;
 }
+.page-link.active {
+  text-decoration: underline;
+  background: var(--act-dropdown-cart-border-hover);
+}
 .page-link:hover {
-  color: #ff0000;
-  opacity: 0.6;
+  text-decoration: underline;
+  background: var(--act-dropdown-cart-border-hover);
 }
 .page-link.disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   opacity: none;
   cursor: not-allowed;
   pointer-events: none;
