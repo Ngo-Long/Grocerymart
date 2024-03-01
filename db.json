@@ -417,5 +417,21 @@
       "createdAt": 1702717219160,
       "updatedAt": 1702717219160
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ngo Long",
+      "email": "ngolong.hh@gmail.com",
+      "avatar": "http://127.0.0.1:5500/assets/imgs/avatar/avatar-4.jpg",
+      "address": "Tran Thi He, Hiep Thanh, Quan 12, HCM city",
+      "company": "",
+      "phoneNumber": "0879337929",
+      "account": "ngolong.hh@gmail.com",
+      "imageAvatar": "http://127.0.0.1:5500/assets/imgs/avatar/avatar-4.jpg",
+      "imageBackground": "http://127.0.0.1:5500/assets/imgs/background-profile.jpg",
+      "createdAt": 1685466000000,
+      "updatedAt": 1685466000000
+    }
   ]
 }

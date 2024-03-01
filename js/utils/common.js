@@ -1,34 +1,36 @@
 export const $ = document.querySelector.bind(document);
 export const $$ = document.querySelectorAll.bind(document);
 
-export function setElementSourceBySelector(container, selector, source) {
-  if (!container || !selector || !source) return;
+export function setElementsSourceBySelector(container, selector, source) {
+  const targetElements = container?.querySelectorAll(selector);
+  if (!targetElements || targetElements.length === 0 || !source) return;
 
-  const targetElement = container.querySelector(selector);
-  if (!targetElement) return;
+  targetElements.forEach((element) => {
+    // Add source to image
+    element.src = source;
 
-  // add source to image
-  targetElement.src = source;
-
-  // set image default source on error
-  targetElement.addEventListener('error', () => {
-    console.log('Sự kiện lỗi đã được kích hoạt.');
-    targetElement.src = 'https://placehold.co/600x400?text=Thumbnail';
+    // Set default source on error
+    element.addEventListener('error', () => {
+      console.log('Sự kiện lỗi đã được kích hoạt.');
+      element.src = 'https://placehold.co/600x400?text=Thumbnail';
+    });
   });
 }
 
-export function setElementTextContent(container, selector, text) {
+export function setElementsTextContent(container, selector, text) {
   if (!container || !selector || !text) return;
 
-  const targetElement = container.querySelector(selector);
-  if (targetElement) targetElement.innerHTML = text;
+  const targetElements = container?.querySelectorAll(selector);
+  if (!targetElements || targetElements.length === 0) return;
+
+  targetElements.forEach((element) => {
+    element.innerHTML = text;
+  });
 }
 
 export function isFavoriteProductElement(container, selector, isFavorite) {
-  if (!container || typeof isFavorite !== 'boolean') return;
-
-  const targetElement = container.querySelector(selector);
-  if (!targetElement) return;
+  const targetElement = container?.querySelector(selector);
+  if (!targetElement || typeof isFavorite !== 'boolean') return;
 
   // Add or remove 'like-btn--liked' class based on the updated isFavorite status
   targetElement.classList.toggle('like-btn--liked', isFavorite);
@@ -55,4 +57,11 @@ export function renderthumbnailImages({ elementId, selectorClass, datasetAlbum, 
     // Append the thumbnail
     $(elementId).appendChild(imgElement);
   });
+}
+
+export function setFieldValue(form, selector, text) {
+  if (!form || !selector || !text) return;
+
+  const field = form?.querySelector(selector);
+  if (field) field.value = text;
 }

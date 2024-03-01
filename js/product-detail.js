@@ -5,8 +5,8 @@ import {
   renderProductList,
   renderthumbnailImages,
   isFavoriteProductElement,
-  setElementSourceBySelector,
-  setElementTextContent,
+  setElementsSourceBySelector,
+  setElementsTextContent,
   showImageProductDetail,
 } from './utils/index';
 
@@ -17,12 +17,12 @@ function displayProductDetail(product) {
   const { title, description, price, brand, score, imageUrl, thumbnailImages, isFavorite } =
     product;
 
-  setElementTextContent(document, '#productHeading', title);
-  setElementTextContent(document, '#productPrice', price);
-  setElementTextContent(document, '#productScore', score);
-  setElementTextContent(document, '#productBrand', brand);
-  setElementTextContent(document, '#productContent', description);
-  setElementSourceBySelector(document, '#productImage', imageUrl);
+  setElementsTextContent(document, '#productHeading', title);
+  setElementsTextContent(document, '#productPrice', price);
+  setElementsTextContent(document, '#productScore', score);
+  setElementsTextContent(document, '#productBrand', brand);
+  setElementsTextContent(document, '#productContent', description);
+  setElementsSourceBySelector(document, '#productImage', imageUrl);
   isFavoriteProductElement(document, '[data-id="isFavoriteProduct"]', isFavorite);
   renderthumbnailImages({
     elementId: '#thumbnailImages',
@@ -32,7 +32,7 @@ function displayProductDetail(product) {
   });
 
   // Update the modal
-  setElementTextContent(document, '[data-id="productHeading"]', title);
+  setElementsTextContent(document, '[data-id="productHeading"]', title);
   renderthumbnailImages({
     elementId: '#thumbnailImagesShow',
     selectorClass: 'product__preview-thumbs-img',
@@ -72,7 +72,6 @@ function displayProductDetail(product) {
     });
 
     showImageProductDetail({
-      productId: '#productPreview',
       imageId: '#productImage',
       thumbnailList: '#thumbnailImages',
       prevSelector: 'button[data-slide-image="prev"]',

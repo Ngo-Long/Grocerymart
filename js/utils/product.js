@@ -1,60 +1,48 @@
 import {
   $,
-  setElementSourceBySelector,
-  setElementTextContent,
+  setElementsSourceBySelector,
+  setElementsTextContent,
   isFavoriteProductElement,
 } from './common';
 
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-dayjs.extend(relativeTime); // to use fromNow function
-
-export function renderProductList(elementId, dataList) {
-  if (!elementId || !Array.isArray(dataList)) return;
-
-  const productList = $(elementId);
-  if (!productList) return;
+export function renderProductList(parentId, dataList) {
+  if (!parentId || !Array.isArray(dataList)) return;
 
   // Clear current product list
-  productList.textContent = '';
+  $(parentId).textContent = '';
 
   // get each data in dataList
   dataList.forEach((dataItem) => {
     const productItem = createProductItem(dataItem);
 
     // append productItem in productList
-    productList.appendChild(productItem);
+    $(parentId).appendChild(productItem);
   });
 }
 
 export function createProductItem(dataItem) {
   if (!dataItem) return;
 
-  // Get id product template
-  const productTemplate = $('#productTemplate');
-  if (!productTemplate) return;
-
   // Get in content product template
-  const productItem = productTemplate.content.firstElementChild.cloneNode(true);
+  const productItem = $('#productTemplate')?.content?.firstElementChild?.cloneNode(true);
   if (!productItem) return;
 
   // Update title, brand, price, score, imageUrl, description, thumbList
-  setElementTextContent(productItem, '[data-id="titleProduct"]', dataItem.title);
-  setElementTextContent(productItem, '[data-id="priceProduct"]', dataItem.price);
-  setElementTextContent(productItem, '[data-id="brandProduct"]', dataItem.brand);
-  setElementTextContent(productItem, '[data-id="scoreProduct"]', dataItem.score);
-  setElementTextContent(productItem, '[data-id="descProduct"]', dataItem.description);
+  setElementsTextContent(productItem, '[data-id="titleProduct"]', dataItem.title);
+  setElementsTextContent(productItem, '[data-id="priceProduct"]', dataItem.price);
+  setElementsTextContent(productItem, '[data-id="brandProduct"]', dataItem.brand);
+  setElementsTextContent(productItem, '[data-id="scoreProduct"]', dataItem.score);
+  setElementsTextContent(productItem, '[data-id="descProduct"]', dataItem.description);
 
-  setElementSourceBySelector(productItem, '[data-id="imageUrlProduct"]', dataItem.imageUrl);
+  setElementsSourceBySelector(productItem, '[data-id="imageUrlProduct"]', dataItem.imageUrl);
   isFavoriteProductElement(productItem, '[data-id="isFavoriteProduct"]', dataItem.isFavorite);
 
-  // calulate timespan
-  // console.log('timespan', dayjs(dataItem.updatedAt).fromNow());
+  // Click on the product to redirect to the product detail page
+  productItem?.firstElementChild?.addEventListener('click', (e) => {
+    // Check if the clicked element is isFavoriteProduct
+    const favoriteElement = productItem?.querySelector('[data-id="isFavoriteProduct"]');
+    if (favoriteElement && favoriteElement.contains(e.target)) return;
 
-  const elementLink = productItem.firstElementChild;
-  if (!elementLink) return;
-
-  elementLink.addEventListener('click', () => {
     window.location.assign(`/product-detail.html?data-id=${dataItem.id}`);
   });
 

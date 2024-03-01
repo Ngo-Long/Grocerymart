@@ -12,26 +12,6 @@
   box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.01);
   transition: box-shadow 0.3s ease;
 
-  &--small {
-    --font-size: 1.4rem;
-    gap: 10px;
-
-    & .product-item__price {
-      font-size: 1.6rem;
-    }
-
-    & .product-item__title {
-      font-size: 1.6rem;
-      line-height: 120%;
-    }
-
-    & .like-btn__icon,
-    & .product-item__start {
-      width: 20px !important;
-      height: 20px !important;
-    }
-  }
-
   &:hover {
     cursor: pointer;
     box-shadow: 0px 20px 60px 10px var(--product-item-shadow);
@@ -44,6 +24,27 @@
   &:hover &__menu {
     opacity: 1;
     transform: scale(1);
+  }
+
+  &--small {
+    --font-size: 1.4rem;
+    gap: 10px;
+    box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      box-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    & .product-item__title {
+      font-size: var(--font-size);
+      line-height: 120%;
+    }
+
+    & .like-btn__icon,
+    & .product-item__start {
+      width: 20px !important;
+      height: 20px !important;
+    }
   }
 
   @include abstracts.screen(md) {
@@ -66,6 +67,11 @@
     @include abstracts.screen(md) {
       font-size: 1.6rem;
       line-height: 140%;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: var(--font-size);
+      line-height: 120%;
     }
   }
 
@@ -158,17 +164,9 @@
 
   &__price {
     font-size: var(--font-size);
-
-    @include abstracts.screen(sm) {
-      font-size: 1.6rem;
-    }
   }
 
   &__score {
     font-size: var(--font-size);
-
-    @include abstracts.screen(sm) {
-      font-size: 1.6rem;
-    }
   }
 }

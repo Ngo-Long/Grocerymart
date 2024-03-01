@@ -1318,7 +1318,12 @@
 
       <div class="top-action__user top-user d-md-none">
         <button class="top-action__btn js-toggle" toggle-target="#act-dropdown">
-          <img src="/assets/imgs/avatar/avatar-4.jpg" alt="Avatar" class="top-action__avatar" />
+          <img
+            src="/assets/imgs/avatar/avatar-4.jpg"
+            alt="Avatar"
+            data-id="avatar"
+            class="top-action__avatar"
+          />
         </button>
 
         <!-- dropdown cart -->
@@ -1336,10 +1341,18 @@
             />
 
             <div class="top-user__content">
-              <img src="/assets/imgs/avatar/avatar-4.jpg" alt="" class="top-user__avatar" />
+              <a href="./edit-personal-info.html">
+                <img
+                  src="/assets/imgs/avatar/avatar-4.jpg"
+                  alt=""
+                  data-id="avatar"
+                  class="top-user__avatar"
+                />
+              </a>
+
               <div class="top-user__info">
-                <div class="top-user__name">Ngô Kim Long</div>
-                <div class="top-user__email">ngolong.hh@gmail.com</div>
+                <div class="top-user__name" data-id="userName">Ngô Kim Long</div>
+                <div class="top-user__email" data-id="email">ngolong.hh@gmail.com</div>
               </div>
             </div>
 
@@ -1408,3 +1421,5 @@
     </div>
   </section>
 </div>
+
+<script type="module" src="/js/edit-personal-info.js"></script>

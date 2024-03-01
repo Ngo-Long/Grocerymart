@@ -342,6 +342,11 @@
       line-height: 141.667%;
 
       margin-bottom: 30px;
+
+      @include abstracts.screen(sm) {
+        font-size: 1.8rem;
+        margin: 20px 0;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 {
     "prettier.printWidth": 120,
     "cSpell.words": [
+        "Calulate",
         "renderthumbnail"
     ]
 }

@@ -61,9 +61,11 @@
               <aside class="profile-container">
                 <!-- user -->
                 <div class="profile-user">
-                  <img src="/assets/imgs/avatar/avatar-4.jpg" alt="" class="profile-user__avatar" />
-                  <h1 class="profile-user__name">Ngo Long</h1>
-                  <p class="profile-user__desc">Registered: 31th May 2022</p>
+                  <img src="" alt="" class="profile-user__avatar" data-id="avatar" />
+
+                  <h1 class="profile-user__name" data-id="userName">User name</h1>
+
+                  <p class="profile-user__desc" data-id="registered">Registered:</p>
                 </div>
 
                 <!-- menu 1 -->
@@ -72,23 +74,27 @@
 
                   <ul class="profile-menu__list">
                     <li class="profile-menu__item">
-                      <a href="#!" class="profile-menu__link">
+                      <a href="./edit-personal-info.html" class="profile-menu__link">
                         <img src="/assets/icons/user.svg" alt="" class="profile-menu__icon icon" />
                         <div class="profile-menu__span">Personal info</div>
                       </a>
                     </li>
 
                     <li class="profile-menu__item">
-                      <a href="#!" class="profile-menu__link">
+                      <a href="./edit-personal-info.html" class="profile-menu__link">
                         <img src="/assets/icons/map.svg" alt="" class="profile-menu__icon icon" />
                         <div class="profile-menu__span">Addresses</div>
                       </a>
                     </li>
 
                     <li class="profile-menu__item">
-                      <a href="#!" class="profile-menu__link">
-                        <img src="/assets/icons/email.svg" alt="" class="profile-menu__icon icon" />
-                        <div class="profile-menu__span">Communications & privacy</div>
+                      <a href="./edit-personal-info.html" class="profile-menu__link">
+                        <img
+                          src="/assets/icons/company.png"
+                          alt=""
+                          class="profile-menu__icon icon"
+                        />
+                        <div class="profile-menu__span">Company</div>
                       </a>
                     </li>
                   </ul>
@@ -282,7 +288,7 @@
 
                             <div class="account-info__content">
                               <h3 class="account-info__title">Email Address</h3>
-                              <p class="account-info__desc">ngolong.hh@gmail.com</p>
+                              <p class="account-info__desc" data-id="email">email@gmail.com</p>
                             </div>
                           </article>
                         </a>
@@ -302,7 +308,7 @@
 
                             <div class="account-info__content">
                               <h3 class="account-info__title">Phone number</h3>
-                              <p class="account-info__desc">+8479337929</p>
+                              <p class="account-info__desc" data-id="phoneNumber">+84</p>
                             </div>
                           </article>
                         </a>
@@ -322,9 +328,7 @@
 
                             <div class="account-info__content">
                               <h3 class="account-info__title">Add an address</h3>
-                              <p class="account-info__desc">
-                                Tran Thi He, Hiep Thanh, Quan 12, HCM city
-                              </p>
+                              <p class="account-info__desc" data-id="address">Location</p>
                             </div>
                           </article>
                         </a>
@@ -412,6 +416,6 @@
     </script>
 
     <!-- script -->
-    <script type="module" src="/js/home.js"></script>
+    <script type="module" src="/js/edit-personal-info.js"></script>
   </body>
 </html>

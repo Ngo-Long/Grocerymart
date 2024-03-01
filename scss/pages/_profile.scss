@@ -1,6 +1,17 @@
 @use '../abstracts';
 
+.container {
+  position: relative;
+}
+
 .profile {
+  margin-top: 110px;
+  border-radius: 10px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  & .cart-info {
+    border-radius: 10px;
+  }
   @include abstracts.screen(lg) {
     --grid-gutter-x: 20px;
     --grid-gutter-y: 20px;
@@ -20,21 +31,6 @@
     border-radius: 20px;
     background: var(--profile-container-bg);
     box-shadow: 0px 20px 60px 10px var(--profile-container-bg-shadow);
-  }
-
-  &__icon-link {
-    padding: 10px 12px 4px;
-    margin: -6px 0 -4px -12px;
-    border-radius: 4px;
-
-    &:hover {
-      background: var(--checkout-ctrl-btn-hover);
-      border-radius: 10px;
-    }
-
-    &:hover .profile__icon {
-      translate: -2px;
-    }
   }
 
   &__icon {
@@ -118,6 +114,12 @@
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 146.667%;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }
 
@@ -220,5 +222,106 @@
   @include abstracts.screen(lg) {
     --grid-gutter-x: 16px;
     --grid-gutter-y: 16px;
+  }
+}
+
+.represent {
+  position: relative;
+
+  &-bg {
+    position: relative;
+    width: 100%;
+    padding-top: 21%;
+    flex-shrink: 0;
+  }
+
+  &-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: url(../imgs/background-profile.jpg) no-repeat center/cover;
+  }
+
+  &-content {
+    position: absolute;
+    bottom: -30%;
+    left: 10%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-avatar {
+    width: 168px;
+    height: 168px;
+    border-radius: 99px;
+    object-fit: cover;
+    border: 8px solid #fff;
+  }
+
+  &-text {
+    margin-top: 80px;
+    color: var(--text-color);
+  }
+
+  &-name {
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  &-gmail {
+    margin-top: 6px;
+    color: var(--filter-btn-title-color);
+  }
+
+  &-update {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    min-width: min(276px, 100%);
+    opacity: 0.9;
+    padding: 10px;
+    max-height: 40px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #fff;
+    border-radius: 99px;
+  }
+
+  &-update--avatar {
+    min-width: inherit;
+    opacity: 1;
+    left: 120px;
+    right: inherit;
+    padding: 4px;
+    background: #ccc;
+
+    & .represent-update__img {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &-update__img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &-update__desc {
+    margin-top: 3px;
+    font-weight: 600;
+    color: #1a162e;
   }
 }
