@@ -45,7 +45,7 @@
       "brand": "Lavazza",
       "score": "5.0",
       "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/Lavazza-2.png",
-        "thumbnailImages": [
+      "thumbnailImages": [
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-1.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-2.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-3.png",
@@ -64,7 +64,7 @@
       "brand": "Nescafe",
       "score": "4.4",
       "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/Nescafe-2.jpg",
-       "thumbnailImages": [
+      "thumbnailImages": [
         "http://127.0.0.1:5500/assets/imgs/product/Nescafe-1.webp",
         "http://127.0.0.1:5500/assets/imgs/product/Nescafe-2.jpg",
         "http://127.0.0.1:5500/assets/imgs/product/Nescafe-3.jpg",
@@ -178,7 +178,7 @@
       "brand": "Lavazza",
       "score": "4.8",
       "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/Lavazza-4.png",
-     "thumbnailImages": [
+      "thumbnailImages": [
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-1.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-2.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-3.png",
@@ -227,7 +227,8 @@
       "isFavorite": false,
       "createdAt": 1702717219160,
       "updatedAt": 1702717219160
-    },{
+    },
+    {
       "id": 13,
       "title": "Coffee Beans - Espresso Arabica and Robusta Beans",
       "price": "47.99",
@@ -348,7 +349,7 @@
       "brand": "Lavazz",
       "score": "5.7",
       "imageUrl": "http://127.0.0.1:5500/assets/imgs/product/Lavazza-3.png",
-     "thumbnailImages": [
+      "thumbnailImages": [
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-1.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-2.png",
         "http://127.0.0.1:5500/assets/imgs/product/Lavazza-3.png",
@@ -421,7 +422,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Ngo Long",
+      "fullName": "Ngo Long",
       "email": "ngolong.hh@gmail.com",
       "avatar": "http://127.0.0.1:5500/assets/imgs/avatar/avatar-4.jpg",
       "address": "Tran Thi He, Hiep Thanh, Quan 12, HCM city",

@@ -5,7 +5,7 @@ export function initPersonalForm({ formId, data, onSubmit }) {
   if (!formId || !data || !onSubmit) return;
 
   const form = $(formId);
-  setFieldValue(form, '[name="fullName"]', data?.name);
+  setFieldValue(form, '[name="fullName"]', data?.fullName);
   setFieldValue(form, '[name="email"]', data?.email);
   setFieldValue(form, '[name="phoneNumber"]', data?.phoneNumber);
   setFieldValue(form, '[name="company"]', data?.company);
@@ -13,16 +13,18 @@ export function initPersonalForm({ formId, data, onSubmit }) {
   setElementsSourceBySelector(document, '[data-id="avatar"]', data?.avatar); // hidden field
   setElementsSourceBySelector(document, '#profileImgBg', data?.imageBackground);
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get form values
-    const formValues = getFormValues(form);
-    console.log(formValues);
+    const formValues = getFormValues(form); // Get form values
+    formValues.id = data.id; // Attach id to formValues
 
-    // If valid trigger submit callback
     // Otherwise show validation errors
-    if (!validatePersonalForm(form, formValues)) return;
+    const isValid = await validatePersonalForm(form, formValues);
+    if (!isValid) return;
+
+    // If valid trigger, submit callback
+    onSubmit?.(formValues);
   });
 }
 
@@ -41,7 +43,7 @@ function getFormValues(form) {
 async function validatePersonalForm(form, formValues) {
   try {
     // reset previous validation
-    ['fullName', 'email', 'number'].forEach((name) => setFieldError(form, name, ''));
+    ['fullName', 'email', 'phoneNumber'].forEach((name) => setFieldError(form, name, ''));
 
     // start new validation
     const schema = getPersonalSchema();
@@ -55,9 +57,7 @@ async function validatePersonalForm(form, formValues) {
     if (error.name === 'ValidationError' && Array.isArray(error.inner)) {
       for (const validationError of error.inner) {
         const name = validationError.path;
-
-        // ignore if the field is already logged
-        if (errorLog[name]) continue;
+        if (errorLog[name]) continue; // ignore if the field is already logged
 
         // set field error and mark as logged
         setFieldError(form, name, validationError.message);
@@ -66,10 +66,10 @@ async function validatePersonalForm(form, formValues) {
     }
   }
 
-  // add was-validated class to form element
-  const isValid = form.checkValidity();
-  if (!isValid) form.classList.add('was-validated');
-  return isValid;
+  // add was-validated class to form element when submitting
+  form.classList.add('was-validated');
+
+  return form.checkValidity(); // return true or false
 }
 
 function getPersonalSchema() {
@@ -87,18 +87,19 @@ function getPersonalSchema() {
       .required()
       .email('Please email valid')
       .typeError('Please enter a valid number'),
-    number: yup
-      .number()
+    phoneNumber: yup
+      .string()
       .required('Please enter phone number')
-      .typeError('Please enter a valid phone number'),
+      .typeError('Please enter a valid phone number')
+      .min(8, 'Phone number must be at least 8 characters'),
     company: yup.string(),
   });
 }
 
 function setFieldError(form, name, error) {
-  const element = form.querySelector(`[name="${name}"]`);
-  if (element) {
-    element.setCustomValidity(error);
-    setElementsTextContent(element.parentElement, '.invalid-feedback', error);
-  }
+  if (!name || !error) return;
+  const element = form?.querySelector(`[name="${name}"]`);
+
+  element?.setCustomValidity(error);
+  setElementsTextContent(element?.parentElement, '.form__invalid-feedback', error);
 }

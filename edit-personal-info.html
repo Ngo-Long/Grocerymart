@@ -99,21 +99,19 @@
                   <div class="form__group">
                     <label for="fullName" class="form__label form-card__label">Full name</label>
 
-                    <div class="form__text-input">
-                      <input
-                        type="text"
-                        inputmode="text"
-                        autocomplete="name"
-                        placeholder="Full name"
-                        id="fullName"
-                        name="fullName"
-                        class="form__input form-card__input"
-                        required
-                        autofocus
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      inputmode="text"
+                      autocomplete="name"
+                      placeholder="Full name"
+                      id="fullName"
+                      name="fullName"
+                      class="form__input form-card__input form__text-input"
+                      required
+                      autofocus
+                    />
 
-                    <div class="invalid-feedback">Please enter title</div>
+                    <div class="form__invalid-feedback">Looks good!</div>
                   </div>
                 </div>
 
@@ -121,20 +119,18 @@
                   <div class="form__group">
                     <label for="email" class="form__label form-card__label">Email</label>
 
-                    <div class="form__text-input">
-                      <input
-                        type="email"
-                        inputmode="email"
-                        autocomplete="email"
-                        name="email"
-                        id="email"
-                        placeholder="admin@uihut.com"
-                        class="form__input form-card__input"
-                        required
-                      />
+                    <input
+                      type="email"
+                      inputmode="email"
+                      autocomplete="email"
+                      name="email"
+                      id="email"
+                      placeholder="admin@uihut.com"
+                      class="form__input form-card__input form__text-input"
+                      required
+                    />
 
-                      <div class="invalid-feedback"></div>
-                    </div>
+                    <div class="form__invalid-feedback">Looks good!</div>
                   </div>
                 </div>
 
@@ -144,20 +140,19 @@
                       >Phone Number</label
                     >
 
-                    <div class="form__text-input">
-                      <input
-                        type="number"
-                        inputmode="decimal"
-                        autocomplete="cc-number"
-                        name="phoneNumber"
-                        id="phoneNumber"
-                        placeholder="+008 01234 56789"
-                        class="form__input form-card__input"
-                        required
-                      />
+                    <input
+                      type="text"
+                      inputmode="decimal"
+                      autocomplete="on"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      minlength="8"
+                      placeholder="+008 01234 56789"
+                      class="form__input form-card__input form__text-input"
+                      required
+                    />
 
-                      <div class="invalid-feedback"></div>
-                    </div>
+                    <div class="form__invalid-feedback">Looks good!</div>
                   </div>
                 </div>
 
@@ -165,18 +160,16 @@
                   <div class="form__group">
                     <label for="company" class="form__label form-card__label">Company</label>
 
-                    <div class="form__text-input">
-                      <input
-                        type="text"
-                        inputmode="text"
-                        name="company"
-                        id="company"
-                        placeholder="..."
-                        class="form__input form-card__input"
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="company"
+                      id="company"
+                      placeholder="..."
+                      class="form__input form-card__input form__text-input"
+                    />
 
-                    <div class="invalid-feedback"></div>
+                    <div class="form__invalid-feedback"></div>
                   </div>
                 </div>
 

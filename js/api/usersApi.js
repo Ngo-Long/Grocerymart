@@ -11,11 +11,6 @@ const usersApi = {
     return axiosClient.get(url);
   },
 
-  getByBrand(brand) {
-    const url = '/users';
-    return axiosClient.get(url, { params: { brand } });
-  },
-
   add(data) {
     const url = '/users';
     return axiosClient.post(url, data);
@@ -29,6 +24,13 @@ const usersApi = {
   remove(id) {
     const url = `/users/${id}`;
     return axiosClient.delete(url);
+  },
+
+  updateFormData(data) {
+    const url = `/with-thumbnail/users/${data.get('id')}`;
+    return axiosClient.patch(url, data, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
   },
 };
 

@@ -1497,7 +1497,7 @@ html.dark {
     hue-rotate(298deg) brightness(102%) contrast(99%);
   --body-bg-color: #292e39;
   --header-bg-color: #171c28;
-  --input-border-color: #292e39;
+  --input-border-color: #505359;
   --top-action-bg-color: #292e39;
   --top-action-group-shadow: rgba(0, 0, 0, 0.2);
   --top-action-separate-color: #40444f;
@@ -1536,7 +1536,7 @@ html.dark {
   --auth-content-bg-color: #292e39;
   --auth-desc-color: #b9babe;
   --auth-title-color: #b9babe;
-  --form-input-text-color: #b9babe;
+  --form-input-text-color: #8f8f8f;
   --form-checkbox-label-color: #b9babe;
   --auth-filter-btn-icon: brightness(0) saturate(100%) invert(69%) sepia(5%) saturate(425%)
     hue-rotate(206deg) brightness(89%) contrast(95%);
@@ -2532,6 +2532,37 @@ html {
   visibility: visible;
 }
 
+.form__invalid-feedback {
+  display: none;
+  width: 100%;
+  height: 10px;
+  font-size: 1.3rem;
+}
+.form.was-validated .form__invalid-feedback {
+  display: block;
+}
+.form.was-validated .form__input:valid {
+  border-color: #75b798;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 1rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.form.was-validated .form__input:invalid {
+  border-color: #ea868f;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 1rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.form__input:valid ~ .form__invalid-feedback {
+  color: #75b798;
+}
+.form__input:invalid ~ .form__invalid-feedback {
+  color: #ea868f;
+}
 .form__title {
   color: var(--checkout-text-color);
   font-size: 1.8rem;
@@ -2653,7 +2684,8 @@ html {
 }
 .form__input::placeholder {
   font-weight: 400;
-  color: var(--form-input-text-color);
+  opacity: 0.6;
+  color: var(--form-input-text-color) !important;
 }
 .form__input-icon {
   margin-left: 12px;
@@ -2740,16 +2772,16 @@ html {
   cursor: pointer;
   border: 1.5px solid var(--input-border-color);
 }
-.form__text-input .form__input {
-  padding: 0;
+.form__text-input:focus-within {
+  border-color: #a7a7a8;
 }
 @media (max-width: 767.98px) {
   .form__text-input {
     height: 48px;
   }
 }
-.form__text-input:focus-within {
-  border-color: #a7a7a8;
+.form__text-input .form__input {
+  padding: 0;
 }
 .form__text-input + .form__text-input {
   margin-top: 20px;
@@ -2783,32 +2815,6 @@ html {
   .form__checkbox-label {
     font-size: 1.4rem;
   }
-}
-.form .invalid-feedback {
-  display: none;
-  width: 100%;
-  height: 10px;
-  font-size: 1.3rem;
-  color: #75b798;
-}
-
-.was-validated {
-  --feedback-color: #75b798;
-}
-.was-validated .form__input:valid {
-  padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
-}
-.was-validated.form__input:invalid {
-  border-color: #ea868f;
-  padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .breadcrums {

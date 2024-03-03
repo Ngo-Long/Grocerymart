@@ -18,17 +18,25 @@ dayjs.extend(relativeTime); // to use fromNow function
     history.pushState({}, '', url);
 
     // Get user id from URL
-    const searchParams = url.searchParams;
-    const userId = searchParams.get('id');
+    const userId = url.searchParams.get('id');
 
     // Get data user
-    const { data } = await usersApi.getById(userId);
+    const { data } = Boolean(userId)
+      ? await usersApi.getById(userId)
+      : {
+          fullName: '',
+          email: '',
+          phoneNumber: '',
+          company: '',
+        };
+
+    console.log(data);
 
     renderPersonalInfo(data);
     initPersonalForm({
       formId: '#personalForm',
       data,
-      onSubmit: (value) => console.log('hi'),
+      onSubmit: handlePersonalFormSubmit,
     });
   } catch (error) {
     console.log('Error get user', error);
@@ -48,4 +56,30 @@ function renderPersonalInfo(data) {
   setElementsTextContent(document, '[data-id="phoneNumber"]', data.phoneNumber);
   setElementsTextContent(document, '[data-id="address"]', data.address);
   setElementsSourceBySelector(document, '[data-id="avatar"]', data.avatar);
+}
+
+async function handlePersonalFormSubmit(formValues) {
+  if (!formValues) return;
+
+  console.log('Submit: ', formValues);
+
+  try {
+    // const formData = jsonToFormData(formValues);
+    // if (formValues.id) await usersApi.update(formValues);
+    if (!formValues.id) return;
+    console.log('formValues: ', formValues.id);
+    const savePersonal = await usersApi.update(formValues);
+  } catch (error) {
+    console.log('Failed to save personal: ', error);
+  }
+}
+
+function jsonToFormData(jsonObject) {
+  const formData = new FormData();
+
+  for (const key in jsonObject) {
+    formData.set(key, jsonObject[key]);
+  }
+
+  return formData;
 }
