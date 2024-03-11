@@ -6,3 +6,5 @@ export * from './pagination';
 export * from './filter';
 export * from './lightBox';
 export * from './user-form';
+export * from './toast';
+export * from './changeImage';

@@ -63,5 +63,11 @@ export function setFieldValue(form, selector, text) {
   if (!form || !selector || !text) return;
 
   const field = form?.querySelector(selector);
-  if (field) field.value = text;
+  if (field) field.value = text.toString();
+}
+
+export function randomNumber(n) {
+  if (!Number.isInteger(n) || n <= 0) return -1;
+
+  return Math.round(Math.random() * n);
 }

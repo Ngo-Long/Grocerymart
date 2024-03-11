@@ -18,14 +18,14 @@
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
 
+    <!-- script -->
+    <script type="module" src="/js/scripts.js" defer></script>
+
     <style>
       .header {
         height: 86px;
       }
     </style>
-
-    <!-- script -->
-    <script type="module" src="/js/scripts.js" defer></script>
   </head>
 
   <body>
@@ -40,23 +40,39 @@
       <div class="represent">
         <!-- Background -->
         <section class="represent-bg">
-          <div id="profileImgBg" class="represent-bg-img"></div>
+          <img
+            src="./assets/imgs/background-profile.jpg"
+            alt="Background"
+            id="profileImgBg"
+            data-id="background"
+            class="represent-bg-img"
+          />
         </section>
 
         <div class="represent-change">
-          <!-- Update image background -->
-          <div class="represent-update" style="bottom: 70px">
+          <!-- Random image background -->
+          <input type="text" name="imageBackground" id="imageSourcePicsumBg" hidden />
+
+          <label class="represent-update" for="imageSourcePicsumBg" style="bottom: 70px">
             <img src="./assets/icons/random.png" alt="" class="represent-update__img" />
 
             <div class="represent-update__desc">Random image using picsum.photos</div>
-          </div>
+          </label>
 
-          <!-- Update image background -->
-          <div class="represent-update">
+          <!-- Upload image background -->
+          <input
+            type="file"
+            name="imageBackground"
+            id="imageSourceUploadBg"
+            accept="image/*"
+            hidden
+          />
+
+          <label class="represent-update" for="imageSourceUploadBg">
             <img src="./assets/icons/camera.png" alt="" class="represent-update__img" />
 
             <div class="represent-update__desc">Upload image from your computer</div>
-          </div>
+          </label>
         </div>
 
         <!-- represent -->
@@ -65,13 +81,22 @@
             <img
               class="represent-avatar"
               data-id="avatar"
-              src="./assets/imgs/avatar/avatar-4.jpg"
+              src="./assets/imgs/avatar/avatar-demo.jpg"
               alt="represent"
             />
 
-            <div class="represent-update represent-update--avatar">
+            <!-- Upload image avatar -->
+            <input
+              type="file"
+              name="imageAvatar"
+              id="imageSourceUploadAvatar"
+              accept="image/*"
+              hidden
+            />
+
+            <label class="represent-update represent-update--avatar" for="imageSourceUploadAvatar">
               <img src="./assets/icons/camera.png" alt="" class="represent-update__img" />
-            </div>
+            </label>
           </div>
 
           <div class="represent-text">
@@ -85,10 +110,10 @@
         <!-- Profile -->
         <div class="profile">
           <div class="cart-info">
-            <div style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1)">
+            <div class="profile__border">
               <h2 class="cart-info__heading">Add credit or debit card</h2>
 
-              <div class="footer__link" style="font-size: 1.6rem; padding-bottom: 16px">
+              <div class="profile__link">
                 Please enter the following information and submit then.
               </div>
             </div>
@@ -109,6 +134,7 @@
                       class="form__input form-card__input form__text-input"
                       required
                       autofocus
+                      pattern="([a-zA-Z0-9]{2,}\s){1,}[a-zA-Z0-9]{2,}"
                     />
 
                     <div class="form__invalid-feedback">Looks good!</div>
@@ -141,12 +167,13 @@
                     >
 
                     <input
-                      type="text"
-                      inputmode="decimal"
-                      autocomplete="on"
+                      type="tel"
+                      inputmode="tel"
+                      autocomplete="tel"
                       id="phoneNumber"
                       name="phoneNumber"
                       minlength="8"
+                      pattern="^[0-9+\-\s]+$"
                       placeholder="+008 01234 56789"
                       class="form__input form-card__input form__text-input"
                       required
@@ -173,18 +200,18 @@
                   </div>
                 </div>
 
-                <div class="col">
+                <!-- <div class="col">
                   <div class="form__group">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="imageSource"
-                      id="imageSourcePicsum"
-                      checked=""
+                      id="imageSourcePicsumBg"
                       value="picsum"
+                      checked
                     />
 
-                    <label class="form-check-label" for="imageSourcePicsum">
+                    <label class="form-check-label" for="imageSourcePicsumBg">
                       Random image using picsum.photos
                     </label>
                   </div>
@@ -194,21 +221,21 @@
                       class="form-check-input"
                       type="radio"
                       name="imageSource"
-                      id="imageSourceUpdate"
+                      id="imageSourceUpdateBg"
                       value="upload"
                     />
 
-                    <label class="form-check-label" for="imageSourceUpdate">
+                    <label class="form-check-label" for="imageSourceUpdateBg">
                       Upload image from your computer
                     </label>
                   </div>
-                </div>
+                </div> -->
               </div>
 
               <!-- button -->
               <div class="form-card__bottom">
                 <button class="btn btn--text form-card__btn">Cancel</button>
-                <button class="btn btn--primary btn--rounded form-card__btn">
+                <button data-id="submit" class="btn btn--primary btn--rounded form-card__btn">
                   <img
                     style="width: 16px; margin-right: 4px; margin-top: -3px"
                     src="./assets/icons/save.png"

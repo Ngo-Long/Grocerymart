@@ -9,12 +9,27 @@
   border-radius: 10px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 
-  & .cart-info {
-    border-radius: 10px;
+  @include abstracts.screen(sm) {
+    margin-top: 170px;
   }
   @include abstracts.screen(lg) {
     --grid-gutter-x: 20px;
     --grid-gutter-y: 20px;
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    color: #6c6c72;
+    margin-bottom: 1rem;
+  }
+
+  &__border {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--profile-border-color);
+  }
+
+  & .cart-info {
+    border-radius: 10px;
   }
 
   &__home {
@@ -231,8 +246,12 @@
   &-bg {
     position: relative;
     width: 100%;
-    padding-top: 21%;
+    padding-top: 22%;
     flex-shrink: 0;
+
+    @include abstracts.screen(sm) {
+      padding-top: 30%;
+    }
   }
 
   &-bg-img {
@@ -242,17 +261,25 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background: url(../imgs/background-profile.jpg) no-repeat center/cover;
   }
 
   &-content {
     position: absolute;
-    bottom: -30%;
+    bottom: -90px;
     left: 10%;
 
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include abstracts.screen(sm) {
+      top: 50px;
+      left: 50%;
+      bottom: 0;
+      text-align: center;
+      flex-direction: column;
+      transform: translateX(-50%);
+    }
   }
 
   &-avatar {
@@ -261,11 +288,19 @@
     border-radius: 99px;
     object-fit: cover;
     border: 8px solid #fff;
+
+    @include abstracts.screen(sm) {
+      border: none;
+    }
   }
 
   &-text {
     margin-top: 80px;
     color: var(--text-color);
+
+    @include abstracts.screen(sm) {
+      margin-top: 0;
+    }
   }
 
   &-name {
@@ -298,6 +333,11 @@
     border-radius: 6px;
     background-color: #fff;
     border-radius: 99px;
+
+    @include abstracts.screen(sm) {
+      min-width: inherit;
+      border-radius: 10px;
+    }
   }
 
   &-update--avatar {
@@ -307,6 +347,11 @@
     right: inherit;
     padding: 4px;
     background: #ccc;
+
+    @include abstracts.screen(sm) {
+      bottom: -80px;
+      border-radius: 999px;
+    }
 
     & .represent-update__img {
       width: 34px;
@@ -323,5 +368,9 @@
     margin-top: 3px;
     font-weight: 600;
     color: #1a162e;
+
+    @include abstracts.screen(sm) {
+      display: none;
+    }
   }
 }
